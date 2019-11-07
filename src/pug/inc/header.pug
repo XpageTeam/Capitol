@@ -1,0 +1,58 @@
+header.head
+	.head__wrap
+		.head__logo
+			a.logo(href="#")
+				img(src="img/logo.svg")
+		nav.head__menu
+			ul.menu
+				li.menu__item.menu__item--submenu
+					a.menu__link.active(href="#")
+						.menu__link-icon
+							include ../../img/ico-about.svg
+						span О школе
+					ul.submenu
+						each link in ["Развитие", "Технологии", "Документы", "Вакансии", ]
+							li
+								a.submenu__link(href="#")=link
+				li.menu__item.menu__item--submenu
+					a.menu__link(href="#") 
+						.menu__link-icon
+							include ../../img/ico-learning.svg
+						span Обучение
+					ul.submenu
+						each link in ["Развитие", "Технологии", "Документы", "Вакансии", ]
+							li
+								a.submenu__link(href="#")=link
+				each link, i in ["Ответы на вопросы", "Что нового?", "Контакты"]
+					li.menu__item
+						a.menu__link(href="#")
+							if (i == 0)
+								.menu__link-icon
+									include ../../img/ico-faq.svg
+							if (i == 1)
+								.menu__link-icon
+									include ../../img/ico-news.svg
+							if (i == 2)
+								.menu__link-icon
+									include ../../img/ico-contacts.svg
+							span=link
+				li.menu__close
+				li.menu__contacts
+					.h-contacts
+						address.h-contacts__phone
+							a(href="tel: 8 (351) 253-15-47") 8 (351) 253-15-47
+						a.h-contacts__link.fancybox(href="#call") Связаться с нами
+					a.default-btn.fancybox(href="#") Записаться на курсы
+		.head__contacts
+			.h-contacts
+				address.h-contacts__phone
+					a(href="tel: 8 (351) 253-15-47") 8 (351) 253-15-47
+				a.h-contacts__link.fancybox(href="#call") Связаться с нами
+		.head__soc
+			.soc
+				a.soc__link.soc__link--text(href="#") VK
+				a.soc__link.soc__link--text(href="#") IN
+		.head__burger
+			.head__burger-text Меню
+			.burger
+				span

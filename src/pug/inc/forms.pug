@@ -1,0 +1,65 @@
+.popup#call
+	.popup-form
+		.base-form__title Связаться с нами
+		.base-form__inputs
+			form(action="#")
+				.form__inputs.form__inputs--2
+					.form__inputs-input
+						.default-input
+							input.default-input__input(type="text" placeholder="Иван" required="")
+							label.default-input__label Ваше имя
+							.default-input__error
+								.error-text
+									<!-- текст ошибки -->
+					.form__inputs-input
+						.default-input
+							input.default-input__input(type="tel" inputmode="tel" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' placeholder="+7 (900) 000-00-00")
+							label.default-input__label Ваш телефон
+							.default-input__error
+								.error-text
+									<!-- текст ошибки -->
+				.base-form__submit
+					.form__submit
+						.form__submit-btn
+							input.default-btn(type="submit" value="Заказать")
+						.form__submit-text Нажимая на кнопку отправки сообщения, я соглашаюсь
+							br
+							| на обработку моих 
+							a(href="#") персональных данных
+
+
+.popup#write
+	.popup-form
+		.base-form__title Записаться на курсы
+		.base-form__inputs
+			form(action="#")
+				.form__inputs.form__inputs--2
+					.form__inputs-input
+						.default-input
+							input.default-input__input(type="text" placeholder="Иван" required="")
+							label.default-input__label Ваше имя
+							.default-input__error
+								.error-text
+									<!-- текст ошибки -->
+					.form__inputs-input
+						.default-input
+							input.default-input__input(type="tel" inputmode="tel" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' placeholder="+7 (900) 000-00-00")
+							label.default-input__label Ваш телефон
+							.default-input__error
+								.error-text
+									<!-- текст ошибки -->
+					.form__inputs-input
+						.default-input
+							input.default-input__input(type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email" placeholder="mail@yandex.ru")
+							label.default-input__label E-mail
+							.default-input__error
+								.error-text
+									<!-- текст ошибки -->
+			.base-form__submit
+				.form__submit
+					.form__submit-btn
+						input.default-btn(type="submit" value="Записаться")
+					.form__submit-text Нажимая на кнопку отправки сообщения, я соглашаюсь
+						br
+						| на обработку моих 
+						a(href="#") персональных данных

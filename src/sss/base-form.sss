@@ -1,0 +1,36 @@
+.bot-form
+    position: relative
+
+    &:before
+        content: ""
+        pointer-events: none
+        position: absolute 0 *
+        left: 50%
+        transform: translateX(-50%)
+        width: 100vw
+        background: #181818
+
+.base-form
+    position: relative
+    padding: 95px 0 115px
+    background: #181818
+    max-width: 1092px
+
+    &__title
+        margin: 0 0 75px
+        font-weight: 300
+        font-size: em(28)
+        line-height: 126%
+
+    &__submit
+        margin: 81px 0 0
+
+@media (max-width: 1000px)
+    .base-form
+        padding: 40px 0
+
+        &__title
+            margin: 0 0 30px
+
+        &__submit
+            margin: 30px 0 0
