@@ -1,235 +1,40 @@
 .title-block
-
-    &--slider
-        justify-content: space-between
-        align-items: center
-        display: flex
-        padding: 0 0 20px
-
-        h1
-            text-decoration: underline
-
-    &:not(&--slider)
-        text-align: center
+    justify-content: space-between
+    align-items: center
+    display: grid
+    gap: 30px
+    grid-template-columns: auto 1fr auto
+    grid-template-areas: "title filters crumbs"
 
     &__title
+        grid-area: title
 
         h1
-            font-weight: bold
-            font-size: em(70)
-            letter-spacing: 0.02em
-            line-height: 126%
+            font-size: em(24)
+            line-height: 153%
 
-            &[data-count]
-
-                &:after
-                    content: "/ " attr(data-count)
-                    display: inline-block
-                    font-size: em(16, 70)
-                    line-height: 1
-                    margin: 0 0 0 17px
-                    position: relative
-                    top: -50px
-
-    &__slider
-        position: relative
-
-        &-nav
-            position: absolute calc(50% - 37px) * * calc(100% + 125px)
-            size: 30px 45px
-            display: flex
-            flex-direction: column
-            justify-content: space-between
-
-            .swiper-button
-
-                &-prev, &-next
-                    position: static
-                    background: url("../img/ico-title-slider-arrow.svg") no-repeat
-                    size: 30px 9px
-
-                &-prev
-                    transform: rotate3d(0,1,0, 180deg) rotateX(180deg)
+    &__filters
+        grid-area: filters
 
     &__crumbs
-        margin: 10px 0 0
+        grid-area: crumbs
 
 .bread-crumbs
-    color: rgba(#fff, .3)
-    font-size: em(13)
-    letter-spacing: 0.02em
-
+    display: flex
+    font-size: em(12)
+    
     &__link
-        color: inherit
-        transition: color .3s ease
+        color: #979797
 
-        &:hover, &:focus
-            color: #fff
+        a
+            border: none !important
+            color: inherit
+            transition: color .3s ease
+
+            &:hover, &:focus
+                color: var(--main-color)
 
         &:after
-            display: inline-block
             content: "-"
-            margin: 0 5px
-            color: rgba(#fff, .3)
-
-.title-slider
-    overflow: hidden
-    width: 742px
-
-    &__slide
-        color: inherit
-
-        &-img
-            margin: 0 0 27px
-            
-            img
-                display: block
-
-        &-text
-            font-size: em(14)
-            letter-spacing: 0.02em
-
-            span
-                position: relative
-                padding-right: 36px
-
-                &:after
-                    content: ""
-                    position: absolute calc(50% - 3px) 0 * *
-                    background: url("../img/ico-arrow.svg") center no-repeat
-                    size: 11px 6px
-
-@media (max-width: 1750px) and (min-width: 1670px)
-    .title-block
-
-        &__slider
-
-            &-nav
-                left: calc(100% + vw(100))
-
-@media (max-width: 1670px) and (min-width: 1600px)
-    .title-block
-
-        &__slider
-
-            &-nav
-                left: calc(100% + vw(70))
-
-@media (max-width: 1600px)
-    .title-block
-
-        &__slider
-            margin-right: 4.67vw
-
-            &-nav
-                left: calc(100% + 30px)
-
-    .title-slider
-
-        img
-            width: 100%
-
-@media (max-width: 1600px) and (min-width: 1400px)
-    .title-slider
-        width: 680px
-
-@media (max-width: 1400px) and (min-width: 1000px)
-    .title-slider
-        width: 560px
-
-@media (max-width: 1000px)
-    .title-block
-
-        &--slider
-            flex-direction: column-reverse
-
-        &__slider
-            width: 100%
-            // padding: 0
-            margin-right: 0
-
-            &-nav
-                display: none
-
-        &__title
-            margin: 40px 0 0
-
-            h1
-                text-decoration: none
-                font-size: 2em
-
-                &:after
-                    display: none !important
-
-    .title-slider
-        width: 100%
-
-        .swiper
-
-            &-wrapper
-                transform: none !important
-                display: block
-                column-count: 3
-                column-gap: 50px
-
-            &-slide
-                width: auto !important
-                margin: 0 !important
-
-                &:not(:first-child)
-                    margin: 20px 0 0 !important
-
-                &-duplicate
-                    display: none !important
-
-                    + .swiper-slide
-                        margin-top: 0 !important
-
-        &__slide
-
-            &-img
-                display: none
-
-            &-text
-                font-size: 14px
-
-                span
-                    padding-right: 23px
-
-@media (max-width: 660px)
-    .title-slider
-
-        .swiper
-
-            &-wrapper
-                column-count: 1
-
-            &-slide
-
-                &:not(:first-child)
-                    margin: 22px 0 0 !important
-
-                &-duplicate
-
-                    + .swiper-slide
-                        margin-top: 0 !important
-
-        &__slide
-
-            &-text
-                font-size: 24px
-                letter-spacing: 0.02em
-                font-weight: bold
-
-                span
-                    padding: 0
-
-                    &:after
-                        display: none
-
-    .title-block
-
-        &__title, &__crumbs
-            display: none
-
-// @media (max-width: 400px)
+            display: inline-block
+            margin: 0 12px

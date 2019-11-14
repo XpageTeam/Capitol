@@ -1,0 +1,24 @@
+mixin titleBLock(pagesArray, needSelects)
+	.title-block
+		.title-block__title
+			h1=pagesArray[pagesArray.length - 1]
+		if (needSelects)
+			.title-block__filters
+				.catalog-sort
+					.catalog-sort__select
+						select
+							option(value="0") Сортировка по
+							option(value="1") По популярности
+							option(value="2") По цене
+					.catalog-sort__select
+						select
+							option(value="0") Показать 36
+							option(value="1") Показать 26
+							option(value="2") Показать 16
+		.title-block__crumbs
+			ul.bread-crumbs
+				- for (let i = 0; i < pagesArray.length - 1; i++)
+					li.bread-crumbs__link(itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb")
+						a(href="#" title=pagesArray[i] itemprop="url")
+							span(itemprop="title")=pagesArray[i]
+				li.bread-crumbs__this=pagesArray[pagesArray.length - 1]

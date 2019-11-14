@@ -1,0 +1,53 @@
+.full-width-page
+
+    .footer
+        padding-inline: 0
+
+.footer
+    padding: 20px var(--base-padding) 0
+
+    &__wrap
+        border-top: 1px solid var(--border-color)
+        display: grid
+        align-items: center
+        justify-content: space-between
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-areas: "copy soc dev"
+        padding: 58px 0 66px
+
+    &__copy
+        grid-area: copy
+
+    &__soc
+        grid-area: soc
+        display: flex
+        justify-content: center
+
+    &__dev
+        grid-area: dev
+        display: flex
+        justify-content: flex-end
+
+.f-dev
+    border: 1px solid var(--border-color)
+    display: block
+    padding: 11px 19px 11px 16px
+    border-radius: 5px
+
+    svg
+        display: block
+
+.f-copy
+
+    &__link
+        font-size: em(12)
+        color: #C5BDBD
+        transition: color .3s ease
+
+        &:hover, &:focus
+            color: var(--main-color)
+
+    &__text
+
+        &:not(:first-child)
+            margin: 3px 0 0

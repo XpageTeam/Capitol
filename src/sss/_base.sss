@@ -54,10 +54,6 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"], input[
 *[v-cloak]
 	display: none
 
-i.rub
-	font-family: "Roboto"
-	font-style: normal
-
 address
 	font-weight: inherit
 
@@ -110,11 +106,11 @@ a
 		white-space: nowrap
 
 	&:not([class])
-		color: var(--main-color-darken)
-		border-bottom: 1px solid transparent
+		color: var(--main-color)
+		border-bottom: 1px solid currentColor
 
 		&:hover, &:focus
-			border-color: currentColor
+			border-color: transparent
 
 .wrapper
 	max-width: var(--base-width)
@@ -157,25 +153,26 @@ li
 	align-items: center
 
 	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		size: 42px
+		border: 1px solid var(--border-color)
+		border-radius: 50%
+		transition: background .3s ease, border-color .3s ease
+
+		path
+			transition: color .3s ease
+
+		&:hover, &:focus
+			background: var(--main-color)
+			border-color: transparent
+
+			path
+				fill: #fff
 
 		&:not(:last-child)
 			margin-right: 22px
-
-		&:not(&--text)
-			display: flex
-			align-items: center
-			justify-content: center
-			background: var(--main-color)
-			size: 42px
-			border-radius: 50%
-			transition: background .3s ease
-
-		&--text
-			transition: color .3s ease
-			color: #fff
-
-			&:hover, &:focus
-				color: var(--main-color)
 
 .swiper-list
 	overflow: hidden

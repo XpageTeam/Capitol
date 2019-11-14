@@ -1,0 +1,43 @@
+.cat-item
+    display: flex
+    flex-direction: column
+    padding: 17px 18px 20px
+    margin: -17px -18px -20px
+    border: 1px solid transparent
+    transition: border-color .3s ease
+    background: var(--body-bg-color)
+
+    &:hover, &:focus-within
+        border-color: var(--border-color)
+
+    &__img
+
+        &-img, img
+            display: block
+
+    &__desc
+        margin: 35px 0 0
+
+        &-title
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+
+            &:after
+                background: url("../img/ico-plus.svg") no-repeat
+                size: 15px
+                margin-right: 12px
+                display: block
+                content: ""
+    
+    &__title
+
+        &[data-count]
+
+            &:after
+                display: inline-block
+                content: attr(data-count)
+                color: rgba(0,0,0, .3)
+                margin: 0 0 0 10px
+
+    &__

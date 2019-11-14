@@ -8,8 +8,60 @@
 @import "_404.sss"
 
 @import "_header.sss"
-// @import "title-block.sss"
+@import "title-block.sss"
 @import "_text-styles.sss"
 // @import "_standart-page.sss"
 
+@import "catalog/catalog.sss"
+
 @import "_footer.sss"
+
+#content
+    margin-top: 100px
+    margin-inline: auto
+    max-width: calc(1920px + var(--base-padding) * 2)
+    width: 100%
+    // box-sizing: content-box
+    padding: 0 var(--base-padding)
+
+.inner-content
+    display: grid
+    grid-template-columns: var(--catalog-cutch) 1fr
+    grid-template-areas: "aside title" "aside catalog" " aside footer"
+    gap: 75px
+    
+    &__filter
+        grid-area: aside
+
+    &__title
+
+        &:first-child
+            -ms-grid-row: 1
+            -ms-grid-column: 1
+            -ms-grid-column-span: 2
+            grid-column: span 2
+
+        &:nth-child(2)
+            grid-area: title
+
+    &__content
+
+        &:nth-child(2)
+            -ms-grid-row: 2
+            -ms-grid-column: 1
+            -ms-grid-column-span: 2
+            grid-column: span 2
+
+        &:nth-child(3)
+            grid-area: catalog
+
+    &__footer
+
+        &:nth-child(3)
+            -ms-grid-row: 3
+            -ms-grid-column: 1
+            -ms-grid-column-span: 2
+            grid-column: span 2
+
+        &:nth-child(4)
+            grid-area: footer

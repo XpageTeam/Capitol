@@ -2,19 +2,20 @@
 html(lang="ru")
     head
         meta(charset="utf-8")
-        title Каталог товаров
+        title Женская коллекция
         include inc/head.pug
         include inc/css.pug
     body.inner.loading.full-width-page
         include inc/header.pug
         main#content
             .inner-content
+                aside.inner-content__aside
                 .inner-content__title
                     include mixins/title-block.pug
-                    +titleBLock(["Capitol", "Женщинам", "Каталог товаров"], false)
+                    +titleBLock(["Capitol", "Каталог товаров", "Женская коллекция"], false)
                 .inner-content__content
                     .catalog
-                        .catalog-list
+                        .catalog2-list
                             each item, i in [{title: "Куртки", count: 10}, {title: "Пальто", count: 9}, {title: "Плащи", count: 15}, {title: "Полупальто", count: 12}, ]
                                 .catalog-list__item
                                     .cat-item

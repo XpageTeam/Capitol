@@ -152,7 +152,7 @@ gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "de
 
 
 const local = _ => {
-	gulp.watch(["src/sss/*.sss"], gulp.series("postcss"));
+	gulp.watch(["src/sss/**/*.sss"], gulp.series("postcss"));
 	gulp.watch('src/pug/**/*', gulp.series("pug"));
 	gulp.watch("src/js/workers/**/*", gulp.series("move:workers"));
 	gulp.watch("src/img/**/*", gulp.series("imagemin"));
