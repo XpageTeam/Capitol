@@ -13,6 +13,16 @@
             font-size: em(24)
             line-height: 153%
 
+            &[data-count]
+
+                &:after
+                    content: attr(data-count)
+                    display: inline-block
+                    margin: 0 0 0 15px
+                    font-size: em(14, 24)
+                    letter-spacing: 0.02em
+                    color: rgba(0,0,0, .3)
+
     &__filters
         grid-area: filters
 

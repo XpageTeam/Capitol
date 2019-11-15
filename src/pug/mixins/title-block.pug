@@ -1,7 +1,10 @@
 mixin titleBLock(pagesArray, needSelects)
 	.title-block
 		.title-block__title
-			h1=pagesArray[pagesArray.length - 1]
+			if (needSelects)
+				h1(data-count="50")=pagesArray[pagesArray.length - 1]
+			else
+				h1=pagesArray[pagesArray.length - 1]
 		if (needSelects)
 			.title-block__filters
 				.catalog-sort

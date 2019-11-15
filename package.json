@@ -61,11 +61,14 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "jquery": "^3.4.0"
+    "imask": "^5.2.1",
+    "is_js": "^0.9.0",
+    "jquery": "^3.4.0",
+    "jquery-ui": "^1.12.1"
   },
   "browserslist": [
-    ">1%", 
-    "not op_mini all", 
+    ">1%",
+    "not op_mini all",
     "last 2 chrome version",
     "last 2 firefox version",
     "last 2 safari version",

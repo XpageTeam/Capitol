@@ -97,6 +97,59 @@ textarea.default-input__input
 			font-size: em(10)
 			opacity: 1
 
+.default-checkbox
+	position: relative
+
+	&__input
+		position: absolute 0 * * 0
+		opacity: 0
+		pointer-events: none
+
+		&:not(:checked) + label
+
+			&:after
+				opacity: 0
+
+		&:focus + label
+
+			&:before
+				border-color: var(--main-color)
+
+	&__label
+		position: relative
+		cursor: pointer
+		padding-left: 47px
+		min-height: 30px
+		display: flex
+		align-items: center
+		user-select: none
+
+		&:before, &:after
+			content: ""
+
+		&:hover
+
+			&:before
+				border-color: var(--main-color)
+
+		&:before
+			position: absolute calc(50% - em(30) / 2) * * 0
+			border-radius: 5px
+			background: #fff
+			size: em(30)
+			border: 1px solid transparent
+			transition: border-color .3s ease
+
+		&:after
+			size: em(6) em(8)
+			position: absolute
+			top: calc(50% - em(5))
+			left: em(13)
+			border-bottom: 1px solid var(--main-color)
+			border-right: 1px solid var(--main-color)
+			transform: rotateZ(45deg)
+			transition: opacity .3s ease
+
 .default-input
 	display: flex
 	flex-direction: column-reverse
@@ -107,7 +160,6 @@ textarea.default-input__input
 	&__input
 		border: none
 		border-bottom: 1px solid #2E2E2E
-		// font-weight: bold
 		font-size: em(14)
 		color: #fff transparent
 		width: 100%

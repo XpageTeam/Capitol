@@ -1,12 +1,11 @@
-import {TweenLite} from "gsap/TweenLite.js";
 import $ from "jquery"
-import is from "is_js"
+// import is from "is_js"
+
+import "./filter.js"
 
 window.jQuery = $
 window.$ = $
-window.is = is
-
-window.TweenLite = TweenLite;
+// window.is = is
 
 let isFancyboxReady = false;
 
@@ -65,34 +64,4 @@ const initFancybox = () => {
 		},
 		transitionEffect: "slide",
 	});
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-	if (is.touchDevice() || document.body.classList.contains("inner"))
-		return
-
-	;(function(){
-		import("./jquery.menu-aim.js")
-			.then(function(){
-				$(".menu").menuAim({
-					// submenuSelector: ".main-nav__submenu",
-					activate: mainMenu.open,
-					deactivate: mainMenu.close,
-					submenuDirection: "right",
-					exitMenu: mainMenu.close,
-				})
-			})
-	})();
-})
-
-class mainMenu{
-    static open(menuElement){
-        menuElement.classList.add("js__submenu-visible")
-    }
-
-    static close(){
-        $(".menu__item.menu__item--submenu").each(function(){
-            this.classList.remove("js__submenu-visible")
-        })
-    }
-}
+};

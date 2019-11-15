@@ -6,6 +6,7 @@
 @import "_base.sss"
 @import "_form-elements.sss"
 @import "_404.sss"
+@import "paginator.sss"
 
 @import "_header.sss"
 @import "title-block.sss"
@@ -27,11 +28,12 @@
 .inner-content
     display: grid
     grid-template-columns: var(--catalog-cutch) 1fr
-    grid-template-areas: "aside title" "aside catalog" " aside footer"
-    gap: 75px
+    grid-template-areas: "aside title" "aside catalog" "aside footer"
+    gap: 75px 0
     
-    &__filter
+    &__aside
         grid-area: aside
+        padding-right: 75px
 
     &__title
 

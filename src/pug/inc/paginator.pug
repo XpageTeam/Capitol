@@ -1,0 +1,12 @@
+.paginator-container
+    ul.paginator
+        li.paginator__arrow
+            a.paginator-arrow.paginator-arrow--left(href="#")
+        - for (let i = 1; i <= 7; i++)
+            li
+                if (i == 2)
+                    a.paginator__link.active(href="#")=i
+                else
+                    a.paginator__link(href="#")=i
+        li.paginator__arrow
+            a.paginator-arrow.paginator-arrow--right(href="#")

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Пальто
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading.full-width-page
+        include inc/header.pug
+        main#content
+            .inner-content
+                .inner-content__aside
+                    .filter
+                        .filter__item.aside-category
+                            .aside-category__list
+                                .aside-category__item
+                                    a.aside-category__link.active(href="#" data-count="10") Куртки
+                                each item in [{title: "Пальто", count: 9},{title: "Плащи", count: 15},{title: "Полупальто", count: 12}]
+                                    .aside-category__item
+                                        a.aside-category__link(href="#" data-count=item.count)=item.title
+                .inner-content__title
+                    include mixins/title-block.pug
+                    +titleBLock(["Capitol", "Каталог товаров", "Женская коллекция", "Клетчатое пальто"], false)
+                .inner-content__content
+                    
+                .inner-content__footer
+                    include inc/footer.pug
+        include inc/scripts.pug
