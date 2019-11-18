@@ -10,7 +10,7 @@ html(lang="ru")
         main#content
             .inner-content
                 .inner-content__aside
-                    .filter
+                    .filter(Data-widget="sticky")
                         .filter__item.aside-category
                             .aside-category__list
                                 .aside-category__item
@@ -22,7 +22,269 @@ html(lang="ru")
                     include mixins/title-block.pug
                     +titleBLock(["Capitol", "Каталог товаров", "Женская коллекция", "Клетчатое пальто"], false)
                 .inner-content__content
-                    
+                    .tovar
+                        .tovar__imgs
+                            .tovar-imgs.swiper-wrapper
+                                .swiper-slide.tovar-imgs__item
+                                    a.tovar-img.fancybox(href="img/photos/tovar-img-0.jpg" data-falcybox="gallery")
+                                        img(src="img/photos/tovar-img-0.jpg" loading="lazy")
+                                .swiper-slide.tovar-imgs__item
+                                    a.tovar-img.fancybox(href="img/photos/tovar-img-1.jpg" data-falcybox="gallery")
+                                        img.swiper-lazy(data-src="img/photos/tovar-img-1.jpg" loading="lazy")
+                                        .swiper-lazy-preloader
+                                .swiper-slide.tovar-imgs__item
+                                    a.tovar-img.fancybox(href="img/photos/tovar-img-2.jpg" data-falcybox="gallery")
+                                        img.swiper-lazy(data-src="img/photos/tovar-img-2.jpg" loading="lazy")
+                                        .swiper-lazy-preloader
+                            .tovar__imgs-pagination
+                                .swiper-pagination
+                            .tovar__imgs-navigation
+                                .swiper-button-prev
+                                .swiper-button-next
+                        .tovar__desc
+                            .tovar__desc-content(data-widget="sticky")
+                                header.tovar__desc-main
+                                    .tovar-desc
+                                        .tovar-desc__prices
+                                            .prices
+                                                .prices__cur 19 400 руб.
+                                                .prices__last 17 000 руб.
+                                        .tovar-desc__counter
+                                            .counter
+                                                a.counter__btn.counter__btn--minus(href="#")
+                                                input.counter__input(type="tel" value="1")
+                                                a.counter__btn.counter__btn--plus(href="#")
+                                        .tovar-desc__to-cart
+                                            a.default-btn(href="# ") В корзину
+                                        .tovar-desc__favorite
+                                            a.favorite-btn(href="#") В избранное
+                                            <!-- класс active при добавлении в избранное -->
+                                main.tovar__desc-more
+                                    .tovar-more
+                                        .tovar-more__row
+                                            .tovar-more__row-item
+                                                .row-item
+                                                    .row-item__title Артикул
+                                                    .row-item__text М-18-77
+                                            .tovar-more__row-item
+                                                .row-item
+                                                    .row-item__title Наличие
+                                                    .row-item__text
+                                                        a.fancybox(href="#available") в 2 магазинах
+                                        .tovar-more__row
+                                            .tovar-more__row-item
+                                                .row-item
+                                                    .row-item__title Размеры RUS
+                                                    .row-item__content
+                                                        .row-item__content-sizes
+                                                            .ci-sizes__list
+                                                                .ci-sizes__list-item
+                                                                    .filter-item.filter-item--tag
+                                                                        a.default-input__label.active(href="#") 42/44
+                                                                .ci-sizes__list-item
+                                                                    .filter-item.filter-item--tag
+                                                                        a.default-input__label(href="#") 44/46
+                                                                .ci-sizes__list-item
+                                                                    .filter-item.filter-item--tag
+                                                                        a.default-input__label(href="#") 46/48
+                                                        .row-item__content-table
+                                                            a.sizes-table.fancybox(href="#") Таблица размеров
+                                footer.tovar__desc-tabs
+                                    .tovar-tabs
+                                        .tabs
+                                            .tabs__top
+                                                .tabs__tab.active(data-id="0" tab-index="1") Описание
+                                                .tabs__tab(data-id="1" tab-index="1") Характеристики
+                                            .tabs__content.active(data-id="0")
+                                                .tabs__content-btn Описание
+                                                .tabs__content-content
+                                                    .tabs-text
+                                                        p Женское пальто прямого силуэта из текстиля серо-голубого цвета с орнаментом клетки.
+                                                        p Аккуратный отложной воротник, рукав реглан с ластовицей. Потайные карманы в рельефах швов, мягкий широкий пояс. Застежка – пришивные крупные кнопки. 
+                                                            br
+                                                            | Очень удобное пальто с идеальной посадкой для весьма требовательных леди.
+                                            .tabs__content(data-id="1")
+                                                .tabs__content-btn Характеристики
+                                                .tabs__content-content
+                                                    p тут будут хкарактеристики
+                        .tovar__bot-slider
+                            .bot-slider
+                                .bot-slider__title
+                                    .bot-slider__title-text Вас может заинтересовать
+                                    .bot-slider__title-arrows
+                                        .swiper-button-prev
+                                        .swiper-button-next
+                                .swiper-wrapper
+                                    - for (let j = 0; j < 3; j++)
+                                        - for (let i = 0; i < 9; i++)
+                                            .swiper-slide
+                                                .cat-item
+                                                    .cat-item__img
+                                                        .cat-item__img-top
+                                                            if (i == 1)
+                                                                .cat-item__sale -20%
+                                                                a.cat-item__favorite.active(href="#")
+                                                            else
+                                                                a.cat-item__favorite(href="#")
+                                                        a.cat-item__img-img(href="#")
+                                                            img(src="img/photos/cat2-item-img-"+i+".jpg" loading="lazy")
+                                                    .cat-item__desc
+                                                        a.cat-item__desc-title(href="#")
+                                                            .cat-item__title
+                                                                span Двубортное пальто с поясом
+                                                        .cat-item__desc-price 19 400 руб.
+                                                        .cat-item__desc-sizes
+                                                            .ci-sizes
+                                                                .ci-sizes__label Размеры RUS
+                                                                .ci-sizes__list
+                                                                    .ci-sizes__list-item
+                                                                        .filter-item.filter-item--tag
+                                                                            a.default-input__label(href="#") 42/44
+                                                                    .ci-sizes__list-item
+                                                                        .filter-item.filter-item--tag
+                                                                            a.default-input__label(href="#") 44/46
+                                                                    .ci-sizes__list-item
+                                                                        .filter-item.filter-item--tag
+                                                                            a.default-input__label(href="#") 46/48
+                                .bot-slider__pagination
+                                    .swiper-pagination
+                    .tovar-available#available
+                        .available
+                            .available__title Наличие товара в магазинах
+                            .available__tabs
+                                .tabs
+                                    .tabs__top
+                                        .tabs__tab.active(data-id="0") списком
+                                        .tabs__tab(data-id="1") на карте
+                                        select
+                                            option(value="0" selected) списком
+                                            option(value="1") на карте
+                                    .tabs__content.active(data-id="0") 
+                                        .available-list
+                                            - for (let j = 0; j < 3; j++)
+                                                .available-list__item
+                                                    .available-list__item-title Челябинск
+                                                    .available-list__item-list
+                                                        table.av-item
+                                                            tbody
+                                                                tr
+                                                                    td.av-item__title ТЦ «Фокус»	
+                                                                    td.av-item__address ул. Молдавская, д.16	
+                                                                    td.av-item__sizes
+                                                                        .ci-sizes__list
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label.active(href="#") 42/44
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 44/46
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 46/48
+                                                                tr
+                                                                    td.av-item__title ТРК «Горки»
+                                                                    td.av-item__address ул. Артилерийская, д.136	
+                                                                    td.av-item__sizes
+                                                                        .ci-sizes__list
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 44/46
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 46/48
+                                                                tr
+                                                                    td.av-item__title ТРЦ «Алмаз»
+                                                                    td.av-item__address Копейское ш., д.64	
+                                                                    td.av-item__sizes
+                                                                        .ci-sizes__list
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 42/44
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 44/46
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 46/48
+                                                                tr
+                                                                    td.av-item__title ТЦ «Фокус»		
+                                                                    td.av-item__address ул. Молдавская, д.16	
+                                                                    td.av-item__sizes
+                                                                        .ci-sizes__list
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 44/46
+                                                                            .ci-sizes__list-item
+                                                                                .filter-item.filter-item--tag
+                                                                                    a.default-input__label(href="#") 46/48
+                                                .available-list__item
+                                                .available-list__item-title Не Челябинск
+                                                .available-list__item-list
+                                                    table.av-item
+                                                        tbody
+                                                            tr
+                                                                td.av-item__title ТЦ «Фокус»	
+                                                                td.av-item__address ул. Молдавская, д.16	
+                                                                td.av-item__sizes
+                                                                    .ci-sizes__list
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 42/44
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 44/46
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 46/48
+                                                            tr
+                                                                td.av-item__title ТРК «Горки»
+                                                                td.av-item__address ул. Артилерийская, д.136	
+                                                                td.av-item__sizes
+                                                                    .ci-sizes__list
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 44/46
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 46/48
+                                                            tr
+                                                                td.av-item__title ТРЦ «Алмаз»
+                                                                td.av-item__address Копейское ш., д.64	
+                                                                td.av-item__sizes
+                                                                    .ci-sizes__list
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 42/44
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 44/46
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 46/48
+                                                            tr
+                                                                td.av-item__title ТЦ «Фокус»		
+                                                                td.av-item__address ул. Молдавская, д.16	
+                                                                td.av-item__sizes
+                                                                    .ci-sizes__list
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 44/46
+                                                                        .ci-sizes__list-item
+                                                                            .filter-item.filter-item--tag
+                                                                                a.default-input__label(href="#") 46/48
+                                    .tabs__content(data-id="1") 
+                                        <!-- img/ico-small-marker.svg -->
+                                        <!-- img/ico-big-marker.svg -->
+                                        .tv-map
+                                            img(src="img/photos/tovar-avail-map.jpg")
+                            .available__small
+                                .av-small
+                                    a.av-small__img(href="#")
+                                        img(src="img/photos/tovar-img-small.jpg")
+                                    a.av-small__title(href="#") Двубортное пальто с поясом
+                                    .av-small__price 19 400 руб.
+                                    .av-small__to-cart
+                                        a.default-btn(href="#") В корзину
                 .inner-content__footer
                     include inc/footer.pug
         include inc/scripts.pug

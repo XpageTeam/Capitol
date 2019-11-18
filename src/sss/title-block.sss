@@ -6,6 +6,15 @@
     grid-template-columns: auto 1fr auto
     grid-template-areas: "title filters crumbs"
 
+    &__top
+
+        &:first-child
+            margin-bottom: 75px
+
+        &-text
+            line-height: calc(30 / 14)
+            max-width: 500px
+
     &__title
         grid-area: title
 
@@ -28,6 +37,16 @@
 
     &__crumbs
         grid-area: crumbs
+
+    &__top
+        display: flex
+
+        &-img
+            flex: none
+            margin-right: 60px
+
+            img
+                display: block
 
 .bread-crumbs
     display: flex

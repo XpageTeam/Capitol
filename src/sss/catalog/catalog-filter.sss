@@ -1,5 +1,17 @@
 .filter
-	max-width: 216px
+	max-width: 277px
+	padding-right: 60px
+	flex: 1 1 auto
+	background: var(--body-bg-color)
+	position: relative
+	z-index: 11
+
+	&:before
+		content: ""
+		position: absolute 50% * * 100%
+		size: 1px 10000vh
+		background: var(--border-color)
+		transform: translateY(-50%)
 
 	&__item
 
@@ -202,8 +214,11 @@
 				cursor: pointer
 				display: block
 
-				&:hover
+				&:hover, &.active
 					border-color: var(--main-color) !important
+
+				&.active
+					color: #fff var(--main-color)
 
 			&__input
 				position: absolute 0 * * 0

@@ -1,0 +1,58 @@
+.tabs
+
+	&__content
+		transition: opacity .3s ease
+
+		&:not(.active)
+			display: none
+			opacity: 0
+
+		&-btn
+			display: none
+
+		&-content
+			line-height: calc(30 / 14)
+
+.tabs
+
+	&__top
+		display: flex
+		margin: 0 0 25px
+
+		select
+			display: none
+
+	&__tab
+		border-radius: 5px
+		font-weight: 500
+		border: 1px solid var(--border-color)
+		transition: border-color .3s ease, background-color .3s ease
+		padding: 13px 20px
+		user-select: none
+		cursor: pointer
+
+		&:focus
+			border-color: var(--main-color)
+
+		&:hover, &.active
+			border-color: var(--border-color)
+			background: var(--border-color)
+
+		&:not(:last-child)
+			margin-right: 20px
+
+@media (max-width: 1200px)
+	
+	.tabs
+		&__tab
+			padding: 9px 20px
+			margin-bottom: 13px
+
+		&__top
+			flex-wrap: wrap
+
+
+@media (max-width: 667px)
+	
+	.tabs__tab
+		padding: 9px 15px

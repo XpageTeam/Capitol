@@ -1,0 +1,210 @@
+.tovar
+    display: grid
+    grid-template-areas: "imgs desc" "slider slider"
+    grid-template-columns: auto 1fr
+    gap: 86px 76px
+
+    &__imgs
+        grid-area: imgs
+
+    &__desc
+        grid-area: desc
+        padding-right: 6px
+
+        &-content
+            top: 25px
+            position: sticky
+
+        &-more
+            margin: 11px 0 0
+
+        &-tabs
+            margin: 50px 0 0
+
+    &__bot-slider
+        grid-area: slider
+
+.tovar-desc
+    display: grid
+    grid-template-columns: auto auto 1fr
+    grid-template-areas: "prices prices prices" "counter cart favorite"
+    gap: 28px 27px
+
+    &__prices
+        grid-area: prices
+
+    &__counter
+        grid-area: counter
+
+    &__to-cart
+        grid-area: cart
+
+    &__favorite
+        grid-area: favorite
+        margin-left: auto
+
+.tovar-img
+    display: block
+    position: relative
+
+    &:after, &:before
+        content: ""
+        position: absolute
+        background: #fff
+
+    &:before
+        size: 2px 85px
+        top: calc(50% - 43px)
+        left: calc(50% - 1px)
+
+    &:after
+        size: 85px 2px
+        left: calc(50% - 43px)
+        top: calc(50% - 1px)
+
+    img
+        display: block
+        max-height: calc(100vh - 80px)
+
+.prices
+    line-height: 1
+
+    &__cur, &__last
+        display: inline-block
+
+        &:not(:last-child)
+            margin-right: 25px
+    
+    &__cur
+        font-weight: 500
+        font-size: em(24)
+
+    &__last
+        color: #959595
+        text-decoration: line-through
+        font-size: em(16)
+
+.tovar-more
+
+    &__row
+        padding: 35px 0
+        border-bottom: 1px solid var(--border-color)
+        display: flex
+
+        &-item
+
+            &:not(:last-child)
+                margin-right: 90px
+
+            &:first-child:last-child
+                margin-right: 0
+                width: 100%
+
+.row-item
+
+    &__title
+        text-transform: uppercase
+        font-size: em(10)
+        line-height: 1
+        letter-spacing: 0.02em
+        margin: 0 0 7px
+
+    &__text
+
+        a.fancybox
+            border-bottom: 1px solid currentColor
+            
+            &:hover, &:focus
+                border-color: transparent
+
+    &__content
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 12px 0 0
+
+        &-talbe
+            margin-left: 25px
+
+.sizes-table
+    position: relative
+
+    &:before
+        content: ""
+        position: absolute calc(50% - 8px) calc(100% + 15px) * *
+        background: url("../img/ico-table.svg") no-repeat
+        size: 16px
+
+.bot-slider
+
+    .swiper-slide
+        width: auto
+
+    &__title
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0 0 72px
+
+        &-text
+            font-size: em(24)
+            margin-right: 20px
+
+        &-arrows
+            display: flex
+
+            .swiper-button
+
+                &-prev, &-next
+                    position: relative
+                    top: auto
+                    right: auto
+                    left: auto
+                    margin: 0
+                    background: none
+                    size: 32px
+
+                    &:after
+                        content: ""
+                        position: absolute calc(50% - 4px) * * 
+                        border-top: 1px solid var(--main-color)
+                        border-right: 1px solid var(--main-color)
+                        size: 7px
+
+                &-next
+
+                    &:after
+                        transform: rotateZ(45deg)
+                        right: 0
+
+                &-prev
+
+                    &:after
+                        right: calc(50% - 4px)
+                        transform: rotateZ(-135deg)
+
+@media (min-width: 1000px)
+    .tovar-imgs
+        transform: none !important
+        display: block !important
+
+        &__item
+            width: auto !important
+
+            &:not(:first-child)
+                margin: 40px 0 0
+
+    .tovar__imgs
+
+        &-pagination, &-navigation
+            display: none
+
+        .swiper
+
+            &-slide
+
+                &-duplicate
+                    display: none
+
+                    + .swiper-slide
+                        margin-top: 0 !important

@@ -1,0 +1,57 @@
+.counter
+    display: grid
+    grid-template-areas: "minus input plus"
+    grid-template-columns: 24px 42px 24px
+    border: 1px solid var(--border-color)
+    transition: border-color .3s ease, background-color .3s ease
+    padding: 12px 23px
+    border-radius: 5px
+    gap: 5px
+
+    &:focus-within 
+        border-color: var(--main-color)
+        background-color: #fff
+
+    &__btn
+        border-radius: 50%
+        border: 1px solid var(--border-color)
+        size: 24px
+        position: relative
+        color: var(--main-color)
+        transition: color .3s ease, border-color .3s ease, background-color .3s ease
+
+        &--minus
+            grid-area: minus
+
+        &--plus
+            grid-area: plus
+
+        &:focus
+            border-color: var(--main-color)
+
+        &:hover
+            color: #fff
+            background-color: var(--main-color)
+            border-color: transparent
+
+        &:before
+            content: ""
+            position: absolute calc(50% - 1px) calc(50% - 4px) * *
+            size: 8px 1px
+            background: currentColor
+
+        &--plus
+
+            &:after
+                content: ""
+                position: absolute calc(50% - 4px) calc(50% - 1px) * *
+                size: 1px 8px
+                background-color: currentColor
+
+    &__input
+        text-align: center
+        padding: 0 7px
+        border: none
+        font-size: em(16)
+        background: none
+        grid-area: input

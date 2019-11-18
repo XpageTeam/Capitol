@@ -107,18 +107,18 @@ gulp.task('imagemin', () =>
 			'src/img/**/*',
 			], {since: gulp.lastRun("imagemin")})
 		 .pipe($.cache($.imagemin([
-				// $.imagemin.jpegtran({
-				// 	progressive: true,
-				// }),
-				// require("imagemin-jpeg-recompress")({
-				// 	loops: 1,
-				// 	min: 80,
-				// 	max: 95,
-				// 	quality: "high"
-				// }),
-				// $.imagemin.svgo(),
+				$.imagemin.jpegtran({
+					progressive: true,
+				}),
+				require("imagemin-jpeg-recompress")({
+					loops: 1,
+					min: 80,
+					max: 95,
+					quality: "high"
+				}),
+				$.imagemin.svgo(),
 				$.imagemin.optipng({optimizationLevel: 3}),
-	      		//require("imagemin-pngquant")({quality: '75-85', speed: 5})
+			  require("imagemin-pngquant")({quality: '75-85', speed: 5})
 			],{
 	     		verbose: true
 	    	})

@@ -11,9 +11,12 @@
 @import "_header.sss"
 @import "title-block.sss"
 @import "_text-styles.sss"
+@import "tabs.sss"
 // @import "_standart-page.sss"
 
 @import "catalog/catalog.sss"
+
+@import "about.sss"
 
 @import "_footer.sss"
 
@@ -27,13 +30,15 @@
 
 .inner-content
     display: grid
-    grid-template-columns: var(--catalog-cutch) 1fr
+    grid-template-columns: var(--catalog-cutch) calc(100% - var(--catalog-cutch))
     grid-template-areas: "aside title" "aside catalog" "aside footer"
     gap: 75px 0
     
     &__aside
         grid-area: aside
         padding-right: 75px
+        display: flex
+        flex-direction: column
 
     &__title
 
@@ -67,3 +72,6 @@
 
         &:nth-child(4)
             grid-area: footer
+
+.fancybox-bg
+    background-color: rgba(233,227,227, .8)

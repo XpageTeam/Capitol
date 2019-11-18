@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Женская коллекция
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading.full-width-page
+        include inc/header.pug
+        main#content
+            .inner-content
+                aside.inner-content__aside
+                    .filter
+                        .filter__item.aside-category
+                            .aside-category__list
+                                .aside-category__item
+                                    a.aside-category__link.active(href="#" data-count="10") Куртки
+                                each item in [{title: "Пальто", count: 9},{title: "Плащи", count: 15},{title: "Полупальто", count: 12}]
+                                    .aside-category__item
+                                        a.aside-category__link(href="#" data-count=item.count)=item.title
+                        .filter__item
+                            .filter__item-title Сезон
+                            .filter__item-content
+                                .filter-list
+                                    each color, l in ['Осень', 'Зима', 'Весна', 'Лето']
+                                        .filter-item.filter-item--tag
+                                            input.default-input__input(type="checkbox" id="11"+l)
+                                            label.default-input__label(for="11"+l)=color
+                        .filter__item.filter__item--price
+                            .filter__item-title Цена
+                            .filter__item-content
+                                .price-filter
+                                    .price-filter__inputs
+                                        input.price-min(type="hidden" value="0")
+                                        input.price-max(type="hidden" value="20000")
+
+                                        input.price-step(type="hidden" value="5")
+
+                                        <!-- значения брать из этих инпутов -->
+                                        input.price-min-cur(type="tel" value="0")
+                                        input.price-max-cur(type="tel" value="7000")
+                                    .price-filter__slider
+                        .filter__item
+                            .filter__item-title Размер
+                            .filter__item-content
+                                .filter-list
+                                    - for (let j = 0; j < 2; j++)
+                                        each color, i in ['42/44', '44/46', '46/48', '50/52', '52/54']
+                                            .filter-item
+                                                .default-checkbox
+                                                    input.default-checkbox__input(type="checkbox" id="2"+i)
+                                                    label.default-checkbox__label(for="2"+i)=color
+                                .filter__item-btn 
+                                    .more-filter Смотреть все
+                        .filter__item
+                            .filter__item-title Цвет
+                            .filter__item-color
+                                - for (let i = 0; i < 9; i++)
+                                    .color-checkbox
+                                        input.color-checkbox__input(type="checkbox" id=i)
+                                        label.color-checkbox__label(for=i style="background: url('img/photos/ico-color-"+i+".jpg')")
+                .inner-content__title
+                    .title-block__top
+                        figure.title-block__top-img
+                            img(src="img/photos/tovar-2-img.jpg")
+                        .title-block__top-text
+                            p Для оплаты покупки Вы будете перенаправлены на платежный шлюз ПАО «Сбербанк России» для ввода реквизитов Вашей карты. Пожалуйста, приготовьте Вашу пластиковую карту заранее. Соединение с платежным шлюзом и передача информации осуществляется в защищенном режиме с использованием протокола шифрования SSL.
+                            p В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa или MasterCard Secure Code для проведения платежа также может потребоваться ввод специального пароля. Способы и возможность получения паролей для совершения интернет-платежей Вы можете уточнить в банке, выпустившем карту.
+                    include mixins/title-block.pug
+                    +titleBLock(["Capitol", "Каталог товаров", "Женская коллекция"], true)
+                .inner-content__content
+                    .catalog
+                        .catalog2-list
+                            - for (let i = 0; i < 9; i++)
+                                .catalog-list__item
+                                    .cat-item
+                                        .cat-item__img
+                                            .cat-item__img-top
+                                                if (i == 1)
+                                                    .cat-item__sale -20%
+                                                    a.cat-item__favorite.active(href="#")
+                                                else
+                                                    a.cat-item__favorite(href="#")
+                                            a.cat-item__img-img(href="#")
+                                                img(src="img/photos/cat2-item-img-"+i+".jpg" loading="lazy")
+                                        .cat-item__desc
+                                            a.cat-item__desc-title(href="#")
+                                                .cat-item__title
+                                                    span Двубортное пальто с поясом
+                                            .cat-item__desc-price 19 400 руб.
+                                            .cat-item__desc-sizes
+                                                .ci-sizes
+                                                    .ci-sizes__label Размеры RUS
+                                                    .ci-sizes__list
+                                                        .ci-sizes__list-item
+                                                            .filter-item.filter-item--tag
+                                                                a.default-input__label(href="#") 42/44
+                                                        .ci-sizes__list-item
+                                                            .filter-item.filter-item--tag
+                                                                a.default-input__label(href="#") 44/46
+                                                        .ci-sizes__list-item
+                                                            .filter-item.filter-item--tag
+                                                                a.default-input__label(href="#") 46/48
+                        include inc/paginator.pug
+                .inner-content__footer
+                    include inc/footer.pug
+        include inc/scripts.pug

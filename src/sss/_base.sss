@@ -71,7 +71,7 @@ body
 	flex-direction: column
 	width: 100%
 	min-height: 100vh
-
+	overflow-y: hidden
 
 select
 	-webkit-appearance: none
@@ -180,35 +180,33 @@ li
 	overflow: hidden
 
 
-.default-btn, .white-btn
-	padding: 15px 25px
-	color: #fff var(--main-color)
-
-.default-btn, .write-btn, .bordered-btn, .white-btn
+.default-btn, .favorite-btn
+	padding: 13px 25px
 	display: inline-block
-	border: none
 	border-radius: 5px
 	transition: background-color .3s ease, color .3s ease, border-color .3s ease
 	cursor: pointer
 	letter-spacing: 0.02em
+
+.favorite-btn
+	border: 1px solid var(--border-color)
+	padding-left: 55px
+	background-image: url("../img/ico-favorite.svg")
+	background-position: left 21px center
+	background-repeat: no-repeat
+
+	&:focus, &:hover, &.active
+		border-color: var(--main-color)
+
+	&:hover, &.active
+		background: url("../img/ico-favorite-white-added.svg") left 21px center no-repeat
+		color: #fff var(--main-color)	
+
+.default-btn
+	border: none
+	color: #fff var(--main-color)
 	border: 1px solid var(--main-color)
 
 	&:hover, &:focus, &.active
-		background-color: lighten(#C15144, .1)
+		background-color: rgba(0,0,0, .8)
 		border-color: transparent
-
-.white-btn
-	border-color: #fff 
-
-.bordered-btn
-	padding: 13px 23px
-	color: var(--main-color)
-
-	&:hover, &:focus, &.active
-		color: #fff
-
-.write-btn
-	background-image: url("../img/ico-write.svg")
-	background-position: left 21px center
-	background-repeat: no-repeat
-	padding: 15px 20px 15px 60px

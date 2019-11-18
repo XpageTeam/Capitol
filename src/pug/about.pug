@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title О компании
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading.full-width-page
+        include inc/header.pug
+        main#content
+            .inner-content
+                aside.inner-content__aside
+                    .filter
+                        .filter__item.aside-category
+                            .aside-category__list
+                                .aside-category__item
+                                    a.aside-category__link(href="#") Женщины
+                                .aside-category__item
+                                    a.aside-category__link(href="#") Мужчины
+                .inner-content__title
+                    include mixins/title-block.pug
+                    +titleBLock(["Capitol", "О компании"])
+                .inner-content__content
+                    .about
+                        .about__top
+                            .title-block__top
+                                figure.title-block__top-img
+                                    img(src="img/photos/tovar-2-img.jpg")
+                                .title-block__top-text
+                                    h2 Capitol — это международная сеть салонов кожи и меха. В 2002 году у сети Capitol появился первый меховой салон в России
+                                    p Сегодня представительства Capitol есть уже в 10 городах России: Челябинске, Перми, Тюмени, Уфе, Екатеринбурге, Казани, Омске, Красноярске, Новосибирске и Сургуте. Все салоны Capitol объединяет огромный выбор моделей верхней одежды из кожи и меха, выгодные цены и европейское обслуживание. Во всех магазинах сети есть возможность приобретения товаров в кредит и получения бесплатных сервисных услуг.
+                        .about__timeline
+                            .timeline-slider
+                                .bot-slider__title
+                                    .bot-slider__title-text Краткая сводка истории компании
+                                    .bot-slider__title-arrows
+                                        .swiper-button-prev
+                                        .swiper-button-next
+                                .swiper-wrapper
+                                    - for (let j = 0; j < 3; j++)
+                                        .swiper-slide
+                                            .timeline-slide
+                                                .timeline-slide__year 2002 
+                                                .timeline-slide__text
+                                                    p В 2002 году у сети Capitol появился первый меховой салон в России. Он был открыт в городе-миллионнике Челябинск. Площадь магазина составила 610 м2. Уже тогда «Capitol» отличался огромным выбором моделей верхней одежды из кожи и меха, выгодными ценами, европейским обслуживанием и пользовался популярностью среди горожан.
+                                        .swiper-slide
+                                            .timeline-slide
+                                                .timeline-slide__year 2007
+                                                .timeline-slide__text
+                                                    p Спустя 5 лет после появления первого салона Capitol в России сеть продолжила свою экспансию и открыла новый магазин меха и кожи в Тюмени. Салон был обустроен с масштабом: он занимал 621 кв.м и располагался в ведущем торгово-развлекательном комплексе.
+                                        .swiper-slide
+                                            .timeline-slide
+                                                .timeline-slide__year 2009
+                                                .timeline-slide__text
+                                                    p В 2002 году у сети Capitol появился первый меховой салон в России. Он был открыт в городе-миллионнике Челябинск. Площадь магазина составила 610 м2. Уже тогда «Capitol» отличался огромным выбором моделей верхней одежды из кожи и меха, выгодными ценами, европейским обслуживанием и пользовался популярностью среди горожан.
+                                .bot-slider__pagination
+                                    .swiper-pagination
+                .inner-content__footer
+                    include inc/footer.pug
+        include inc/scripts.pug

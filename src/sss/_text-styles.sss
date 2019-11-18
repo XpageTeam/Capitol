@@ -11,16 +11,6 @@ h2, h3, h4, h5, h6, p, img, table, .table-wrap, ul, ol
 	&:first-child
 		margin-top: 0
 
-:--heading
-	position: relative
-
-	&:before
-		content: ""
-		position: absolute em(9) calc(100% + 23px) * *
-		transform: rotateZ(45deg)
-		background: var(--main-color)
-		size: 5px
-
 h2, h3, h4, h5, h6
 	font-weight: 400
 	margin-bottom: 5px
@@ -28,11 +18,8 @@ h2, h3, h4, h5, h6
 	&:not(:first-child)
 		margin-top: 32px
 
-	+ *
-		margin-top: 0
-
 h2
-	font-size: em(28)
+	font-size: em(24)
 	// line-height: calc(32 / 28)
 	line-height: 128%
 
