@@ -24,7 +24,7 @@ h2
 	line-height: 128%
 
 h3
-	font-size: em(23)
+	font-size: em(22)
 	// line-height: calc(28 / 25)
 	line-height: 146%
 
@@ -67,19 +67,32 @@ img[height]
 table:not([class])
 	margin: 52px 0 20px
 
+	&[border]
+		border-color: var(--border-color)
+		min-width: 100%
+
+		th, td
+			border: 1px solid
+			border-color: inherit
+
+	thead, tbody, tfoot, tr
+		border-color: inherit
+
 	thead
 
 		th, td
-			background: #151515
 			text-align: left
-			padding-top: 22px
-			padding-bottom: 22px
-			font-size: em(16)
+
+	th
+		padding-block: 22px
+
+	td
+		padding-block: 18px
 
 	td, th
-		padding: 16px 60px
+		padding-inline: 30px
 		font-weight: inherit
-		font-size: em(14)
+		font-size: em(16)
 
 		&:not([valign]), &[valign="middle"]
 			vertical-align: middle
@@ -95,11 +108,11 @@ table:not([class])
 
 	&[cellspacing]:not([cellspacing="1"]):not([cellspacing="0"])
 
-table[border="1"]:not([class])
-	min-width: 100%
+// table[border="1"]:not([class])
+// 	min-width: 100%
 
-	td, th
-		border: 1px solid #2E2E2E
+// 	td, th
+// 		border: 1px solid #2E2E2E
 
 
 ul, ol
