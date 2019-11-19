@@ -4,6 +4,11 @@ import "./textPage/text-page";
 import "./tovar"
 import "./tabs"
 
+
+import "./popup-menu"
+
+
+
 import "./timeline-slider"
 
 import { domReady, App, EventListener } from "./xpage/index";

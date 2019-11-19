@@ -1,0 +1,55 @@
+.popup-menu
+    figure.popup-menu__logo
+        img(src="img/logo-white.svg", alt="Capitol")
+    .popup-menu__content
+        .pm-content
+            nav.pm-content__left-menu
+                ul.pm
+                    li.pm__item.pm__item--submenu
+                        a.pm__link(href="#") Женщины
+                        ul.pm-submenu
+                            li
+                                a.pm-submenu__link(href="#" data-count="10") Куртки
+                            li
+                                a.pm-submenu__link(href="#" data-count="9") Пальто
+                            li
+                                a.pm-submenu__link(href="#" data-count="15") Плащи
+                            li
+                                a.pm-submenu__link(href="#" data-count="12") Полупальто
+                    li.pm__item.pm__item--submenu
+                        a.pm__link(href="#") Мужчины
+                        ul.pm-submenu
+                            li
+                                a.pm-submenu__link(href="#" data-count="10") Куртки
+                            li
+                                a.pm-submenu__link(href="#" data-count="9") Пальто
+            nav.pm-content__mid-menu
+                ul.pm
+                    each link in ["О компании", "Доставка", "Оплата", "Рассрочка", "Новинки", "Аутлет", ]
+                        li.pm__item
+                            a.pm__link(href="#")=link
+            .pm-content__contacts
+                .pm-contacts
+                    .pm-contacts__phone
+                        address.pm-phone
+                            a(href="tel: +7 (351) 263-96-00") +7 (351) 263-96-00
+                        span.pm-contacts__phone-text Будем рады сотрудничеству
+                    .pm-contacts__email
+                        address.pm-mail
+                            a(href="mailto: capitol@capitol.ru") capitol@capitol.ru
+            .pm-content__copy
+                .f-copy
+                    a.f-copy__link(href="#") Политика конфиденциальности
+                    .f-copy__text &copy; 2019, «Capitol» салон кожи меха
+            .pm-content__soc
+                .soc
+                    a.soc__link(href="#")
+                        <!-- /img/ico-inst.svg -->
+                        include ../../img/ico-inst.svg
+                    a.soc__link(href="#")
+                        <!-- /img/ico-vk.svg -->
+                        include ../../img/ico-vk.svg
+                    a.soc__link(href="#")
+                        <!-- /img/ico-fb.svg -->
+                        include ../../img/ico-fb.svg
+    button.popup-menu__close

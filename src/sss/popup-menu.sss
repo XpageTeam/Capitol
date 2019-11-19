@@ -1,0 +1,116 @@
+.popup-menu
+    position: fixed 0
+    z-index: 20
+    background: var(--body-bg-color)
+    display: grid
+    grid-template-areas: "logo content"
+    grid-template-columns: persent(605, 1920) 1fr
+    transition: opacity .3s ease
+
+    &:not(.js__opened)
+        opacity: 0
+        pointer-events: none
+
+    &__logo
+        background: url("../img/popup-menu-logo-bg.png") center no-repeat, #C9AA78
+        background-size: cover
+        grid-area: logo
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &__content
+        grid-area: content
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: vh(100) vw(150)
+
+    &__close
+        position: absolute 70px 65px * *
+        size: 30px
+        background: url("../img/ico-close.svg") center no-repeat
+        cursor: pointer
+        border: none
+
+.pm-content
+    display: grid
+    width: 100%
+    grid-template-areas: "leftMenu midMenu contacts" "copy copy soc"
+    grid-template-columns: 230px 230px 1fr
+    gap: vh(110) vw(55)
+
+    &__left-menu
+        grid-area: leftMenu
+
+    &__mid-menu
+        grid-area: midMenu
+
+    &__contacts
+        grid-area: contacts
+
+    &__copy
+        grid-area: copy
+
+    &__soc
+        grid-area: soc
+
+.pm
+
+    &__item
+
+        &:not(:first-child)
+            margin: 20px 0 0
+
+        &--submenu
+
+            .pm__link
+                font-weight: 500
+
+            &:not(:first-child)
+                margin: 75px 0 0
+
+    &__link
+        font-size: em(18)
+
+.pm-submenu
+    margin: 20px 0 0
+
+    li
+
+        &:not(:first-child)
+            margin: 17px 0 0
+
+    &__link
+        letter-spacing: 0.02em
+
+        &[data-count]
+
+            &:after
+                content: attr(data-count)
+                opacity: .3
+                display: inline-block
+                margin: 0 0 0 10px
+
+.pm-contacts
+
+    &__phone, &__email
+
+        &:not(:first-child)
+            margin: 30px 0 0
+
+    &__phone
+
+        &-text
+            font-size: em(12)
+            color: #757575
+
+.pm-phone, .pm-mail
+    
+    a
+        border: none
+
+.pm-phone
+
+    a
+        font-size: em(18)
