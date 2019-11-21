@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Корзина
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading.full-width-page
+        include inc/header.pug
+        main#content
+            .inner-content
+                .inner-content__title
+                    include mixins/title-block.pug
+                    +titleBLock(["Capitol", "Корзина"], false)
+                .inner-content__content
+                   
+                .inner-content__footer
+                    include inc/footer.pug
+        include inc/scripts.pug
