@@ -1,17 +1,13 @@
 // import "./forms"
 import "./textPage/text-page";
 
+import "./head"
+
+import "./catalog-sort"
 import "./tovar"
 import "./tabs"
 
-
-import "./popup-menu"
-
-
-
 import "./timeline-slider"
-
-import { domReady, App, EventListener } from "./xpage/index";
 
 declare global {
 	interface Window {

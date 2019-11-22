@@ -49,6 +49,22 @@
         cursor: pointer
         background: url("../img/ico-select-arrow.svg") right center no-repeat
 
+        &.js__opened
+
+            + .my-select__list-cont
+                display: block
+
+    .my-select
+
+        &__list
+
+            &-cont
+                border-radius: 5px
+                top: calc(100% + 10px)
+                left: 50%
+                right: auto
+                transform: translateX(-50%)
+
 .h-menu
     display: flex
     font-weight: 500

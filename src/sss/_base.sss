@@ -67,11 +67,13 @@ body
 	background: var(--body-bg-color)
 	position: relative
 	left: 0
-	display: flex
-	flex-direction: column
 	width: 100%
 	min-height: 100vh
 	overflow-y: hidden
+	display: grid
+	grid-template-columns: 100%
+	grid-template-rows: auto 1fr
+	grid-template-areas: "header" "content"
 
 select
 	-webkit-appearance: none
@@ -86,18 +88,11 @@ select
 	&::-ms-expand 
 		display: none
 
-.head, .footer
-	flex: none
+// .head, .footer
+// 	flex: none
 
-#content
-	flex: 1 1 auto
-	display: flex
-	flex-direction: column
-
-.inner-content
-	flex: 1 1 auto
-	// position: relative
-	z-index: 2
+.head
+	grid-area: header
 
 a
 	color: #000
@@ -190,17 +185,24 @@ li
 
 .favorite-btn
 	border: 1px solid var(--border-color)
-	padding-left: 55px
 	background-image: url("../img/ico-favorite.svg")
-	background-position: left 21px center
 	background-repeat: no-repeat
+
+	&:not(:empty)
+		background-position: left 21px center
+		padding-left: 55px
+
+	&:empty
+		background-position: center
+		size: 50px
+		padding: 0
 
 	&:focus, &:hover, &.active
 		border-color: var(--main-color)
 
 	&:hover, &.active
-		background: url("../img/ico-favorite-white-added.svg") left 21px center no-repeat
-		color: #fff var(--main-color)	
+		color: #fff var(--main-color)
+		background-image: url("../img/ico-favorite-white-added.svg")
 
 .default-btn
 	border: none

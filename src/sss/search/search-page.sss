@@ -1,0 +1,41 @@
+.search-results
+
+    &__list
+        margin: 82px 0 0
+
+.sf-input
+    position: relative
+
+    &__input
+        width: 100%
+        border: none
+        background: none
+        border-bottom: 1px solid var(--border-color)
+        padding: 17px 0 17px 20px
+        transition: background .3s ease, border-color .3s ease
+
+        &::-ms-clear, &::-ms-reveal
+            display: none
+
+        &::-webkit-search
+
+            &-decoration, &-cancel-button
+                -webkit-appearance: none
+                appearance: none
+                display: block
+                size: 49px
+                background: url("../img/ico-remove.svg") center no-repeat
+                cursor: pointer
+
+        &:focus, &:hover
+            border-color: var(--main-color)
+
+        &:focus
+            background: #ffffff
+
+    &__reset
+        position: absolute 0 0 * *
+        size: 49px 100%
+        background: url("../img/ico-remove.svg") center no-repeat
+        cursor: pointer
+        border: none

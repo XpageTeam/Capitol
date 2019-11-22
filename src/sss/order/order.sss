@@ -1,0 +1,92 @@
+.order
+    display: flex
+
+    &__list
+        flex: 1 1 auto
+
+    &__content
+        width: 504px
+        margin-left: 22px
+
+.order-title
+    border-radius: 5px
+    background: #E9E3E3
+    font-size: em(20)
+    padding: 20px 28px 18px
+
+.order-list
+    counter-reset: i
+
+    &__item
+        counter-increment: i
+
+        .order-title__text
+
+            &:before
+                content: counter(i)"."
+                display: inline-block
+                margin-right: 20px
+
+.order-item
+    padding: 25px 18px 35px
+
+    &__inputs
+
+        &-item
+
+            &:not(:first-child)
+                margin: 24px 0 
+
+    &__btn
+        margin: 40px 0 0
+                
+.order-input
+    display: flex
+    flex-direction: row-reverse
+    align-items: center
+
+    &__label
+        margin-right: 24px
+        width: 76px
+        flex: none
+
+    &__input
+        width: auto
+        flex: 1 1 auto
+        border: none
+        background: none
+        border-bottom: 1px solid var(--border-color)
+        transition: border-color .3s ease, background .3s ease
+        padding: 17px 18px
+
+        &:required
+            
+            + label
+
+                &:after
+                    content: "*"
+                    display: inline-block
+                    color: red
+                    margin-left: 5px
+
+        &:hover
+            border-color: var(--main-color)
+
+        &:focus
+            background: #fff
+            border-color: transparent !important
+
+.oi-next
+    display: flex
+    align-items: center
+
+    &__btn
+        margin-right: 30px
+
+    &__text
+
+        &::before
+            content: "*"
+            display: inline-block
+            color: red
+            margin-right: 5px

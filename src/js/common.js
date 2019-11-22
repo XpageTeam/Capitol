@@ -1,11 +1,11 @@
 import $ from "jquery"
-// import is from "is_js"
+import is from "is_js"
 
 import "./filter.js"
 
 window.jQuery = $
 window.$ = $
-// window.is = is
+window.is = is
 
 let isFancyboxReady = false;
 

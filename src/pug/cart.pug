@@ -1,19 +1,97 @@
 <!DOCTYPE html>
 html(lang="ru")
-    head
-        meta(charset="utf-8")
-        title Корзина
-        include inc/head.pug
-        include inc/css.pug
-    body.inner.loading.full-width-page
-        include inc/header.pug
-        main#content
-            .inner-content
-                .inner-content__title
-                    include mixins/title-block.pug
-                    +titleBLock(["Capitol", "Корзина"], false)
-                .inner-content__content
-                   
-                .inner-content__footer
-                    include inc/footer.pug
-        include inc/scripts.pug
+	head
+		meta(charset="utf-8")
+		title Корзина
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					include mixins/title-block.pug
+					+titleBLock(["Capitol", "Корзина"], false)
+				.inner-content__content
+					.cart
+						.cart__list
+							.cart__list-item
+								.cart-item
+									a.cart-item__img(href="#")
+										img(src="img/photos/cart-img-0.jpg")
+									.cart-item__desc
+										.ci-desc
+											.ci-desc__title
+												a.ci-title(href="#") Двубортное пальто с поясом
+											.ci-desc__sizes
+												.row-item__title Размеры RUS
+													.row-item__content
+														.row-item__content-sizes
+															.ci-sizes__list
+																.ci-sizes__list-item
+																	.filter-item.filter-item--tag
+																		.default-input__label 42/44
+											.ci-desc__index
+												.row-item
+													.row-item__title Артикул
+													.row-item__text М-18-77
+											.ci-desc__counter
+												.counter
+													a.counter__btn.counter__btn--minus(href="#")
+													input.counter__input(type="tel" value="1")
+													a.counter__btn.counter__btn--plus(href="#")
+											.ci-desc__price-actions
+												.ci-prices
+													.ci-prices__summ 19 400 руб.
+													.ci-prices__count за 1 шт.
+												.ci-favorite
+													a.favorite-btn(href="#")
+													<!-- класс active при добавлении в избранное -->
+												.ci-remove
+													a.remove-link(href="#")
+							.cart__list-item
+								.cart-item
+									a.cart-item__img(href="#")
+										img(src="img/photos/cart-img-1.jpg")
+									.cart-item__desc
+										.ci-desc
+											.ci-desc__title
+												a.ci-title(href="#") Двубортное пальто
+											.ci-desc__sizes
+												.row-item__title Размеры RUS
+													.row-item__content
+														.row-item__content-sizes
+															.ci-sizes__list
+																.ci-sizes__list-item
+																	.filter-item.filter-item--tag
+																		.default-input__label 42/44
+											.ci-desc__index
+												.row-item
+													.row-item__title Артикул
+													.row-item__text М-18-77
+											.ci-desc__counter
+												.counter
+													a.counter__btn.counter__btn--minus(href="#")
+													input.counter__input(type="tel" value="1")
+													a.counter__btn.counter__btn--plus(href="#")
+											.ci-desc__price-actions
+												.ci-prices
+													.ci-prices__summ 19 400 руб.
+													.ci-prices__count за 1 шт.
+												.ci-favorite
+													a.favorite-btn(href="#")
+													<!-- класс active при добавлении в избранное -->
+												.ci-remove
+													a.remove-link
+						.cart__footer
+							.cart__footer-itog
+								.cart-itog
+									.cart-itog__summ
+										.ci-prices
+											.ci-prices__summ 48 800 руб.
+											.ci-prices__count Итог
+									.cart-itog__btn
+										a.default-btn(href="#") Оформить заказ
+				.inner-content__footer
+					include inc/footer.pug
+		include inc/scripts.pug

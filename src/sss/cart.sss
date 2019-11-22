@@ -1,0 +1,125 @@
+:root
+    --price-actions-width: 400px
+    --cart-img-width: 172px
+
+.cart
+
+    &__list
+
+        &-item
+
+            &:not(:first-child)
+                margin: 53px 0 0
+
+    &__footer
+        display: flex
+        justify-content: flex-end
+        margin: 40px 0 0
+
+        &-itog
+            width: var(--price-actions-width)
+
+.ci-desc
+    border-bottom: 1px solid var(--border-color)
+
+.cart-item
+    display: grid
+    grid-template-columns: var(--cart-img-width) 1fr
+    grid-template-areas: "img desc"
+    gap: 54px
+
+    &__img
+        grid-area: img
+
+        img
+            display: block
+
+    &__desc
+        grid-area: desc
+        display: grid
+        grid-template-areas: "desc"
+        grid-template-columns: 1fr
+        grid-template-rows: 1fr
+
+.ci-desc
+    display: grid
+    grid-template-areas: "title title title title" "sizes index counter price_actions"
+    grid-template-rows: auto 1fr
+    grid-template-columns: auto auto 1fr var(--price-actions-width)
+    gap: 40px 28px
+
+    &__title
+        padding: 10px 0 0
+        grid-area: title
+
+    &__sizes
+        grid-area: sizes
+        padding-right: 35px
+
+    &__index
+        grid-area: index
+
+    &__counter
+        grid-area: counter
+        margin-left: auto
+
+    &__price-actions
+        grid-area: price_actions
+        display: grid
+        grid-template-areas: "price fav remove"
+        grid-template-columns: 1fr auto auto
+        align-items: center
+        align-self: flex-start
+        gap: 23px
+
+.ci-title
+    font-size: em(24)
+    line-height: 153%
+
+.remove-link
+    display: inline-block
+    size: 49px
+    border-radius: 5px
+    border: 1px solid transparent
+    background: url("../img/ico-remove.svg") center no-repeat
+    transition: background .3s ease, border-color .3s ease
+
+    &:focus:not(:hover):not(:active)
+        border-color: var(--border-color)
+
+    &:hover
+        border-color: var(--main-color)
+
+    &:active
+        background: url("../img/ico-remove-white.svg") center no-repeat
+        background-color: var(--main-color)
+
+.ci-favorite
+    grid-area: fav
+
+.ci-remove
+    grid-area: remove
+
+.ci-prices
+    grid-area: price
+
+    &__summ
+        font-size: em(20)
+        line-height: 1
+        white-space: nowrap
+
+    &__count
+        font-size: em(14)
+        color: #979797
+        margin: 8px 0 0
+
+.cart-itog
+    display: grid
+    grid-template-areas: "price btn"
+    grid-template-columns: 1fr auto
+
+    &__summ
+        grid-area: price
+
+    &__btn
+        grid-area: btn

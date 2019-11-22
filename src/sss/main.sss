@@ -8,9 +8,10 @@
 @import "_404.sss"
 @import "paginator.sss"
 
+@import "my-select.sss"
+
 @import "_header.sss"
 @import "popup-menu.sss"
-
 
 @import "title-block.sss"
 @import "_text-styles.sss"
@@ -20,8 +21,15 @@
 @import "catalog/catalog.sss"
 
 @import "about.sss"
+@import "cart.sss"
+
+@import "search/search.sss"
+@import "order/order.sss"
 
 @import "_footer.sss"
+
+#panel
+    grid-area: header
 
 #content
     margin-top: 100px
@@ -30,18 +38,40 @@
     width: 100%
     // box-sizing: content-box
     padding: 0 var(--base-padding)
+    grid-template-areas: "content"
+    grid-area: content
+    display: grid
+    grid-template-columns: 100%
+    grid-template-rows: 1fr
+    -ms-grid-row: 2 !important
 
 .inner-content
     display: grid
     grid-template-columns: var(--catalog-cutch) calc(100% - var(--catalog-cutch))
     grid-template-areas: "aside title" "aside catalog" "aside footer"
+    grid-template-rows: auto 1fr auto
     gap: 75px 0
+    grid-area: content
     
     &__aside
         grid-area: aside
         padding-right: 75px
         display: flex
         flex-direction: column
+
+    &__title:first-child, &__content:nth-child(2), 
+    &__content:first-child, &__footer:nth-child(3),
+    &__footer:nth-child(2)
+        width: 100%
+        max-width: var(--base-width)
+        margin: 0 auto
+
+    &__footer
+        
+        &:nth-child(3), &:nth-child(2)
+
+            .footer
+                padding-inline: 0
 
     &__title
 
@@ -56,6 +86,11 @@
 
     &__content
 
+        &:first-child
+            grid-area: catalog
+            grid-column: span 2
+            grid-row: span 3
+
         &:nth-child(2)
             -ms-grid-row: 2
             -ms-grid-column: 1
@@ -67,7 +102,7 @@
 
     &__footer
 
-        &:nth-child(3)
+        &:nth-child(3), &:nth-child(2)
             -ms-grid-row: 3
             -ms-grid-column: 1
             -ms-grid-column-span: 2

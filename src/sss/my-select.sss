@@ -2,23 +2,22 @@
 
 	&__list
 		overflow-y: auto
-		max-height: 220px
+		max-height: 150px
 		overscroll-behavior: none
 
 		&-cont
 			user-select: none
-			position: absolute calc(100% - 10px) 0 *
+			position: absolute 100% 0 *
 			z-index: 1
-			border-radius: 5px
-			background: var(--second-color)
-			padding: 30px 17px 20px
+			background: #fff
+			padding: 11px 7px
 			display: none
 
 		&::-webkit-scrollbar
-			width: 13px
+			width: 15px
 
 			&-thumb, &-track
-				border-left: 10px solid var(--second-color)
+				border-left: 10px solid #fff
 
 			&-thumb
 				background: var(--main-color)
@@ -27,13 +26,14 @@
 				background: #C4C4C4
 		
 		&-option
-			transition: color .3s ease
-
-			&:not(:first-child)
-				margin: 6px 0 0
+			transition: color .3s ease, background .3s ease
+			padding: 13px 17px
 
 			&:not(.js__selected)
 				cursor: pointer
 
-			&:hover, &.js__selected
-				color: var(--main-color)
+			&:hover
+				background: #E9E3E3
+
+			&.js__selected
+				color: #fff var(--main-color)

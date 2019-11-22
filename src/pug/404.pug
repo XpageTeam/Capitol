@@ -12,12 +12,14 @@ html(lang="ru")
                 .inner-content__content
                     .wrapper
                         .p-404
-                            .p-404__number 404
+                            figure.p-404__number
+                                img(src="img/404.svg")
                             .p-404__text
                                 .p-404__text-title Что-то пошло не так, страница больше не существует
                                 a.p-404__text-link(href="#")
                                     span.p-404-links
                                         span.p-404-links__home.home-btn
                                         span.p-404-links__text Пожалуйста, перейдите на главную страницу сайта
-        include inc/footer.pug
+                .inner-content__footer
+                    include inc/footer.pug
         include inc/scripts.pug

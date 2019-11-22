@@ -13,3 +13,21 @@
             background: url("../img/ico-select-arrow.svg") right center no-repeat
             padding-right: 25px
             text-align: right
+
+            &.js__opened
+
+                + .my-select__list-cont
+                    display: block
+        
+        .my-select__list
+            
+            &-cont
+                border-radius: 5px
+                top: calc(100% + 10px)
+                left: 50%
+                right: auto
+                transform: translateX(-50%)
+
+            &-option
+                // min-width: 165px
+                white-space: nowrap

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Результаты поиска
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.search-results
+						.search-results__search
+							.search-form
+								form(action="#")
+									.search-form__inputs
+										.sf-input
+											input.sf-input__input(type="search" placeholder="Введите запрос" value="Двубортное пальто с поясом")
+											//- .sf-input__reset
+						.search-results__list
+							.catalog2-list
+								- for (let i = 0; i < 3; i++)
+									.catalog-list__item
+										.cat-item
+											.cat-item__img
+												.cat-item__img-top
+													if (i == 1)
+														.cat-item__sale -20%
+														a.cat-item__favorite.active(href="#")
+													else
+														a.cat-item__favorite(href="#")
+												a.cat-item__img-img(href="#")
+													img(src="img/photos/cat2-item-img-"+i+".jpg" loading="lazy")
+											.cat-item__desc
+												a.cat-item__desc-title(href="#")
+													.cat-item__title
+														span Двубортное пальто с поясом
+												.cat-item__desc-price 19 400 руб.
+												.cat-item__desc-sizes
+													.ci-sizes
+														.ci-sizes__label Размеры RUS
+														.ci-sizes__list
+															.ci-sizes__list-item
+																.filter-item.filter-item--tag
+																	a.default-input__label(href="#") 42/44
+															.ci-sizes__list-item
+																.filter-item.filter-item--tag
+																	a.default-input__label(href="#") 44/46
+															.ci-sizes__list-item
+																.filter-item.filter-item--tag
+																	a.default-input__label(href="#") 46/48
+				.inner-content__footer
+					include inc/footer.pug
+		include inc/scripts.pug
