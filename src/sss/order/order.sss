@@ -11,8 +11,19 @@
 .order-title
     border-radius: 5px
     background: #E9E3E3
-    font-size: em(20)
     padding: 20px 28px 18px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__text
+        font-size: em(20)
+
+    &__edit
+        transition: opacity .3s ease
+        white-space: nowrap
+        color: #B4AEAE
+        line-height: 1
 
 .order-list
     counter-reset: i
