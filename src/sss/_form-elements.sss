@@ -3,6 +3,7 @@
 	&__submit
 		display: flex
 		align-items: center
+		margin: 57px 0 0
 
 		&--reverse
 			flex-direction: row-reverse
@@ -19,11 +20,10 @@
 
 		&-text
 			font-size: em(13)
-			color: rgba(255,255,255, .3)
-			max-width: 310px
+			// max-width: 310px
 
 			a
-				color: #fff
+				// color: #fff
 
 	&__inputs
 		display: flex
@@ -157,14 +157,38 @@ textarea.default-input__input
 	justify-content: space-between
 	flex: 1 1 auto
 
-	&__input
-		border: none
-		border-bottom: 1px solid #2E2E2E
-		font-size: em(14)
-		color: #fff transparent
-		width: 100%
+	&__error
+		transition: opacity .3s ease
+		opacity: 0
+		pointer-events: none
+		position: absolute calc(100% + 5px) 0 *
+		color: red
+		text-align: right
+		font-size: em(12)
 
+	&__input
+		border: 1px solid transparent
+		font-size: em(14)
+		// color: #fff transparent
+		size: 100% 50px
+		border-radius: 5px
 		transition: border-color .3s ease
+	
+		&--error:not(:valid)
+			border-color: red
+
+			~ .default-input__error
+				opacity: 1
+
+		&:required
+			
+			+ label
+				
+				&:after
+					content: "*"
+					display: inline-block
+					color: red
+					margin-left: 5px
 
 		&:not(&--select)
 			padding: var(--input-padding)
@@ -172,8 +196,8 @@ textarea.default-input__input
 		&:not(.default-input__input--textarea)
 			max-height: 57px
 
-		&:focus
-			border-color: #fff
+		&:focus, &:hover
+			border-color: var(--main-color)
 
 		&--select
 			padding: var(--select-padding)
@@ -228,7 +252,8 @@ textarea.default-input__input
 
 	&__label
 		font-size: 1em
-		color: #fff
+		// color: #fff
+		margin-bottom: 15px
 
 		&-file
 			size: 49px
