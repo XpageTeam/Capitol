@@ -15,12 +15,25 @@
             opacity: 1
             pointer-events: auto
 
+        img + img
+            opacity: 1
+
     &__img
         position: relative
 
         &-img, img
             display: block
             width: 100%
+
+        img
+            transition: opacity .3s ease
+
+            + img
+                position: absolute 0
+                size: 100%
+                object-fit: cover
+                object-position: center
+                opacity: 0
 
         &-top
             position: absolute 0 0 *
