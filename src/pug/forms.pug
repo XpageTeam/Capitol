@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Формы
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		#app
+			include inc/header.pug
+			include mixins/title-block.pug
+			+titleBLock(["Арт-квартал", "Личный кабинет"])
+			main#content
+				.wrapper
+					br
+					br
+					br
+					ul
+						li
+							a(href="#enter").fancybox Вход в личный кабинет
+						li
+							a(href="#thanks").fancybox Спасибо за покупку
+
+
+		include inc/forms.pug
+		include inc/footer.pug 
+		include inc/scripts.pug 

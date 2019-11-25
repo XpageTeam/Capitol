@@ -31,32 +31,30 @@ document.addEventListener("DOMContentLoaded", () => {
     fancyboxReady(initFancybox)
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-	const phoneInputs = document.querySelectorAll(".phone-input");
+// document.addEventListener("DOMContentLoaded", () => {
+// 	const phoneInputs = document.querySelectorAll(".phone-input");
 
-	if (!phoneInputs.length)
-		return;
+// 	if (!phoneInputs.length)
+// 		return;
 
-	;(async function(){
-		const IMask = await import("imask");
+// 	;(async function(){
+// 		const IMask = await import("imask");
 
-		for (let i = 0; i < phoneInputs.length; i++){
-			const phoneInput = phoneInputs[i];
+// 		for (let i = 0; i < phoneInputs.length; i++){
+// 			const phoneInput = phoneInputs[i];
 
-			new IMask.default(phoneInput, {
-				mask: '+{7}(000)000-00-00'
-			});
-		}
+// 			new IMask.default(phoneInput, {
+// 				mask: '+{7}(000)000-00-00'
+// 			});
+// 		}
 		
-	})()
-});
+// 	})()
+// });
 
 const initFancybox = () => {
 	$(".fancybox").fancybox({
 		trapFocus: false,
-		touch : {
-  			vertical : false,
-  		},
+		touch : false,
 		loop: true,
 		buttons: ["fullscreen", "slideShow", "close", "thumbs"],
 		image: {

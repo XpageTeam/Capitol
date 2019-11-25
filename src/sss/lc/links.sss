@@ -1,0 +1,33 @@
+.lc-links
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: -20px
+
+    select
+        display: none
+
+    &__link
+        margin-bottom: 21px
+
+        &:not(:last-child)
+            margin-right: 21px
+
+.lc-tab
+    text-transform: uppercase
+    display: block
+    border-radius: 5px
+    transition: border-color .3s ease, background .3s ease
+    border: 1px solid var(--border-color)
+    letter-spacing: 0.02em
+    font-size: em(12)
+    padding: 16px 20px 15px
+
+    &:focus
+        border-color: var(--main-color)
+
+    &.active
+        font-weight: bold
+
+    &.active, &:hover
+        border-color: transparent
+        background-color: #fff

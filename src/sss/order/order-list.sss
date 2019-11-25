@@ -1,0 +1,110 @@
+.order-title
+    border-radius: 5px
+    background: #E9E3E3
+    padding: 20px 28px 18px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__text
+        font-size: em(20)
+
+    &__edit
+        transition: opacity .3s ease
+        white-space: nowrap
+        color: #B4AEAE
+        line-height: 1
+
+.order-list
+    counter-reset: i
+
+    &__item
+        counter-increment: i
+
+        .order-title__text
+
+            &:before
+                content: counter(i)"."
+                display: inline-block
+                margin-right: 20px
+
+        &--deliv
+
+            .order-input__label
+                width: 130px
+
+.order-item
+    padding: 25px 18px 35px
+
+    &__inputs
+
+        &-item
+
+            &:not(:first-child)
+                margin: 24px 0 
+
+            &--delivery
+                display: flex
+
+    &__btn
+        margin: 40px 0 0
+                
+.order-input
+    display: flex
+    flex-direction: row-reverse
+    align-items: center
+
+    &__label
+        margin-right: 24px
+        width: 76px
+        flex: none
+
+    &__input
+        width: auto
+        flex: 1 1 auto
+        border: none
+        background: none
+        border-bottom: 1px solid var(--border-color)
+        transition: border-color .3s ease, background .3s ease
+        padding: 17px 18px
+
+        &--textarea
+            border-radius: 5px
+            border: 1px solid var(--border-color)
+            margin: 16px 0 0
+            width: 100% !important
+            min-width: 100%
+            max-width: 100%
+            height: 148px
+
+        &:required
+            
+            + label
+
+                &:after
+                    content: "*"
+                    display: inline-block
+                    color: red
+                    margin-left: 5px
+
+        &:hover
+            border-color: var(--main-color)
+
+        &:focus
+            background: #fff
+            border-color: transparent !important
+
+.oi-next
+    display: flex
+    align-items: center
+
+    &__btn
+        margin-right: 30px
+
+    &__text
+
+        &::before
+            content: "*"
+            display: inline-block
+            color: red
+            margin-right: 5px

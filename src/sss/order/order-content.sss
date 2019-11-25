@@ -1,0 +1,70 @@
+.order-content
+
+    &__list
+        margin: 28px 0 0
+
+        &-item
+            border-bottom: 1px solid var(--border-color)
+            padding-bottom: 26px
+
+            &:not(:first-child)
+                padding-top: 26px
+
+    &__bottom
+        margin: 25px 0 0
+        display: flex
+        align-items: flex-end
+        flex-direction: column
+
+.order-goods
+    display: grid
+    grid-template-columns: auto 1fr
+    grid-template-areas: "img title" "img price"
+    align-items: flex-start
+    position: relative
+    gap: 15px 37px
+    padding-right: 44px
+
+    &__img
+        grid-area: img
+        grid-row: span 3
+
+        img
+            display: block
+
+    &__title
+        grid-area: title
+        font-size: em(16)
+        padding: 3px 0 0
+        align-self: flex-start
+
+    &__price
+        grid-area: price
+        font-size: em(16)
+
+    &__remove
+        position: absolute 5px 22px * *
+        size: 11px 
+        background: url("../img/ico-remove.svg") no-repeat
+
+.order-itog
+
+    &__top, &__bottom
+        display: flex
+        justify-content: space-between
+
+        &:not(:first-child)
+            margin: 10px 0 0
+
+        span
+
+            &:not(:first-child)
+                margin-left: 45px
+
+    &__bottom
+        font-weight: 500
+        font-size: em(20)
+        line-height: calc(20 / 18)
+
+.order-btn
+    margin: 40px 0 0

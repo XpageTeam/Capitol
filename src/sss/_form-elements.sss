@@ -85,6 +85,9 @@
 				background-position: right 27px center
 				background-repeat: no-repeat
 
+		&row
+			grid-row: span 2
+
 textarea.default-input__input
 
 	&:not(.default-input__input--textarea)
@@ -249,6 +252,8 @@ textarea.default-input__input
 			max-width: 100%
 			max-height: 40vh
 			min-height: 124px
+			width: 100% !important
+			flex: 1 1 auto
 
 	&__label
 		font-size: 1em
@@ -294,7 +299,6 @@ textarea.default-input__input
 	display: none
 	width: 821px
 	max-width: 100%
-	padding: 0 !important
 
 	--input-hor-spacing: 26px
 	--input-vert-spacing: 26px

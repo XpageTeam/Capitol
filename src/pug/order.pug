@@ -16,7 +16,7 @@ html(lang="ru")
                     .order
                         .order__list
                             .order-list
-                                .order-list__item
+                                .order-list__item.completed
                                     .order-list__item-title 
                                         .order-title 
                                             .order-title__text Личные данные
@@ -25,22 +25,28 @@ html(lang="ru")
                                         .order-item__inputs
                                             .order-item__inputs-item
                                                 .order-input
-                                                    input.order-input__input(required="" type="text" value="Аретм Александрович Архипов")
+                                                    input.order-input__input.default-input__input--error(required="" type="text" value="Аретм Александрович Архипов")
                                                     label.order-input__label ФИО
+                                                    .default-input__error
+                                                        .error-text Ошибка
                                             .order-item__inputs-item
                                                 .order-input
-                                                    input.order-input__input.phone-input(required="" type="tel" value="+ 7 900 072 94 66")
+                                                    input.order-input__input.phone-input(required="" type="tel" value="+ 7 900 072 94 66" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$")
                                                     label.order-input__label Телефон
+                                                    .default-input__error
+                                                        .error-text Ошибка
                                             .order-item__inputs-item
                                                 .order-input
-                                                    input.order-input__input(required="" type="email" value="Artem@yandex.ru")
+                                                    input.order-input__input(required="" type="email" value="Artem@yandex.ru" pattern="\\+[0-9]\\s?[\\(][0-9]{3}[\\)]\\s?[0-9]{3}[-][0-9]{2}[-][0-9]{2}")
                                                     label.order-input__label E-mail
+                                                    .default-input__error
+                                                        .error-text Ошибка
                                         .order-item__btn
                                             .oi-next
                                                 .oi-next__btn
                                                     .default-btn Далее
                                                 .oi-next__text поля обязательны к заполнению
-                                .order-list__item
+                                .order-list__item.order-list__item--deliv
                                     .order-list__item-title 
                                         .order-title 
                                             .order-title__text Способы доставки
@@ -49,22 +55,145 @@ html(lang="ru")
                                         .order-item__inputs
                                             .order-item__inputs-item
                                                 .order-input
-                                                    input.order-input__input(required="" type="text" value="Аретм Александрович Архипов")
+                                                    select.order-input__input.order-input__input--select(required="")
+                                                        option(value="0") Челябинск
+                                                        option(value="1") Челябинс1
+                                                        option(value="2") Челябинс2
+                                                        option(value="3") Челябинс3
                                                     label.order-input__label ФИО
+                                                    .default-input__error
+                                                        .error-text Ошибка
+                                            .order-item__inputs-item.order-item__inputs-item--delivery
+                                                label.order-input__label Доставка 
+                                                    span.required *
+                                                .delivery-radio
+                                                    .delivery-radio__item.checked
+                                                        <!-- устанавливать класс checked на .delivery-radio__item -->
+                                                        .order-radio
+                                                            input.order-radio__input(type="radio" name="deliv" id="01" checked="")
+                                                            label.order-radio__label(for="01")
+                                                                p Курьерская доставка. Вернем 10% стоимости заказа на бонусный счет!
+                                                                    br
+                                                                    b Стоимость доставки 299 руб.
+                                                    .delivery-radio__item
+                                                        .order-radio
+                                                            input.order-radio__input(type="radio" name="deliv" id="02")
+                                                            label.order-radio__label(for="02")
+                                                                p Пункты выдачи Pick Point. Вернем 10% стоимости заказа на бонусный счет.
+                                                                    br
+                                                                    b Стоимость доставки 199 руб.
+                                                    .delivery-radio__item
+                                                        .order-radio
+                                                            input.order-radio__input(type="radio" name="deliv" id="03")
+                                                            label.order-radio__label(for="03")
+                                                                p ПОЧТА РОССИИ. Вернём 10% стоимости заказа на бонусный счёт!
+                                                                    br
+                                                                    b Стоимость доставки 299 руб.
                                             .order-item__inputs-item
                                                 .order-input
-                                                    input.order-input__input.phone-input(required="" type="tel" value="+ 7 900 072 94 66")
-                                                    label.order-input__label Телефон
+                                                    input.order-input__input(required="" type="text" value="Аретм Александрович Архипов")
+                                                    label.order-input__label Получатель
+                                                    .default-input__error
+                                                        .error-text Ошибка
                                             .order-item__inputs-item
                                                 .order-input
-                                                    input.order-input__input(required="" type="email" value="Artem@yandex.ru")
-                                                    label.order-input__label E-mail
+                                                    input.order-input__input(type="tel" value="456206")
+                                                    label.order-input__label Индекс
+                                                    .default-input__error
+                                                        .error-text Ошибка
+                                            .order-item__inputs-item
+                                                .order-input
+                                                    input.order-input__input(required="" type="text" value="Братьев Кашириных, дом 131Б")
+                                                    label.order-input__label Улица, дом
+                                                    .default-input__error
+                                                        .error-text Ошибка
+                                            .order-item__inputs-item
+                                                .order-input
+                                                    input.order-input__input(type="tel" value="67")
+                                                    label.order-input__label Квартира/офис
+                                                    .default-input__error
+                                                        .error-text Ошибка
+                                            .order-item__inputs-item
+                                                .order-input
+                                                    select.order-input__input.order-input__input--select(required="")
+                                                        option(value="0") 10:00
+                                                        option(value="1") 11:00
+                                                        option(value="2") 12:00
+                                                        option(value="3") 13:00
+                                                    label.order-input__label Время доставки
+                                                    .default-input__error
+                                                        .error-text Ошибка
                                         .order-item__btn
                                             .oi-next
                                                 .oi-next__btn
                                                     .default-btn Далее
                                                 .oi-next__text поля обязательны к заполнению
+                                .order-list__item.order-list__item--payment.blocked
+                                    .order-list__item-title 
+                                        .order-title 
+                                            .order-title__text Способы оплаты
+                                            a.order-title__edit(href="#") Редактировать
+                                    .order-item
+                                        .delivery-radio
+                                            .delivery-radio__item
+                                                .order-radio
+                                                    input.order-radio__input(type="radio" name="pay" id="001" checked="")
+                                                    label.order-radio__label(for="001")
+                                                        p Оплату наличными курьеру/банковской картой
+                                                        .order-radio__label-paysystems
+                                                            .paysystems
+                                                                figure.paysystems__item
+                                                                    img(src="img/photos/ps-img-0.jpg")
+                                                                figure.paysystems__item
+                                                                    img(src="img/photos/ps-img-1.jpg")
+                                                                figure.paysystems__item
+                                                                    img(src="img/photos/ps-img-2.jpg")
+                                            .delivery-radio__item
+                                                .order-radio
+                                                    input.order-radio__input(type="radio" name="pay" id="002")
+                                                    label.order-radio__label(for="002")
+                                                        p Оплата On-line
+                                            .delivery-radio__item
+                                                .order-radio
+                                                    input.order-radio__input(type="radio" name="pay" id="003")
+                                                    label.order-radio__label(for="003")
+                                                        p Оплата по счету для юр.лиц.
+                                        .order-item__comments
+                                            .order-input
+                                                textarea.order-input__input.order-input__input--textarea.default-input__input--error(placeholder="Дополнительная информация к заказу")
+                                                label.order-input__label Комментарии
+                                                .default-input__error
+                                                    .error-text Ошибка
                         .order__content
+                            .order-content(data-widget="sticky")
+                                .order-content__title
+                                    .order-title 
+                                        .order-title__text Ваш заказ
+                                .order-content__list
+                                    .order-content__list-item
+                                        .order-goods
+                                            .order-goods__img
+                                                img(src="img/photos/order-goods-img.jpg")
+                                            .order-goods__title Двубортное пальто с поясом
+                                            .order-goods__price 19 400 руб.
+                                            a.order-goods__remove(href="#")
+                                    .order-content__list-item
+                                        .order-goods
+                                            .order-goods__img
+                                                img(src="img/photos/order-goods-img.jpg")
+                                            .order-goods__title Двубортное пальто с поясом
+                                            .order-goods__price 19 400 руб.
+                                            a.order-goods__remove(href="#")
+                                .order-content__bottom
+                                    .order-itog
+                                        .order-itog__top
+                                            span Доставка
+                                            span бесплатно
+                                        .order-itog__bottom
+                                            span Итог 
+                                            span 19 400 руб.
+                                    .order-btn
+                                        a.default-btn(href="#") Оформить заказ
                 .inner-content__footer
                     include inc/footer.pug
         include inc/scripts.pug

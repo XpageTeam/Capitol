@@ -8,6 +8,8 @@ import "./tovar"
 import "./tabs"
 
 import "./timeline-slider"
+import App from "./xpage/core";
+import domReady from "./xpage/ready";
 
 declare global {
 	interface Window {
@@ -16,3 +18,15 @@ declare global {
 		is: any;
 	}
 }
+
+domReady(async () => {
+    if (window.is.touchDevice())
+		return;
+	
+
+    const select = await import("./xpage/select");
+
+    App.each(".default-input__input--select", (el: HTMLSelectElement) => {
+		new select.default(el);
+    });
+});

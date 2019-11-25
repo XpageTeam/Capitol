@@ -1,3 +1,10 @@
+@import "order-list.sss"
+@import "order-radio.sss"
+@import "order-comments.sss"
+@import "payment.sss"
+
+@import "order-content.sss"
+
 .order
     display: flex
 
@@ -7,97 +14,107 @@
     &__content
         width: 504px
         margin-left: 22px
-
-.order-title
-    border-radius: 5px
-    background: #E9E3E3
-    padding: 20px 28px 18px
-    display: flex
-    align-items: center
-    justify-content: space-between
-
-    &__text
-        font-size: em(20)
-
-    &__edit
-        transition: opacity .3s ease
-        white-space: nowrap
-        color: #B4AEAE
-        line-height: 1
-
-.order-list
-    counter-reset: i
-
-    &__item
-        counter-increment: i
-
-        .order-title__text
-
-            &:before
-                content: counter(i)"."
-                display: inline-block
-                margin-right: 20px
-
-.order-item
-    padding: 25px 18px 35px
-
-    &__inputs
-
-        &-item
-
-            &:not(:first-child)
-                margin: 24px 0 
-
-    &__btn
-        margin: 40px 0 0
-                
-.order-input
-    display: flex
-    flex-direction: row-reverse
-    align-items: center
-
-    &__label
-        margin-right: 24px
-        width: 76px
         flex: none
 
-    &__input
-        width: auto
-        flex: 1 1 auto
-        border: none
+span.required
+    color: red
+    display: inline-block
+    margin-left: 5px
+
+.delivery-radio
+
+    &__item
+
+        &:not(:first-child)
+            margin: 32px 0 0
+
+.order-list__item
+
+    &:not(.completed)
+
+        .order-title__edit
+            display: none
+
+.blocked
+
+    .order-title
         background: none
-        border-bottom: 1px solid var(--border-color)
-        transition: border-color .3s ease, background .3s ease
-        padding: 17px 18px
+        border: 1px solid var(--border-color)
 
-        &:required
-            
-            + label
+        &__text
+            color: #D2CCCC
 
-                &:after
-                    content: "*"
-                    display: inline-block
-                    color: red
-                    margin-left: 5px
+        &__edit
+            display: none
 
-        &:hover
-            border-color: var(--main-color)
+    .order-item
+        display: none
 
-        &:focus
-            background: #fff
-            border-color: transparent !important
+.completed
 
-.oi-next
-    display: flex
-    align-items: center
+    .order-input__label
+        width: auto !important
 
-    &__btn
-        margin-right: 30px
+    .order-item__inputs-item--delivery
+        display: block
+        width: calc((133.33% - 56px * 2) / 2) !important
 
-    &__text
+    .delivery-radio
 
-        &::before
-            content: "*"
-            display: inline-block
-            color: red
-            margin-right: 5px
+        &__item
+
+            &:not(.checked)
+                display: none
+
+            &.checked
+
+                .order-radio
+
+                    &__label
+                        padding-left: 0
+
+                        &:before, &:after
+                            display: none
+
+    .order-title
+
+        &__text
+
+            &:before
+                content: ""
+                background: url("../img/ico-ok.svg") no-repeat
+                size: 11px 8px
+
+    .order-item
+
+        &__inputs
+            display: flex
+            flex-wrap: wrap
+            margin: 0 0 -35px -55px
+
+            &-item
+                width: calc((100% - 55px * 3) / 3)
+                margin: 0 0 35px 55px
+
+        &__btn
+            display: none
+
+    .order-input
+        flex-direction: column-reverse
+        align-items: stretch
+        user-select: none
+        pointer-events: none
+
+        &__label
+            text-transform: uppercase
+            font-size: em(10)
+            letter-spacing: 0.02em
+            margin: 0 0 7px
+
+            &:after
+                display: none !important
+
+        &__input
+            padding: 0
+            border: none
+            user-select: none

@@ -1,0 +1,38 @@
+.order-radio
+    position: relative
+
+    &__input
+        position: absolute 0 * * 0
+        opacity: 0
+        pointer-events: none
+
+        &:checked
+
+            ~ label
+
+                &:after
+                    opacity: 1
+
+    &__label
+        padding-left: 17px
+        display: block
+        cursor: pointer
+
+        &:before, &:after
+            content: ""
+            position: absolute
+            border-radius: 50%
+
+        &:before
+            background: #ffffff
+            size: 20px
+            top: 3px
+            right: calc(100% + 16px)
+
+        &:after
+            background: var(--main-color)
+            size: 6px
+            right: calc(100% + 23px)
+            top: 10px
+            transition: opacity .3s ease
+            opacity: 0
