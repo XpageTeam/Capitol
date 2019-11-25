@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Личный кабинет
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading.full-width-page 
+        include inc/header.pug
+        main#content
+            .inner-content
+                .inner-content__title
+                    include mixins/title-block.pug
+                    +titleBLock(["Capitol", "Личный кабинет"], false)
+                .inner-content__content
+                    .lc
+                        .lc__links
+                            .lc-links
+                                .lc-links__link
+                                    a.lc-tab(href="#") Мой профиль
+                                .lc-links__link
+                                    a.lc-tab(href="#") wishlist
+                                .lc-links__link
+                                    a.lc-tab.active(href="#") Мои заказы
+                                select
+                                    option(value="0") Мой профиль
+                                    option(value="1") wishlist
+                                    option(value="2" selected="") Мои заказы
+                        .lc__content
+                            .lc-orders
+                                .lc-orders__links
+                                    .orders-links
+                                        a.orders-links__link.active(href="#") Все
+                                        a.orders-links__link(href="#") Текущие
+                                        a.orders-links__link(href="#") Завершенные
+                                        select
+                                            option(value="0" selected) Все
+                                            option(value="1") Текущие
+                                            option(value="2") Завершенные
+                                .lc-orders__list
+                                    .orders-list
+                                        .orders-list__item
+                                            .orders-list__item-top
+                                                .order-top
+                                                    .order-top__
+                                            .orders-list__item-content
+                .inner-content__footer
+                    include inc/footer.pug
+        include inc/scripts.pug
