@@ -1,0 +1,25 @@
+.order-status
+    position: relative
+    padding-left: 27px
+
+    &:before
+        content: ""
+        position: absolute calc(50% - 9px) * * 0
+        size: 16px
+
+    &--complete
+        color: #6BB869
+
+        &:before
+            background: url("../img/ico-status-completed.svg") no-repeat
+
+    &--wating
+
+        &:before
+            background: url("../img/ico-status-waiting.svg") no-repeat
+
+    &--canceled
+        color: #B2B2B2
+
+        &:before
+            background: url("../img/ico-status-canceled.svg") no-repeat

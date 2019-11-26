@@ -39,11 +39,51 @@ html(lang="ru")
                                             option(value="2") Завершенные
                                 .lc-orders__list
                                     .orders-list
-                                        .orders-list__item
-                                            .orders-list__item-top
-                                                .order-top
-                                                    .order-top__
-                                            .orders-list__item-content
+                                        each status in ["Оплачен", "Ожидается оплата", "Отменен"]
+                                            .orders-list__item
+                                                .orders-list__item-top
+                                                    .order-top
+                                                        .order-top__title 
+                                                            b Заказ № 12345
+                                                        .order-top__date 24.09.2019 в 21:10
+                                                        .order-top__status
+                                                            case status
+                                                                when "Оплачен"
+                                                                    .order-status.order-status--complete=status
+                                                                when "Ожидается оплата"
+                                                                    .order-status.order-status--wating=status
+                                                                when "Отменен"
+                                                                    .order-status.order-status--canceled=status
+                                                        .order-top__price
+                                                            b 36 497 руб.
+                                                        .order-top__more
+                                                            a.ot-more(href="#") Подробнее
+                                                .orders-list__item-content
+                                                    each title, i in ["Двубортное пальто с поясом", "Двубортное пальто"]
+                                                        .order-contains
+                                                            a.order-contains__img
+                                                                img(src="img/photos/orders-img-"+i+".jpg")
+                                                            .order-contains__title
+                                                                a(href="#")=title
+                                                            .order-contains__sizes
+                                                                .row-item__title Размеры RUS
+                                                                    .row-item__content
+                                                                        .row-item__content-sizes
+                                                                            .ci-sizes__list
+                                                                                .ci-sizes__list-item
+                                                                                    .filter-item.filter-item--tag
+                                                                                        .default-input__label 42/44
+                                                            .order-contains__index
+                                                                .row-item
+                                                                    .row-item__title Артикул
+                                                                    .row-item__text М-18-77
+                                                            .order-contains__color
+                                                                .color-checkbox
+                                                                    label.color-checkbox__label(style="background: url('img/photos/ico-color-"+i+".jpg')")
+                                                            .order-contains__count
+                                                                span 1шт
+                                                            .order-contains__price
+                                                                span 19 400 руб.
                 .inner-content__footer
                     include inc/footer.pug
         include inc/scripts.pug

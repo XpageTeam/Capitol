@@ -111,13 +111,13 @@ gulp.task('imagemin', () =>
 					progressive: true,
 				}),
 				require("imagemin-jpeg-recompress")({
-					loops: 1,
-					min: 80,
+					loops: 2,
+					min: 85,
 					max: 95,
 					quality: "high"
 				}),
 				$.imagemin.svgo(),
-				$.imagemin.optipng({optimizationLevel: 3}),
+				$.imagemin.optipng({optimizationLevel: 2}),
 			//   require("imagemin-pngquant")({quality: '75-85', speed: 5})
 			],{
 	     		verbose: true

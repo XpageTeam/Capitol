@@ -10,6 +10,36 @@ html(lang="ru")
 		main#content
 			.main-slider
 				.swiper-wrapper
-					
+					each slideName, i in ["Autumn", "Winter", "Spring", "Summer"]
+						.swiper-slide
+							.main-slide(style="background-image: url('img/main-slider-bg-"+i+".jpg')")
+								.wrapper
+									.main-slide__content
+										if (i == 0)
+											picture.main-slide__img
+												source(srcset="img/main-slider-img-"+i+".png" media="(min-width: 660px)")
+												source(srcset="img/main-slider-img-mobile-"+i+".png" media="(max-width: 660px)")
+												img
+										else
+											picture.main-slide__img
+												source.swiper-lazy(data-srcset="img/main-slider-img-"+i+".png" media="(min-width: 660px)")
+												source.swiper-lazy(data-srcset="img/main-slider-img-mobile-"+i+".png" media="(max-width: 660px)")
+												img
+										.main-slide__content-text=slideName
+			nav.mp-menu__container
+				ul.mp-menu
+					li
+						a.mp-menu__link(href="#" data-count="10") Новинки
+					li
+						a.mp-menu__link(href="#") Женщины
+					li
+						a.mp-menu__link(href="#") Мужчины
+					li
+						a.mp-menu__link(href="#") Аутлет
+			.main-nav
+				.wrapper
+					.main-nav__buttons
+						.swiper-button-prev
+						.swiper-button-next
 		include inc/scripts.pug
 		script(src="js/main-page.js")

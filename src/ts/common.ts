@@ -6,6 +6,7 @@ import "./head"
 import "./catalog-sort"
 import "./tovar"
 import "./tabs"
+import "./lc-orders"
 
 import "./timeline-slider"
 import App from "./xpage/core";

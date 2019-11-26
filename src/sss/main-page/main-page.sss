@@ -1,0 +1,60 @@
+@import "main-slider.sss"
+@import "main-nav.sss"
+
+.main
+
+    .head
+        position: absolute 0 0 *
+        z-index: 10
+
+        &__menu
+            opacity: 0
+            pointer-events: none
+
+        &__city
+            display: none
+
+        &__search
+            grid-area: city
+            text-align: center
+
+    .logo
+        background: url("../img/white-logo.svg") center no-repeat
+        size: 181px 51px
+
+        img
+            opacity: 0
+
+    #content
+        margin: 0
+        max-width: none
+        padding: 0 !important
+
+    .wrapper
+        padding: 0 var(--base-padding)
+        max-width: calc(1766px + var(--base-padding) * 2)
+        box-sizing: border-box
+        width: 100%
+
+    .search-btn
+
+        &:before
+            opacity: 1
+
+        &:after
+            background: url("../img/ico-search-white.svg") center no-repeat
+
+    .lc, .favorite, .cart
+
+        &-link
+
+            &:after
+                color: var(--main-color) #fff !important
+
+            path
+                fill: #fff
+
+    .burger
+
+        &:before, &:after, span
+            background: #ffffff

@@ -1,0 +1,73 @@
+:root
+    --status-color-width: persent(225)
+    --price-count-width: persent(170)
+    --more-price-width: 120px
+
+.order-top
+    display: grid
+    align-items: center
+    grid-template-areas: "title date status price more"
+    grid-template-columns: persent(260) persent(230) var(--status-color-width) var(--price-count-width) var(--more-price-width)
+    gap: 20px 50px
+    padding: 39px 0
+    border-bottom: 1px solid var(--border-color)
+
+    &__title
+        grid-area: title
+
+    &__date
+        grid-area: date
+
+    &__status
+        grid-area: status
+
+    &__price
+        grid-area: price
+
+    &__more
+        grid-area: more
+        text-align: right
+
+.ot-more
+    position: relative
+    font-weight: bold
+    padding-right: 18px
+
+    &:after
+        content: ""
+        size: 5px
+        border-radius: 0 0 2px
+        position: absolute calc(50% - 3px) 0 * *
+        border-right: 1px solid currentColor
+        border-bottom: 1px solid currentColor
+        transform: rotateZ(45deg)
+
+.order-contains
+    display: grid
+    grid-template-rows: auto 1fr
+    align-items: center
+    grid-template-areas: "img title title title title title" "img sizes index color count price"
+    grid-template-columns: 122px 94px persent(226) var(--status-color-width) var(--price-count-width) var(--more-price-width)
+    gap: 33px 50px
+
+    &__img
+        grid-area: img
+
+    &__title
+        grid-area: title
+
+    &__sizes
+        grid-area: sizes
+
+    &__index
+        grid-area: index
+
+    &__color
+        grid-area: color
+
+    &__count
+        grid-area: count
+
+    &__price
+        grid-area: price
+        text-align: right

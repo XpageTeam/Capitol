@@ -1,0 +1,127 @@
+.main-slider
+
+    .swiper
+
+        &-slide
+
+            &-active
+
+                .main-slide
+
+                    &:after
+                        transform: translate3d(33%, -50%, 0) scale(.76)
+
+                    &:before
+                        transform: translate3d(33%, -50%, 0) scale(1)
+
+                    &__img
+
+                        img
+                            transform: translate3d(0,0,0) scale(1.03)
+
+                        &:after
+                            transform: translate3d(20%, 50%, 0) scale(.76)
+
+                        &:before
+                            transform: translate3d(20%, 50%, 0) scale(1)
+
+                    &__content-text span
+                        opacity: 1
+
+.main-slide
+    background-position: center
+    background-size: cover
+    height: 100vh
+    position: relative
+
+    &:before, &:after
+        content: ""
+        position: absolute 0 0 * *
+        border-radius: 50%
+        border: 1px solid rgba(255,255,255, .3)
+        transition: transform .8s ease
+        transform: translate3d(33%, -50%, 0) scale(0)
+        pointer-events: none
+        size: 702px
+
+    &:after
+        transition-delay: .1s
+
+    &__content
+        display: inline-block
+        margin-left: persent(184, 1766)
+        margin-bottom: -4px
+        height: calc(100vh + 4px)
+        position: relative
+
+        &-text
+            position: absolute * 0 0
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            white-space: nowrap
+            color: #fff
+            line-height: 1
+            font-size: em(250)
+            font-weight: bold
+            z-index: 2
+
+            span
+                opacity: 0
+                transition: opacity .3s ease
+
+    &__img
+        position: relative
+        display: block
+        height: 100%
+        // overflow: hidden
+
+        img
+            object-fit: cover
+            object-position: center
+            display: block
+            height: 100%
+            position: relative
+            z-index: 1
+            transition: transform 4s ease
+            transform: translate3d(-5%,0,0)
+
+        &:before, &:after
+            content: ""
+            position: absolute * 0 0 *
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255, .3)
+            transition: transform .6s ease 
+            transform: translate3d(20%, 50%, 0) scale(0)
+            pointer-events: none
+            size: 702px
+
+        &:after
+            transition-delay: .1s
+
+.main-slider
+    overflow: hidden
+
+    .swiper
+
+        &-slide
+            // width: 100vw !important
+
+.main-nav
+    position: absolute * 0 128px
+
+    &__buttons
+        display: flex
+        justify-content: flex-end
+        
+        .swiper-button
+
+            &-prev, &-next
+                position: static
+                margin: 0
+                size: 45px 13px
+                background: url("../img/main-slider-arrow.svg") no-repeat
+
+            &-prev
+                transform: rotateZ(180deg)
+                margin-right: 44px

@@ -110,10 +110,23 @@
     display: none
 
 .search-btn
-    border: none
-    padding: 0
+    display: inline-block
     size: 19px
-    background: url("../img/ico-search.svg") no-repeat
+    position: relative
+
+    &:before, &:after
+        content: ""
+        position: absolute 50% * * 50%
+        border-radius: 50%
+        size: 63px
+        transform: translate(-50%, -50%)
+
+    &:before
+        background: rgba(255,255,255, .3)
+        opacity: 0
+
+    &:after
+        background: url("../img/ico-search.svg") center no-repeat
 
 .h-links
     display: grid
