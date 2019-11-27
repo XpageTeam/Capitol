@@ -11,6 +11,47 @@
     .catalog2-list
         gap: 75px 86px
 
-@media (max-width: 1800px)
+@media (max-width: 1800px) and (min-width: 1500px)
     .catalog2-list
         gap: vh(75) vw(86)
+
+@media (max-width: 1500px)
+    .catalog2-list
+        gap: 40px
+
+@media (max-width: 1300px)
+    .catalog-list
+        gap: 40px
+
+    .catalog2-list
+        grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 1100px) and (min-width: 800px)
+    .catalog-list
+        gap: 35px
+        grid-template-columns: repeat(3, 1fr)
+
+@media (max-width: 1100px) and (min-width: 660px)
+    .catalog2-list
+        gap: 10px 30px
+
+@media (max-width: 800px) and (min-width: 660px)
+    .catalog-list
+        gap: 30px
+        grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 660px) and (min-width: 360px)
+    .catalog-list, .catalog2-list
+        gap: 20px
+        grid-template-columns: repeat(2, calc(50% - 10px))
+
+@media (max-width: 660px)
+    .catalog2-list
+        gap: 10px 20px !important
+
+@media (max-width: 360px)
+    .catalog-list, .catalog2-list
+        gap: 20px
+        grid-template-columns: 1fr
+
+    

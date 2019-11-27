@@ -14,17 +14,27 @@ domReady(() => {
         
         const slider = new Swiper(tovarSlider, {
             // loop: true,
-            slidesPerView: 3,
+            slidesPerView: 2,
+            spaceBetween:  30,
             lazy: {
                 loadPrevNext: true
+            },
+            pagination: {
+                el: ".tovar__imgs-pagination .swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                900: {
+                    slidesPerView: 1
+                }
             }
         });
     
-        if (window.matchMedia(settings.adaptiveMedia))
+        if (window.matchMedia("(max-width: 1200px"))
             loadingAllImgs(slider);
         
         window.addEventListener("resize", function(){
-            if (window.matchMedia(settings.adaptiveMedia))
+            if (window.matchMedia("(max-width: 1200px"))
                 loadingAllImgs(slider);
         });
     })();
@@ -53,6 +63,18 @@ domReady(() => {
                 navigation: {
                     prevEl: slider.querySelector(".swiper-button-prev") as HTMLElement,
                     nextEl: slider.querySelector(".swiper-button-next") as HTMLElement
+                },
+                breakpoints: {
+                    1200: {
+                        slidesPerView: 2
+                    },
+                    1000: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    660: {
+                        slidesPerView: 1
+                    }
                 }
             })
         });

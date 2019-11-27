@@ -1,5 +1,4 @@
 .head
-    padding: em(78) var(--base-padding)
 
     &__wrap
         max-width: 1920px
@@ -231,3 +230,42 @@
 
             &:before, &:after
                 opacity: 1
+
+@media (min-width: 1700px)
+    .head
+        padding: em(78) var(--base-padding)
+
+@media (max-width: 1700px) and (min-width: 1300px)
+    .head
+        padding: em(40) var(--base-padding)
+
+@media (max-width: 1500px) and (min-width: 1300px)
+    .h-menu
+
+        &__item
+
+            &:not(:last-child)
+                margin-right: 35px
+
+    .head
+
+        &__links
+
+            &:not(:last-child)
+                margin-right: 80px
+
+@media (max-width: 1300px)
+    .h-menu
+
+        &__item
+
+            &:not(:last-child)
+                margin-right: 28px
+
+    .head
+        padding: em(30) var(--base-padding)
+
+        &__links
+
+            &:not(:last-child)
+                margin-right: 60px

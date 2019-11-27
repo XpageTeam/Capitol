@@ -19,6 +19,14 @@ domReady(async () => {
         navigation: {
             prevEl: botSlider.querySelector(".swiper-button-prev") as HTMLElement,
             nextEl: botSlider.querySelector(".swiper-button-next") as HTMLElement
+        },
+        breakpoints: {
+            1200: {
+                slidesPerView: 2
+            },
+            900: {
+                slidesPerView: 1
+            }
         }
     });
 });

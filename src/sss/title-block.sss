@@ -2,18 +2,9 @@
     justify-content: space-between
     align-items: center
     display: grid
-    gap: 30px
+    gap: 10px 30px
     grid-template-columns: auto 1fr auto
     grid-template-areas: "title filters crumbs"
-
-    &__top
-
-        &:first-child
-            margin-bottom: 75px
-
-        &-text
-            line-height: calc(30 / 14)
-            max-width: 500px
 
     &__title
         grid-area: title
@@ -44,9 +35,17 @@
         &-img
             flex: none
             margin-right: 60px
+            max-width: 50%
 
             img
                 display: block
+
+        &:first-child
+            margin-bottom: 75px
+
+        &-text
+            line-height: calc(30 / 14)
+            max-width: 500px
 
 .bread-crumbs
     display: flex
@@ -67,3 +66,57 @@
             content: "-"
             display: inline-block
             margin: 0 12px
+
+@media (max-width: 1500px)
+    .title-block
+        grid-template-areas: "title filters" "crumbs filters"
+        grid-template-columns: 1fr auto
+
+        &__top
+
+            &-img
+                margin-right: 30px
+
+@media (max-width: 1300px) and (min-width: 1000px)
+    .title-block
+
+        &__top
+            display: block
+
+            &:first-child
+                margin-bottom: 40px
+
+            &:after
+                content: ""
+                clear: both
+                display: table    
+
+            &-img
+                float: left
+                margin: 0 20px 10px 0
+
+            &-text
+                max-width: none
+
+@media (max-width: 1000px)
+    .title-block
+
+        &__top
+            display: block
+
+            &:first-child
+                margin-bottom: 30px
+
+            &-text, &-img
+                max-width: none
+
+            &-img
+                margin: 0
+
+            &-text
+
+                &:not(:first-child)
+                    margin: 20px 0 0
+
+// @media (max-width: 660px)
+//     .title-block

@@ -120,5 +120,76 @@
         &:nth-child(4)
             grid-area: footer
 
+            .footer
+                padding-inline: 0
+
 .fancybox-bg
     background-color: rgba(233,227,227, .8)
+
+@media (max-width: 1700px) and (min-width: 1500px)
+    :root
+        --catalog-cutch: 250px
+        --base-padding: em(50)
+
+@media (max-width: 1700px) and (min-width: 1000px)
+    .inner-content
+
+        &__aside
+            padding-right: 25px
+
+@media (max-width: 1200px)
+    .inner-content
+        grid-template-areas: "aside title" "aside catalog" "footer footer"
+
+        &__footer
+            z-index: 20
+            background: var(--body-bg-color)
+            position: relative
+
+@media (max-width: 1500px) and (min-width: 1000px)
+    :root
+        --catalog-cutch: 240px
+        --base-padding: 25px
+
+    .wrapper
+        padding: 0
+
+    #content
+        margin-top: 50px
+        
+    .inner-content
+        grid-template-columns: var(--catalog-cutch) calc(100% - var(--catalog-cutch))
+        gap: 40px 0
+
+@media (max-width: 1000px) and (min-width: 660px)
+    :root
+        --catalog-cutch: 240px
+        --base-padding: 20px
+
+    .wrapper
+        padding: 0
+
+    #content
+        margin-top: 20px
+        
+    .inner-content
+        grid-template-columns: var(--catalog-cutch) calc(100% - var(--catalog-cutch))
+        gap: 20px 0
+
+        &__aside
+            padding-right: 20px
+
+@media (max-width: 660px)
+    :root
+        --base-padding: 20px
+
+    #content
+        margin: 0
+        
+    .inner-content
+        grid-template-columns: 100%
+        grid-template-areas: "title" "catalog" "footer"
+        gap: 20px 0
+
+        &__aside
+            display: none

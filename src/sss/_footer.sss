@@ -8,7 +8,6 @@
         justify-content: space-between
         grid-template-columns: repeat(3, 1fr)
         grid-template-areas: "copy soc dev"
-        padding: 58px 0 66px
 
     &__copy
         grid-area: copy
@@ -46,3 +45,37 @@
 
         &:not(:first-child)
             margin: 3px 0 0
+
+@media (min-width: 1700px)
+    .footer
+
+        &__wrap
+            padding: 58px 0 66px
+
+@media (max-width: 1700px) and (min-width: 1300px)
+    .footer
+
+        &__wrap
+            padding: 40px 0
+
+@media (max-width: 1300px)
+    .footer
+
+        &__wrap
+            padding: 2.14em 0
+
+@media (max-width: 660px)
+    .footer
+        padding: 0
+
+        &__wrap
+            padding: 20px 0
+            grid-template-areas: "soc" "copy"
+            grid-template-columns: 100%
+            gap: 10px
+
+        &__copy
+            text-align: center
+
+        &__dev
+            display: none

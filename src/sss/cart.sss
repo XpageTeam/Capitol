@@ -22,6 +22,15 @@
 .ci-desc
     border-bottom: 1px solid var(--border-color)
 
+    &__sizes
+        
+        .default-input__label
+            pointer-events: none
+            color: var(--main-color) #fff
+            border: none
+            font-size: em(14)
+            padding: 14px 18px 12px
+
 .cart-item
     display: grid
     grid-template-columns: var(--cart-img-width) 1fr
@@ -123,3 +132,5 @@
 
     &__btn
         grid-area: btn
+
+// @media (max-width: 1200px)

@@ -11,7 +11,7 @@ domReady(() => {
         slideText.innerText = "";
 
         for (let i = 0; i < curTextArray.length; i++)
-            slideText.innerHTML+= `<span style="transition-delay: .${i}5s">${curTextArray[i]}</span>`;
+            slideText.innerHTML+= `<span style="transition-delay: .${i+1}s">${curTextArray[i]}</span>`;
     });
 
     new Swiper(".main-slider", {

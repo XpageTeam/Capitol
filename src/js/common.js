@@ -2,6 +2,7 @@ import $ from "jquery"
 import is from "is_js"
 
 import "./filter.js"
+import { Sticky } from "./x-widgets.js"
 
 window.jQuery = $
 window.$ = $
@@ -31,25 +32,35 @@ document.addEventListener("DOMContentLoaded", () => {
     fancyboxReady(initFancybox)
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-// 	const phoneInputs = document.querySelectorAll(".phone-input");
+document.addEventListener("DOMContentLoaded", () => {
+	const stickyElements = document.querySelectorAll("[data-widget=\"sticky\"]:not(.filter)");
 
-// 	if (!phoneInputs.length)
-// 		return;
+	if (!stickyElements.length)
+		return;
 
-// 	;(async function(){
-// 		const IMask = await import("imask");
+	for (let i = 0; i < stickyElements.length; i++)
+		Sticky(stickyElements[i])
+});
 
-// 		for (let i = 0; i < phoneInputs.length; i++){
-// 			const phoneInput = phoneInputs[i];
+document.addEventListener("DOMContentLoaded", () => {
+	const phoneInputs = document.querySelectorAll(".phone-input");
 
-// 			new IMask.default(phoneInput, {
-// 				mask: '+{7}(000)000-00-00'
-// 			});
-// 		}
+	if (!phoneInputs.length)
+		return;
+
+	;(async function(){
+		const IMask = await import("imask");
+
+		for (let i = 0; i < phoneInputs.length; i++){
+			const phoneInput = phoneInputs[i];
+
+			new IMask.default(phoneInput, {
+				mask: '+{7}(000)000-00-00'
+			});
+		}
 		
-// 	})()
-// });
+	})();
+});
 
 const initFancybox = () => {
 	$(".fancybox").fancybox({
