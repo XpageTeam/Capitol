@@ -85,16 +85,19 @@ span.required
                 background: url("../img/ico-ok.svg") no-repeat
                 size: 11px 8px
 
+    @media (min-width: 660px)
+        .order-item
+
+            &__inputs
+                display: flex
+                flex-wrap: wrap
+                margin: 0 0 -35px -55px
+
+                &-item
+                    width: calc((100% - 55px * 3) / 3)
+                    margin: 0 0 35px 55px
+
     .order-item
-
-        &__inputs
-            display: flex
-            flex-wrap: wrap
-            margin: 0 0 -35px -55px
-
-            &-item
-                width: calc((100% - 55px * 3) / 3)
-                margin: 0 0 35px 55px
 
         &__btn
             display: none
@@ -118,3 +121,17 @@ span.required
             padding: 0
             border: none
             user-select: none
+
+@media (max-width: 1300px) and (min-width: 1000px)
+    .order
+
+        &__content
+            width: 400px
+
+@media (max-width: 1000px)
+    .order
+        display: block
+
+        &__content
+            width: auto
+            margin: 30px 0 0

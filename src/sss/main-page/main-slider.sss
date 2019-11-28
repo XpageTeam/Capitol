@@ -63,7 +63,7 @@
             white-space: nowrap
             color: #fff
             line-height: 1
-            font-size: em(250)
+            font-size: vw(250)
             font-weight: bold
             z-index: 2
             transform-style: preserve-3d
@@ -130,3 +130,54 @@
             &-prev
                 transform: rotateZ(180deg)
                 margin-right: 44px
+
+@media (max-width: 1700px)
+    .main-nav
+        position: absolute * 0 3em
+
+@media (max-width: 1000px)
+    .main-slide
+        background-position: right center
+
+        &:before, &:after, &__img:before, &__img:after
+            display: none
+
+        &__content
+            margin: 0
+            display: block
+            height: 100%
+
+        .wrapper
+            height: 100%
+            padding: 0 !important
+
+        &__img
+            padding: 0 !important
+            display: flex
+            align-items: flex-end
+            justify-content: flex-end
+
+            img
+                max-height: 75vh
+                transform: none !important
+
+
+@media (max-width: 660px)
+    body.main
+        position: fixed 0
+        height: auto
+        min-height: auto
+
+    .main-slide
+        height: 100%
+
+        &__content
+
+            &-text
+                font-size: vw(80, 414)
+
+    .main-nav
+        bottom: vh(180, 735)
+
+        &__buttons
+            justify-content: flex-start

@@ -83,7 +83,7 @@
                 padding-inline: 0
 
     &__title
-
+        
         &:first-child
             -ms-grid-row: 1
             -ms-grid-column: 1
@@ -161,9 +161,16 @@
         grid-template-columns: var(--catalog-cutch) calc(100% - var(--catalog-cutch))
         gap: 40px 0
 
-@media (max-width: 1000px) and (min-width: 660px)
+@media (max-width: 1000px) and (min-width: 660px) and (orientation: portrait)
     :root
         --catalog-cutch: 240px
+
+@media (max-width: 1000px) and (min-width: 660px) and (orientation: landscape)
+    :root
+        --catalog-cutch: 170px
+
+@media (max-width: 1000px) and (min-width: 660px)
+    :root
         --base-padding: 20px
 
     .wrapper
@@ -191,5 +198,17 @@
         grid-template-areas: "title" "catalog" "footer"
         gap: 20px 0
 
+        &__title, &__content, &__footer
+            grid-column: span 1 !important
+
         &__aside
-            display: none
+            position: fixed 0
+            z-index: 10
+            padding: 0
+            transition: opacity .3s ease
+            overflow-y: auto
+            -webkit-overflow-scrolling: touch
+
+            &:not(.js__opened)
+                pointer-events: none
+                opacity: 0

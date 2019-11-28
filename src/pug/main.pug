@@ -17,13 +17,13 @@ html(lang="ru")
 									.main-slide__content
 										if (i == 0)
 											picture.main-slide__img
-												source(srcset="img/main-slider-img-"+i+".png" media="(min-width: 660px)")
-												source(srcset="img/main-slider-img-mobile-"+i+".png" media="(max-width: 660px)")
+												source(srcset="img/main-slider-img-"+i+".png" media="(min-width: 1000px)")
+												source(srcset="img/main-slider-img-mobile-"+i+".png" media="(max-width: 1000px)")
 												img
 										else
 											picture.main-slide__img
-												source.swiper-lazy(data-srcset="img/main-slider-img-"+i+".png" media="(min-width: 660px)")
-												source.swiper-lazy(data-srcset="img/main-slider-img-mobile-"+i+".png" media="(max-width: 660px)")
+												source.swiper-lazy(data-srcset="img/main-slider-img-"+i+".png" media="(min-width: 1000px)")
+												source.swiper-lazy(data-srcset="img/main-slider-img-mobile-"+i+".png" media="(max-width: 1000px)")
 												img
 										.main-slide__content-text=slideName
 			nav.mp-menu__container

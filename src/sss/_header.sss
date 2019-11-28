@@ -35,6 +35,8 @@
 
 .logo
     display: block
+    max-width: 100%
+    background-size: contain !important
 
     img
         display: block
@@ -269,3 +271,35 @@
 
             &:not(:last-child)
                 margin-right: 60px
+
+@media (max-width: 1230px)
+    .head
+
+        &__menu
+            opacity: 0
+            pointer-events: none
+            display: none
+
+        &__wrap
+            grid-template-columns: var(--catalog-cutch) 1fr 19px 250px auto 26px
+
+@media (max-width: 660px)
+    .head
+        padding: 23px 20px
+
+        &__wrap
+            grid-template-areas: "logo links burger"
+            grid-template-columns: 96px 1fr 26px
+            gap: 30px
+
+        &__links
+            margin-right: 0 !important
+            display: flex
+            justify-content: center
+
+        &__search, &__city
+            display: none
+
+    .h-links
+        width: 95px
+        gap: 17px

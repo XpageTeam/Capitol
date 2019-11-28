@@ -45,16 +45,33 @@
 .order-contains
     display: grid
     grid-template-rows: auto 1fr
-    align-items: center
+    align-items: start
     grid-template-areas: "img title title title title title" "img sizes index color count price"
-    grid-template-columns: 122px 94px persent(226) var(--status-color-width) var(--price-count-width) var(--more-price-width)
+    grid-template-columns: 122px 90px persent(226) var(--status-color-width) var(--price-count-width) var(--more-price-width)
     gap: 33px 50px
+
+    &:first-child
+        padding: 49px 0 0
+
+    &:last-child
+        padding: 0 0 49px
 
     &__img
         grid-area: img
 
+        img
+            display: block
+            width: 100%
+
     &__title
         grid-area: title
+
+        a
+            border: none
+            font-size: em(20)
+
+    // &__sizes, &__index
+    //     align-self: start
 
     &__sizes
         grid-area: sizes
@@ -71,3 +88,51 @@
     &__price
         grid-area: price
         text-align: right
+
+@media (max-width: 1300px)
+    :root
+        --price-count-width: auto
+
+    .order-contains
+        gap: 25px 35px
+
+        &:first-child
+            padding-top: 25px
+
+        &:last-child
+            padding-bottom: 25px
+
+        &:not(:first-child)
+            margin: 25px 0 0 !important
+
+    .order-top
+        gap: 25px 29px
+        padding: 20px 0
+
+@media (max-width: 1000px) and (min-width: 660px)
+    .order-top
+        grid-template-areas: "title date price more" "status date price more"
+        align-items: center
+        grid-template-columns: repeat(4, auto)
+        gap: 10px 20px
+
+    .order-contains
+        gap: 25px
+        grid-template-columns: 120px auto auto auto auto auto
+
+@media (max-width: 660px)
+    .order-top
+        grid-template-areas: "title date" "status price" "more more"
+        grid-template-columns: calc(60% - 10px) calc(40% - 10px)
+        gap: 10px 20px
+
+        &__more
+            text-align: center
+
+    .order-contains
+        grid-template-areas: "img img img img" "title title title title" "sizes index color count" "price price price price"
+        gap: 20px
+        grid-template-columns: auto auto
+
+        &__price
+            text-align: left

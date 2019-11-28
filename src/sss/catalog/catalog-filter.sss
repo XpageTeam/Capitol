@@ -15,8 +15,8 @@
 
 	&__item
 
-		&:not(:first-child)
-			margin: 67px 0 0
+		&:not(:first-of-type)
+			margin: 67px 0 0 
 
 		&-title
 			font-weight: 500
@@ -244,6 +244,10 @@
 		&:not(:first-child)
 			margin: 19px 0 0
 
+@media (min-width: 660px)
+	.filter__close
+		display: none
+
 @media (max-width: 1700px) and (min-width: 1000px)
 	.filter
 		padding-right: 25px
@@ -253,7 +257,7 @@
 
 		&__item
 
-			&:not(:first-child)
+			&:not(:first-of-type)
 				margin: 30px 0 0
 
 			&-title
@@ -262,3 +266,28 @@
 @media (max-width: 1000px) and (min-width: 660px)
 	.filter
 		padding-right: 20px
+
+@media (max-width: 660px)
+	.filter
+		padding: 30px var(--base-padding)
+		max-width: none
+
+		&:before
+			display: none
+
+		&__close
+			size: 35px
+			position: fixed 0 0 * *
+			background: url("../img/ico-remove-white.svg") center no-repeat
+			background-color: var(--main-color)
+			z-index: 10
+
+	.aside-category
+
+		&__item
+
+			&:not(:first-child)
+				margin: 13px 0 0
+
+		&__link
+			display: inline-block

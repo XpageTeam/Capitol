@@ -312,16 +312,60 @@
                 margin: 20px 0 0
                 padding-left: 31px
 
-@media (max-width: 360px)
+    .bot-slider
+
+        &__title
+
+            &-text
+                font-size: em(16)
+
+@media (max-width: 355px)
+    .tovar-desc
+        // grid-template-areas: "prices cart" "counter favorite"
+        // grid-template-columns: repeat(2, auto)
+
+        &__favorite
+            
+            .favorite-btn
+                padding: 0
+                font-size: 0
+                background-position: center
+                size: 50px
+
+
+@media (max-width: 660px)
     .tovar
-        position: relative
 
         &__desc
 
             &-content
-                position: static !important
-
+                position: static
+                
     .tovar-desc
+        grid-template-areas: "prices counter"
+
+        &__to-cart, &__favorite
+            position: fixed * 0 0
+            border-top: 1px solid var(--border-color)
+            padding: 20px
+            z-index: 10
 
         &__favorite
-            position: absolute 20px 20px * *
+            display: flex
+            justify-content: flex-end
+            pointer-events: none
+
+            .favorite-btn
+                pointer-events: auto
+
+        &__to-cart
+            background: var(--body-bg-color)
+
+@media (max-width: 355px)
+    .tovar-desc
+
+        &__to-cart
+
+            .default-btn
+                width: calc(100% - 70px)
+                text-align: center

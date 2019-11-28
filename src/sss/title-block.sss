@@ -100,6 +100,7 @@
 
 @media (max-width: 1000px)
     .title-block
+        grid-template-areas: "title title" "crumbs filters"
 
         &__top
             display: block
@@ -118,5 +119,43 @@
                 &:not(:first-child)
                     margin: 20px 0 0
 
-// @media (max-width: 660px)
-//     .title-block
+@media (max-width: 660px)
+    .bread-crumbs
+
+        &__link
+
+            &:not(:nth-last-child(2))
+                display: none
+
+            &:nth-last-child(2)
+
+                &:after
+                    display: none
+
+                a
+                    position: relative
+                    display: inline-block
+                    padding-left: 10px
+                    
+                    &:before
+                        content: ""
+                        position: absolute calc(50% - 3px) * * 0
+                        size: 6px
+                        border-top: 2px solid currentColor
+                        border-left: 2px solid currentColor
+                        transform: rotateZ(-45deg)
+        
+        &__this
+            display: none
+
+    .title-block
+        grid-template-areas: "title title" "crumbs filters"
+
+        &__title
+
+            &:nth-last-child(2)
+                grid-column: span 2
+
+            h1
+                font-size: em(19)
+                

@@ -1,8 +1,19 @@
-import $ from "jquery"
-import "jquery-ui/ui/widgets/slider.js"
-import "./touch-for-ui-slider.js"
+import $ from "jquery";
+import "jquery-ui/ui/widgets/slider.js";
+import is from "is_js";
 
 document.addEventListener("DOMContentLoaded", function(){
+
+	if (is.touchDevice())
+		import("./touch-for-ui-slider.js")
+			.then(() => {
+				initFilterScripts();
+			});
+	else
+		initFilterScripts();
+});
+
+function initFilterScripts(){
 	$(".price-filter").each(function () {
 		const $this = $(this),
 			min = +$this.find(".price-min").val() || 0,
@@ -57,4 +68,4 @@ document.addEventListener("DOMContentLoaded", function(){
 			$this.find(".price-filter__slider").slider("values", 0, value);
 		});
 	});
-});
+}

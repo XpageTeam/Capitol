@@ -38,3 +38,34 @@
         &:not(:first-child)
             margin: 16px 0 0
         
+
+@media (max-width: 1400px)
+    .mp-menu
+
+        li
+
+            &:not(:first-child)
+                margin: 10px 0 0
+
+        &__link
+            font-size: em(33)
+
+@media (max-width: 1000px)
+    .mp-menu
+
+        &__container
+            align-items: flex-start
+
+@media (max-width: 660px)
+    .mp-menu
+
+        &__container
+            padding: 0 20px
+
+        &__link
+            font-size: em(32)
+
+        li
+
+            &:not(:first-child)
+                margin: 0

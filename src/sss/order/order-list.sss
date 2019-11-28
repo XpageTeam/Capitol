@@ -43,8 +43,9 @@
             &:not(:first-child)
                 margin: 24px 0 
 
-            &--delivery
-                display: flex
+            @media (min-width: 660px)
+                &--delivery
+                    display: flex
 
     &__btn
         margin: 40px 0 0
@@ -108,3 +109,38 @@
             display: inline-block
             color: red
             margin-right: 5px
+
+@media (max-width: 1300px)
+    .order-title
+        padding: 16px 22px 14px
+
+    .order-item
+        padding: 20px 18px 25px
+
+@media (max-width: 660px)
+    .order-title
+
+        &__text
+            font-size: em(16)
+
+    .order-item
+        padding-inline: 0
+
+    .order-input
+        flex-direction: column-reverse
+        align-items: stretch
+
+        &__label
+            text-transform: uppercase
+            font-size: em(10)
+            letter-spacing: 0.02em
+            margin: 0 0 7px
+            display: block
+
+    .delivery-radio
+        padding-left: 35px
+
+        &__item
+
+            &:not(:first-child)
+                margin: 20px 0 0 !important

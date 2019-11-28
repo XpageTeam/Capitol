@@ -30,6 +30,7 @@
             border: none
             font-size: em(14)
             padding: 14px 18px 12px
+            margin-bottom: 0
 
 .cart-item
     display: grid
@@ -133,4 +134,141 @@
     &__btn
         grid-area: btn
 
-// @media (max-width: 1200px)
+@media (max-width: 1200px)
+    .cart
+
+        &__list
+
+            &-item
+
+                &:not(:first-child)
+                    margin: 30px 0
+
+    .cart-item
+        gap: 25px
+
+    .ci-desc
+        gap: 20px
+
+        &__title
+            padding: 0
+
+@media (max-width: 1100px) and (min-width: 1000px)
+    .ci-desc
+        grid-template-columns: auto 1fr var(--price-actions-width)
+        grid-template-rows: auto auto 1fr
+        grid-template-areas: "title title title" "sizes index price_actions" "counter counter price_actions"
+
+        &__counter
+            margin-left: 0
+            margin-right: auto
+
+@media (max-width: 1000px)
+    :root
+        --price-actions-width: auto
+
+    .cart-item
+        grid-template-columns: 140px 1fr
+        position: relative
+
+        .favorite-btn, .remove-link
+            border: none
+
+        .favorite-btn
+
+            &:not(.active)
+                background: url("../img/ico-favorite-white.svg") center no-repeat
+
+            &.active
+                background: url("../img/ico-favorite-white-added.svg") center no-repeat
+
+        .ci-favorite
+            position: absolute 0 * * 0
+
+        .ci-remove
+            position: absolute -10px -10px * *
+
+    .cart-itog
+        
+        &__summ
+            margin-right: 20px
+
+    .ci-desc
+
+        &__price-actions
+            grid-template-areas: "price"
+            grid-template-columns: 1fr
+
+@media (max-width: 660px) and (min-width: 380px)
+    .cart
+
+        &__list
+            display: flex
+            flex-wrap: wrap
+            margin: 0 0 -20px -20px
+
+            &-item
+                width: calc((100% - 20px * 2) / 2)
+                margin: 0 0 20px 20px !important
+
+                &:not(:first-child)
+                    margin-top: 0
+
+@media (max-width: 660px)
+    .cart-item
+        gap: 20px
+        grid-template-columns: 100%
+        grid-template-areas: "img" "desc"
+
+        &__img
+
+            img
+                width: 100%
+
+        .ci-remove
+            top: -15px
+            right: -15px
+
+        .remove-link
+            background-color: #fff
+            size: 30px
+            border-radius: 50%
+
+    .ci-title
+        font-size: em(18)
+
+    .ci-desc
+        grid-template-areas: "title title" "sizes index" "counter counter" "price_actions price_actions"
+        grid-template-columns: auto auto
+        gap: 20px
+        border: none
+
+        &__sizes
+            padding-right: 0
+
+        &__counter
+            margin-left: 0
+            margin-right: auto
+
+    .ci-prices
+
+        &__summ
+            font-size: em(17)
+
+    .cart
+
+        &__footer
+            position: sticky
+            bottom: 0
+            padding: 20px
+            margin: 0 -20px -21px
+            background-color: var(--body-bg-color)
+            border-top: 1px solid var(--border-color)
+            border-bottom: 1px solid var(--border-color)
+
+            &-itog
+                width: 100%
+
+@media (max-width: 380px)
+    .ci-desc
+        grid-template-areas: "title title" "sizes index" "counter price_actions"

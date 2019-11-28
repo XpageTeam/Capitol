@@ -173,32 +173,40 @@ ol:not([class])
 			font-weight: 300
 			margin: 23px 0 0 !important
 
-@media (max-width: 660px)
+@media (max-width: 1000px)
 	[align]
 		float: none
 		width: 100%
 		margin-left: 0
 		margin-right: 0
+		margin-bottom: 0
 
 		img
 			width: inherit
-
+		
 	h2
-		font-size: em(24)
-
-	h3
-		font-size: em(21)
-
-	h4
 		font-size: em(18)
 
-	h5
+	h3
+		font-size: em(17)
+
+	h4
 		font-size: em(16)
+
+	h5
+		font-size: em(15)
 
 	h6
 		font-size: em(14)
 
-	:--heading
+	table:not([class])
+		margin: 0
 
-		&:before
-			display: none
+		th
+			padding-block: 17px
+
+		td
+			padding-block: 10px
+
+		td, th
+			padding-inline: 15px

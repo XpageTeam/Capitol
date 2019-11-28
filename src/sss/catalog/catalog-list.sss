@@ -41,16 +41,24 @@
         grid-template-columns: repeat(2, 1fr)
 
 @media (max-width: 660px) and (min-width: 360px)
-    .catalog-list, .catalog2-list
+    .catalog-list
         gap: 20px
+        grid-template-columns: repeat(2, calc(50% - 10px))
+
+@media (max-width: 660px) and (min-width: 400px)
+    .catalog2-list
         grid-template-columns: repeat(2, calc(50% - 10px))
 
 @media (max-width: 660px)
     .catalog2-list
-        gap: 10px 20px !important
+        gap: 20px
+
+@media (max-width: 400px)
+    .catalog2-list
+        grid-template-columns: 1fr
 
 @media (max-width: 360px)
-    .catalog-list, .catalog2-list
+    .catalog-list
         gap: 20px
         grid-template-columns: 1fr
 
