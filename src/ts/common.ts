@@ -2,6 +2,7 @@
 import "./textPage/text-page";
 
 import "./head"
+import "./notificator"
 
 import "./catalog-sort"
 import "./tovar"
@@ -18,6 +19,7 @@ declare global {
 		TweenLite: any;
 		$: any;
 		is: any;
+		notificator: any
 	}
 }
 
