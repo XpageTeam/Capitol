@@ -2,6 +2,50 @@
 @import "profile.sss"
 @import "orders.sss"
 
+
+.bx-sls 
+    
+    .bx-ui
+        
+        &-sls
+            
+            &-container
+                min-height: 50px
+
+            &-fake, &-route
+                height: 50px
+
+            &-clear
+                top: 9px
+
+    .dropdown
+        
+        &-icon
+            top: 18px
+
+        &-block
+            border-color: transparent
+            border-radius: 5px
+            box-shadow: none
+            transition: border-color .3s ease
+
+            &:hover, &:focus-within
+                border-color: var(--main-color)
+
+.lc-wishlist
+
+    .ci-desc__sizes 
+        
+        .default-input__label
+            pointer-events: auto
+
+.inner-content
+
+    &__content
+
+        > .lc-links
+            margin: 0 0 30px
+
 @media (min-width: 1300px)
     .lc
 
