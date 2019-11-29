@@ -1,371 +1,408 @@
 .tovar
-    display: grid
-    grid-template-areas: "imgs desc" "slider slider"
-    grid-template-columns: auto 1fr
-    gap: 86px 76px
+	display: grid
+	grid-template-areas: "imgs desc" "slider slider"
+	grid-template-columns: auto 1fr
+	gap: 86px 76px
 
-    &__imgs
-        grid-area: imgs
+	&__imgs
+		grid-area: imgs
 
-    &__desc
-        grid-area: desc
-        padding-right: 6px
+	&__desc
+		grid-area: desc
+		padding-right: 6px
 
-        &-content
-            top: 25px
-            position: sticky
+		&-content
+			top: 25px
+			position: sticky
 
-        &-more
-            margin: 11px 0 0
+		&-more
+			margin: 11px 0 0
 
-        &-tabs
-            margin: 50px 0 0
+		&-tabs
+			margin: 50px 0 0
 
-    &__bot-slider
-        grid-area: slider
+	&__bot-slider
+		grid-area: slider
 
 .tovar-desc
-    display: grid
-    grid-template-columns: auto auto 1fr
-    grid-template-areas: "prices prices prices" "counter cart favorite"
-    gap: 28px 27px
 
-    &__prices
-        grid-area: prices
+	&__row
+		display: table-row
 
-    &__counter
-        grid-area: counter
+		&:not(:first-child)
+			margin-top: 20px
 
-    &__to-cart
-        grid-area: cart
+		&-title
+			color: #9a9a9a
+			display: inline-block
+			padding-right: 18px
+			position: relative
 
-    &__favorite
-        grid-area: favorite
-        margin-left: auto
+			&:before
+				content: ""
+				position: absolute
+				left: 0
+				bottom: 11px
+				width: 100%
+				border-bottom: 2px dotted var(--border-color)
+
+			span
+				background: var(--body-bg-color)
+				position: relative
+				z-index: 2
+				display: inline-block
+				padding-right: 10px
+
+		&-text
+			padding-left: 10px
+		
+		&-title, &-text
+			display: table-cell
+			padding-top: 8px
+			vertical-align: bottom
+
+.tovar-desc
+	display: grid
+	grid-template-columns: auto auto 1fr
+	grid-template-areas: "prices prices prices" "counter cart favorite"
+	gap: 28px 27px
+
+	&__prices
+		grid-area: prices
+
+	&__counter
+		grid-area: counter
+
+	&__to-cart
+		grid-area: cart
+
+	&__favorite
+		grid-area: favorite
+		margin-left: auto
 
 .tovar-img
-    display: block
-    position: relative
+	display: block
+	position: relative
 
-    &:after, &:before
-        content: ""
-        position: absolute
-        background: #fff
+	&:after, &:before
+		content: ""
+		position: absolute
+		background: #fff
 
-    &:before
-        size: 2px 85px
-        top: calc(50% - 43px)
-        left: calc(50% - 1px)
+	&:before
+		size: 2px 85px
+		top: calc(50% - 43px)
+		left: calc(50% - 1px)
 
-    &:after
-        size: 85px 2px
-        left: calc(50% - 43px)
-        top: calc(50% - 1px)
+	&:after
+		size: 85px 2px
+		left: calc(50% - 43px)
+		top: calc(50% - 1px)
 
-    img
-        display: block
-        max-height: calc(100vh - 80px)
+	img
+		display: block
+		max-height: calc(100vh - 80px)
 
 .prices
-    line-height: 1
+	line-height: 1
 
-    &__cur, &__last
-        display: inline-block
+	&__cur, &__last
+		display: inline-block
 
-        &:not(:last-child)
-            margin-right: 25px
-    
-    &__cur
-        font-weight: 500
-        font-size: em(24)
+		&:not(:last-child)
+			margin-right: 25px
+	
+	&__cur
+		font-weight: 500
+		font-size: em(24)
 
-    &__last
-        color: #959595
-        text-decoration: line-through
-        font-size: em(16)
+	&__last
+		color: #959595
+		text-decoration: line-through
+		font-size: em(16)
 
 .tovar-more
 
-    &__row
-        padding: 35px 0
-        border-bottom: 1px solid var(--border-color)
-        display: flex
+	&__row
+		padding: 35px 0
+		border-bottom: 1px solid var(--border-color)
+		display: flex
 
-        &-item
+		&-item
 
-            &:not(:last-child)
-                margin-right: 90px
+			&:not(:last-child)
+				margin-right: 90px
 
-            &:first-child:last-child
-                margin-right: 0
-                width: 100%
+			&:first-child:last-child
+				margin-right: 0
+				width: 100%
 
 .row-item
 
-    &__title
-        text-transform: uppercase
-        font-size: em(10)
-        line-height: 1
-        letter-spacing: 0.02em
-        margin: 0 0 7px
+	&__title
+		text-transform: uppercase
+		font-size: em(10)
+		line-height: 1
+		letter-spacing: 0.02em
+		margin: 0 0 7px
 
-    &__text
+	&__text
 
-        a.fancybox
-            border-bottom: 1px solid currentColor
-            
-            &:hover, &:focus
-                border-color: transparent
+		a.fancybox
+			border-bottom: 1px solid currentColor
+			
+			&:hover, &:focus
+				border-color: transparent
 
-    &__content
-        display: flex
-        align-items: center
-        justify-content: space-between
-        margin: 12px 0 0
+	&__content
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin: 12px 0 0
 
-        &-talbe
-            margin-left: 25px
+		&-talbe
+			margin-left: 25px
 
 .sizes-table
-    position: relative
+	position: relative
 
-    &:before
-        content: ""
-        position: absolute calc(50% - 8px) calc(100% + 15px) * *
-        background: url("../img/ico-table.svg") no-repeat
-        size: 16px
+	&:before
+		content: ""
+		position: absolute calc(50% - 8px) calc(100% + 15px) * *
+		background: url("../img/ico-table.svg") no-repeat
+		size: 16px
 
 .bot-slider
 
-    .swiper-slide
-        width: auto
+	.swiper-slide
+		width: 337px
 
-    &__title
-        display: flex
-        align-items: center
-        justify-content: space-between
-        margin: 0 0 72px
+	&__title
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin: 0 0 72px
 
-        &-text
-            font-size: em(24)
-            margin-right: 20px
+		&-text
+			font-size: em(24)
+			margin-right: 20px
 
-        &-arrows
-            display: flex
+		&-arrows
+			display: flex
 
-            .swiper-button
+			.swiper-button
 
-                &-prev, &-next
-                    position: relative
-                    top: auto
-                    right: auto
-                    left: auto
-                    margin: 0
-                    background: none
-                    size: 32px
+				&-prev, &-next
+					position: relative
+					top: auto
+					right: auto
+					left: auto
+					margin: 0
+					background: none
+					size: 32px
 
-                    &:after
-                        content: ""
-                        position: absolute calc(50% - 4px) * * 
-                        border-top: 1px solid var(--main-color)
-                        border-right: 1px solid var(--main-color)
-                        size: 7px
+					&:after
+						content: ""
+						position: absolute calc(50% - 4px) * * 
+						border-top: 1px solid var(--main-color)
+						border-right: 1px solid var(--main-color)
+						size: 7px
 
-                &-next
+				&-next
 
-                    &:after
-                        transform: rotateZ(45deg)
-                        right: 0
+					&:after
+						transform: rotateZ(45deg)
+						right: 0
 
-                &-prev
+				&-prev
 
-                    &:after
-                        right: calc(50% - 4px)
-                        transform: rotateZ(-135deg)
+					&:after
+						right: calc(50% - 4px)
+						transform: rotateZ(-135deg)
 
 @media (min-width: 1200px)
-    .tovar-imgs
-        transform: none !important
-        display: block !important
+	.tovar-imgs
+		transform: none !important
+		display: block !important
 
-        &__item
-            width: auto !important
+		&__item
+			width: auto !important
 
-            &:not(:first-child)
-                margin: 40px 0 0
+			&:not(:first-child)
+				margin: 40px 0 0
 
-    .tovar__imgs
+	.tovar__imgs
 
-        &-pagination, &-navigation
-            display: none
+		&-pagination, &-navigation
+			display: none
 
-        .swiper
+		.swiper
 
-            &-slide
+			&-slide
 
-                &-duplicate
-                    display: none
+				&-duplicate
+					display: none
 
-                    + .swiper-slide
-                        margin-top: 0 !important
+					+ .swiper-slide
+						margin-top: 0 !important
 
 @media (max-width: 1700px)
-    .tovar
-        grid-template-columns: auto 1fr
-        gap: 50px var(--base-padding)
+	.tovar
+		grid-template-columns: auto 1fr
+		gap: 50px var(--base-padding)
 
-    .bot-slider
+	.bot-slider
 
-        &__title
-            margin: 0 0 35px
+		&__title
+			margin: 0 0 35px
 
 @media (max-width: 1300px)
-    .tovar-desc
-        gap: 20px
+	.tovar-desc
+		gap: 20px
 
-    .tovar
+	.tovar
 
-        &__desc
+		&__desc
 
-            &-tabs
-                margin: 20px 0 0
+			&-tabs
+				margin: 20px 0 0
 
-    .tovar-more
+	.tovar-more
 
-        &__row
-            padding: 20px 0
+		&__row
+			padding: 20px 0
 
 @media (max-width: 1200px)
-    .tovar
-        display: block
+	.tovar
+		display: block
 
-        &__imgs
-            width: 100%
-            overflow: hidden
-            margin: 0 0 30px
-            position: relative
+		&__imgs
+			width: 100%
+			overflow: hidden
+			margin: 0 0 30px
+			position: relative
 
-            &-navigation
-                display: none
+			&-navigation
+				display: none
 
-            &-pagination
-                margin: 15px 0 0
+			&-pagination
+				margin: 15px 0 0
 
-                .swiper-pagination
-                    position: static
+				.swiper-pagination
+					position: static
 
-                    &-bullet
-                        opacity: 1
-                        size: 16px
-                        transition: background-color .3s ease, transform .3s ease
-                        transform: scale(.6)
+					&-bullet
+						opacity: 1
+						size: 16px
+						transition: background-color .3s ease, transform .3s ease
+						transform: scale(.6)
 
-                        &:not(:last-child)
-                            margin-right: 5px
+						&:not(:last-child)
+							margin-right: 5px
 
-                        &-active
-                            background: var(--main-color)
-                            transform: scale(1)
+						&-active
+							background: var(--main-color)
+							transform: scale(1)
 
-        &__bot-slider
-            margin: 30px 0 0
+		&__bot-slider
+			margin: 30px 0 0
 
-    .bot-slider
+	.bot-slider
 
-        &__title
-            margin: 0 0 20px
+		&__title
+			margin: 0 0 20px
 
 @media (max-width: 1300px)
-    .tovar
-        grid-template-columns: auto 1fr
-        gap: 30px var(--base-padding)
+	.tovar
+		grid-template-columns: auto 1fr
+		gap: 30px var(--base-padding)
 
 @media (max-width: 660px)
-    .tovar-desc
-        grid-template-areas: "prices counter" "cart favorite"
-        grid-template-columns: auto auto
-        align-items: flex-start
-        gap: 20px
+	.tovar-desc
+		grid-template-areas: "prices counter" "cart favorite"
+		grid-template-columns: auto auto
+		align-items: flex-start
+		gap: 20px
 
-        &__counter
-            display: flex
-            justify-content: flex-end
+		&__counter
+			display: flex
+			justify-content: flex-end
 
-    .prices
-        font-size: 13px
+	.prices
+		font-size: 13px
 
-        &__cur
-            font-size: em(16, 12)
+		&__cur
+			font-size: em(16, 12)
 
-            &:not(:last-child)
-                margin-bottom: 5px
+			&:not(:last-child)
+				margin-bottom: 5px
 
-        &__last
-            font-size: em(13, 12)
+		&__last
+			font-size: em(13, 12)
 
-    .row-item
-        
-        &__content
-            display: block
+	.row-item
+		
+		&__content
+			display: block
 
-            &-table
-                margin: 20px 0 0
-                padding-left: 31px
+			&-table
+				margin: 20px 0 0
+				padding-left: 31px
 
-    .bot-slider
+	.bot-slider
 
-        &__title
+		&__title
 
-            &-text
-                font-size: em(16)
+			&-text
+				font-size: em(16)
 
 @media (max-width: 355px)
-    .tovar-desc
-        // grid-template-areas: "prices cart" "counter favorite"
-        // grid-template-columns: repeat(2, auto)
+	.tovar-desc
+		// grid-template-areas: "prices cart" "counter favorite"
+		// grid-template-columns: repeat(2, auto)
 
-        &__favorite
-            
-            .favorite-btn
-                padding: 0
-                font-size: 0
-                background-position: center
-                size: 50px
+		&__favorite
+			
+			.favorite-btn
+				padding: 0
+				font-size: 0
+				background-position: center
+				size: 50px
 
 
 @media (max-width: 660px)
-    .tovar
+	.tovar
 
-        &__desc
+		&__desc
 
-            &-content
-                position: static
-                
-    .tovar-desc
-        grid-template-areas: "prices counter"
+			&-content
+				position: static
+				
+	.tovar-desc
+		grid-template-areas: "prices counter"
 
-        &__to-cart, &__favorite
-            position: fixed * 0 0
-            border-top: 1px solid var(--border-color)
-            padding: 20px
-            z-index: 10
+		&__to-cart, &__favorite
+			position: fixed * 0 0
+			border-top: 1px solid var(--border-color)
+			padding: 20px
+			z-index: 10
 
-        &__favorite
-            display: flex
-            justify-content: flex-end
-            pointer-events: none
+		&__favorite
+			display: flex
+			justify-content: flex-end
+			pointer-events: none
 
-            .favorite-btn
-                pointer-events: auto
+			.favorite-btn
+				pointer-events: auto
 
-        &__to-cart
-            background: var(--body-bg-color)
+		&__to-cart
+			background: var(--body-bg-color)
 
 @media (max-width: 355px)
-    .tovar-desc
+	.tovar-desc
 
-        &__to-cart
+		&__to-cart
 
-            .default-btn
-                width: calc(100% - 70px)
-                text-align: center
+			.default-btn
+				width: calc(100% - 70px)
+				text-align: center

@@ -262,6 +262,7 @@ class selectOption implements selectElement {
 		"<li %attrs% class='my-select__list-option %classes%'>%text%</li>";
 	private _value: string;
 	private _attributes: NamedNodeMap;
+	private _classes: string;
 
 	get text() {
 		return this._text;
@@ -291,14 +292,33 @@ class selectOption implements selectElement {
 		let attrsObject: attrsObject[] = [],
 			attrsString = "";
 
-		for (let i = 0; i < this.attributes.length; i++) {
-			attrsObject.push({
-				name: this.attributes[i].localName,
-				value: this.attributes[i].textContent || ""
-			});
+		let i = 0;
 
-			attrsString += ` ${attrsObject[i].name}='${attrsObject[i].value}'`;
+		for (const curAttr of Array.prototype.slice.call(this.attributes)){
+			if (curAttr.localName != "class"){
+				attrsObject.push({
+					name: curAttr.localName,
+					value: curAttr.textContent || ""
+				});
+
+				attrsString += ` ${curAttr.name}='${curAttr.value}'`;
+			}else{
+				this._classes = curAttr.value;
+			}
 		}
+		
+		// for (let i = 0; i < this.attributes.length; i++) {
+		// 	if (this.attributes[i].localName != "class"){
+		// 		attrsObject.push({
+		// 			name: this.attributes[i].localName,
+		// 			value: this.attributes[i].textContent || ""
+		// 		});
+
+		// 		attrsString += ` ${attrsObject[i].name}='${attrsObject[i].value}'`;
+		// 	}else{
+		// 		this._classes = this.attributes[i].value;
+		// 	}
+		// }
 
 		return attrsString;
 	}
@@ -306,6 +326,7 @@ class selectOption implements selectElement {
 	public replaceTemplateMarks(template: string): string {
 		return template
 			.replace("%attrs%", this.getAttrsString())
+			.replace("%classes%", this._classes)
 			.replace("%text%", this.text);
 	}
 

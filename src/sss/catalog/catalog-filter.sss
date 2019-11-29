@@ -8,10 +8,28 @@
 
 	&:before
 		content: ""
-		position: absolute 50% * * 100%
-		size: 1px 10000vh
+		position: fixed
+		size: 1px 100vh
+		top: 0
+		left: calc(var(--base-padding) + var(--catalog-cutch) - 75px)
+
+		// position: absolute 50% * * 100%
+		// size: 1px 10000vh
 		background: var(--border-color)
-		transform: translateY(-50%)
+		// transform: translateY(-50%)
+
+	&:after
+		content: ""
+		position: absolute 0 100% 0 *
+		width: var(--base-padding)
+		background: inherit
+
+	@media (min-width: 1920px)
+		&:after
+			width: calc((100vw - 1920px) / 2)
+
+		&:before
+			left: calc((100vw - 1920px) / 2 + var(--catalog-cutch) - 75px)
 
 	&__item
 
@@ -88,6 +106,10 @@
 	display: inline-block
 
 .aside-category
+
+	&:first-child:last-child
+		position: sticky
+		top: 25px
 
 	&__item
 
@@ -252,6 +274,9 @@
 	.filter
 		padding-right: 25px
 
+		&:before
+			left: calc(var(--base-padding) + var(--catalog-cutch) - 25px)
+
 @media (max-width: 1500px)
 	.filter
 
@@ -266,6 +291,9 @@
 @media (max-width: 1000px) and (min-width: 660px)
 	.filter
 		padding-right: 20px
+
+		&:before
+			left: calc(var(--base-padding) + var(--catalog-cutch) - 20px)
 
 @media (max-width: 660px)
 	.filter
