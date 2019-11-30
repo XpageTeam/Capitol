@@ -267,6 +267,17 @@
 			margin: 19px 0 0
 
 @media (min-width: 660px)
+	.bx_filter_parameters_box_container
+		display: flex
+
+		.default, .bordered	
+
+			&-btn
+
+				&:not(:first-child)
+					margin-left: 15px
+
+@media (min-width: 660px)
 	.filter__close
 		display: none
 
@@ -276,6 +287,14 @@
 
 		&:before
 			left: calc(var(--base-padding) + var(--catalog-cutch) - 25px)
+
+@media (max-width: 1700px) and (min-width: 660px)
+	.bx_filter_parameters_box_container
+
+		.default, .bordered	
+
+			&-btn
+				padding: 11px 10px
 
 @media (max-width: 1500px)
 	.filter

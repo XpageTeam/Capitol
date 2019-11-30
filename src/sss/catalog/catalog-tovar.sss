@@ -13,7 +13,6 @@
 
 		&-content
 			top: 25px
-			position: sticky
 
 		&-more
 			margin: 11px 0 0
@@ -172,6 +171,11 @@
 		background: url("../img/ico-table.svg") no-repeat
 		size: 16px
 
+@media (max-width: 1200px)
+	.bot-slider
+		width: 100%
+		overflow: hidden
+
 .bot-slider
 
 	.swiper-slide
@@ -317,6 +321,13 @@
 		grid-template-columns: auto 1fr
 		gap: 30px var(--base-padding)
 
+@media (max-width: 900px)
+	.tovar-img
+		text-align: center
+
+		img
+			display: inline-block
+
 @media (max-width: 660px)
 	.tovar-desc
 		grid-template-areas: "prices counter" "cart favorite"
@@ -376,7 +387,7 @@
 		&__desc
 
 			&-content
-				position: static
+				position: static !important
 				
 	.tovar-desc
 		grid-template-areas: "prices counter"

@@ -2884,6 +2884,8 @@
           (props.top === undefined ? $el.position().top : props.top) +
           "px";
 
+        console.log($el);
+
         if (this.use3d) {
           str = "translate3d(" + str + ", 0px)";
         } else {

@@ -1,6 +1,6 @@
 html
 	font-size: 100%
-	width: 100%
+	width: 100vw
 	overflow-x: hidden
 
 input, a, button, textarea, select
@@ -174,7 +174,7 @@ li
 	overflow: hidden
 
 
-.default-btn, .favorite-btn
+.default-btn, .favorite-btn, .bordered-btn
 	padding: 13px 25px
 	display: inline-block
 	border-radius: 5px
@@ -212,3 +212,13 @@ li
 	&:hover, &:focus, &.active
 		background-color: rgba(0,0,0, .8)
 		border-color: transparent
+
+.bordered-btn
+	border: 1px solid var(--border-color)
+
+	&:focus, &:hover
+		border-color: var(--main-color)
+
+	&:active
+		color: #fff
+		background-color: rgba(0,0,0, .8)
