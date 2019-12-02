@@ -59,6 +59,14 @@
 
     &__item
 
+        &.active 
+            
+            .pm__link, > .pm-submenu__link
+                font-weight: bold
+
+                &:before
+                    opacity: 1
+
         &:not(:first-child)
             margin: 20px 0 0
 
@@ -72,6 +80,25 @@
 
     &__link
         font-size: em(18)
+        position: relative
+        
+        &:before
+            content: ""
+            top: calc(50% - 1px)
+            right: calc(100% + 8px)
+            position: absolute
+            width: 9px
+            height: 2px
+            background: currentColor
+            transition: opacity .3s ease
+            opacity: 0
+
+        &.active, &:hover, &:focus
+            
+            &:before
+                opacity: 1
+
+       
 
 .pm-submenu
     margin: 20px 0 0
@@ -83,6 +110,26 @@
 
     &__link
         letter-spacing: 0.02em
+        position: relative
+
+        &.active
+            font-weight: bold
+        
+        &:before
+            content: ""
+            top: calc(50% - 1px)
+            right: calc(100% + 8px)
+            position: absolute
+            width: 9px
+            height: 2px
+            background: currentColor
+            transition: opacity .3s ease
+            opacity: 0
+
+        &.active, &:hover, &:focus
+            
+            &:before
+                opacity: 1
 
         &[data-count]
 
