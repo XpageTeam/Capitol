@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Контакты
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading.full-width-page
+        include inc/header.pug
+        main#content
+            .inner-content
+                aside.inner-content__aside
+                    .filter(Data-widget="sticky")
+                        .filter__item.aside-category
+                            .aside-category__list
+                                .aside-category__item
+                                    a.aside-category__link(href="#") Женщины
+                                .aside-category__item
+                                    a.aside-category__link(href="#") Мужчины
+                .inner-content__title
+                    include mixins/title-block.pug
+                    +titleBLock(["Capitol", "Контакты"], false)
+                .inner-content__content
+                    .contacts
+                        .contacts__list
+                            .contacts-list
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Челябинск
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address 
+                                                        p ул. Кирова,104, ТК «Молодежная мода»
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (351) 263-96-00") +7 (351) 263-96-00
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00     
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Тюмень
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address 
+                                                        p ул. 50 лет ВЛКСМ, 63, ТРЦ «Премьер»
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (3452) 35-01-85") +7 (3452) 35-01-85
+                                                    time.cl-address__time
+                                                        p 10.00-21.00  
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p ул. Тимофея Чаркова, 60, ТРЦ «Сити Молл»
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (3452) 55-58-45") +7 (3452) 55-58-45
+                                                    time.cl-address__time    
+                                                        p 10.00-21.00   
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Екатеринбург
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p ул. 8 марта, 46, ТРЦ «Гринвич»
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (343) 311-60-70") +7 (343) 311-60-70
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00        
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Красноярск
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p ул. Алексеева,41
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (343) 311-60-70") +7 (343) 311-60-70
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00        
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Сургут
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p Югорский тракт, 38, ТРЦ «Сургут Сити Молл»
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (343) 311-60-70") +7 (343) 311-60-70
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00        
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Пермь
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p ул. Сибирская, 18
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (343) 311-60-70") +7 (343) 311-60-70
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00        
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Омск
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p ул. Масленникова, 9
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (343) 311-60-70") +7 (343) 311-60-70
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00        
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Новосибирск
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p Красный проспект, 101, ТЦ «Ройял Парк»
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (343) 311-60-70") +7 (343) 311-60-70
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00        
+                                .contacts-list__item
+                                    .cl-item
+                                        .cl-item__name
+                                            span г. Казань
+                                        .cl-item__addresses
+                                            .cl-item__addresses-item
+                                                .cl-address
+                                                    address.cl-address__address
+                                                        p п-т. Х. Ямашева, 46/33, ТРК «Парк Хаус»
+                                                    address.cl-address__phone
+                                                        a(href="tel: +7 (343) 311-60-70") +7 (343) 311-60-70
+                                                    time.cl-address__time  
+                                                        p 10.00-21.00        
+                        .contacts__map
+                            img(src="img/photos/contacts-map.jpg")
+                        .contacts__info
+                            .contacts-info
+                                .contacts-info__title ООО «ВЕМСЕЙ»
+                                .contacts-info__list
+                                    .contacts-info__list-item.contacts-info__list-item--full
+                                        .c-info
+                                            .c-info__title Юридический адрес: 
+                                            address.c-info__text
+                                                p 194044, г. Санкт-Петербург, Выборгская наб, дом № 33/17, корпус А
+                                    .contacts-info__list-item
+                                        .c-info
+                                            .c-info__title ИНН: 
+                                            .c-info__text 
+                                                p 7802278772
+                                    .contacts-info__list-item
+                                        .c-info
+                                            .c-info__title ОГРН: 
+                                            .c-info__text 
+                                                p 1157847079940, серия 78 №009211822 от 10.03.2015
+                                    .contacts-info__list-item
+                                        .c-info
+                                            .c-info__title Телефон:
+                                            address.c-info__text
+                                                a(href="tel: +7 (351) 218-96-06") +7 (351) 218-96-06
+                .inner-content__footer
+                    include inc/footer.pug
+        include inc/scripts.pug

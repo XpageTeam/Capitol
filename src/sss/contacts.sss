@@ -1,0 +1,181 @@
+.contacts
+    display: grid
+    grid-template-areas: "list map" "list info" 
+    grid-template-columns: 1fr 695px
+    grid-template-rows: auto 1fr
+    gap: em(65) em(84)
+
+    &__list
+        grid-area: list
+
+    &__map
+        grid-area: map
+        padding: 13px 0 0
+
+    &__info
+        grid-area: info
+
+.cl-item
+
+    &__name
+        position: relative
+        font-size: em(18)
+        letter-spacing: 0.02em
+        font-weight: 500
+
+        &:after
+            content: ""
+            position: absolute calc(50% - 1px) 0 *
+            height: 1px
+            background: var(--border-color)
+
+        span
+            background: url("../img/ico-marker.svg") left center no-repeat
+            background-size: 13px 15px
+            background-color: var(--body-bg-color)
+            position: relative
+            z-index: 1
+            padding-left: 29px
+            min-width: 232px
+            display: inline-block
+
+    &__addresses
+        padding: 29px 0 49px
+
+        &-item
+
+            &:not(:first-child)
+                margin: 10px 0 0
+
+.cl-address
+    display: grid
+    grid-template-areas: "address phone time"
+    grid-template-columns: 1fr 130px 80px
+    gap: 20px 50px
+    
+    &__address
+        grid-area: address
+        line-height: calc(24 / 14)
+
+    &__phone
+        grid-area: phone
+
+        a
+            border: none
+
+    &__time
+        grid-area: time
+
+.contacts-info
+    background: #E9E3E3
+    padding: 45px 55px
+
+    &__title
+        font-weight: 500
+        margin: 0 0 25px
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+        margin: 0 0 -25px -25px
+
+        &-item
+            margin: 0 0 25px 25px
+
+            &--full
+                width: calc(100% - 25px)
+
+            &:not(&--full)
+                min-width: 20%
+
+.c-info
+
+    &__title
+        font-weight: 500
+        margin: 0 0 4px
+
+    &__text
+        line-height: 1.4
+
+    
+
+@media (max-width: 1800px) and (min-width: 1500px)
+    .contacts
+        grid-template-columns: 1fr 550px
+        gap: 40px
+
+    .contacts-info
+        padding: 30px
+
+@media (max-width: 1500px) and (min-width: 1300px)
+    .contacts
+        grid-template-columns: 1fr 500px
+        gap: var(--base-padding)
+
+    .contacts-info
+        padding: 30px
+
+@media (max-width: 1500px)
+    .cl-address
+        gap: 20px 30px
+
+    .cl-item
+        
+        &__addresses
+            padding: 20px 0 35px
+
+@media (max-width: 1300px)
+    .contacts
+        grid-template-columns: 100%
+        grid-template-areas: "list" "map" "info"
+        grid-template-rows: repeat(3, auto)
+
+        &__map
+            padding: 0
+
+            > img
+                width: 100%
+
+@media (max-width: 1100px)
+    .contacts
+        gap: var(--base-padding)
+
+    .contacts-info
+        padding: 30px
+
+@media (max-width: 660px)
+    .contacts
+        gap: 0
+
+        &__map
+
+            > img
+                display: block
+
+        &__map, &__info
+            margin: 0 calc(-1 * var(--base-padding))
+
+        &__info
+            margin-bottom: -20px
+
+    .contacts-info
+        padding: 30px var(--base-padding)
+
+        &__title
+            margin: 0 0 15px
+
+    .cl-address
+        grid-template-areas: "address address" "phone time"
+        grid-template-columns: repeat(2, 1fr)
+        gap: 10px var(--base-padding)
+        font-size: 12px
+
+    .cl-item__name 
+        font-size: em(16)
+        
+        span
+            min-width: 0
+            padding-right: 15px
+
+    .cl-item__addresses-item:not(:first-child)
+        margin: 20px 0 0
