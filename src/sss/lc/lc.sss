@@ -35,9 +35,21 @@
 .lc-wishlist
 
     .ci-desc__sizes 
+        padding-right: 0
         
         .default-input__label
             pointer-events: auto
+
+    .ci-sizes
+
+        &__list
+            margin-bottom: -10px
+
+            &-item
+                margin-bottom: 10px
+
+                &:not(:last-child)
+                    margin-right: 9px
 
 .inner-content
 
@@ -57,3 +69,14 @@
 
         &__links
             margin: 0 0 30px
+
+// @media (max-width: 660px) and (min-width: 380px)
+//     .lc-wishlist
+
+//         .cart__list
+//             display: block
+//             margin-left: 0 !important
+
+//             &-item
+//                 margin-left: 0 !important
+//                 width: 100% !important

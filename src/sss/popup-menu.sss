@@ -185,6 +185,28 @@
         &__content
             position: absolute 0
 
+
+
+@media (min-width: 660px)
+    .popup-menu
+
+        &__city
+            display: none
+    
+    .pm__link
+        
+        &-img
+            display: none
+
+        figcaption
+            display: inline
+
+
+
+
+
+
+
 @media (max-width: 1000px)
     .popup-menu
 
@@ -216,10 +238,141 @@
 
 @media (max-width: 660px)
     .pm-content
-        grid-template-columns: 100%
-        grid-template-areas: "leftMenu" "midMenu" "contacts" "copy" "soc"
+        display: flex
+        flex-direction: column
+
+        &__contacts
+            margin: 30px 0 0
+            border-top: 1px solid var(--border-color)
+            padding: 30px 25px
+
+        &__copy
+            order: 1
+
+        &__soc
+            padding: 0 25px 33px
+            border-bottom: 1px solid var(--border-color)
+
+        &__copy
+            padding: 30px 25px
 
     .popup-menu
+        overflow-x: hidden
+        overflow-y: auto
+        -webkit-overflow-scrolling: touch
+
+        &__close
+            size: 55px 61px
+            z-index: 2
+            position: fixed 0 0 * *
+
+        &__city
+            border-bottom: 1px solid var(--border-color)
+            position: sticky
+            top: 0
+            margin: 0 0 15px
+            background: var(--body-bg-color)
+            z-index: 1
+
+            &:before
+                pointer-events: none
+                content: ""
+                position: absolute calc(50% - 7px) * * 25px
+                background: url("../img/ico-marker.svg") no-repeat
+                background-size: contain
+                size: 9px 13px
+
+            select
+                letter-spacing: 0.02em
+                font-weight: 500
+                font-size: 14px
+                padding: 23px 0 24px 55px
+                width: calc(100% - 55px)
 
         &__content
-            padding: 30px var(--base-padding)
+            padding: 0
+            position: static
+            overflow: visible
+
+    .pm
+
+        &__item
+            margin: 0 !important
+
+            &--submenu
+
+                .pm__link
+                    position: relative
+
+                    &:after
+                        content: ""
+                        position: absolute calc(50% - 3px) 30px * *
+                        transform: rotateZ(45deg)
+                        size: 5px
+                        border-top: 1px solid currentColor
+                        border-right: 1px solid currentColor
+
+        &__link
+            display: block
+            font-size: 14px
+            padding: 10px 60px 10px 20px
+            display: flex
+            align-items: center
+
+            &-img
+                display: flex
+                justify-content: center
+                width: 20px
+                flex: none
+                margin-right: 15px
+
+                img
+                    display: block
+
+    .pm-contacts
+
+        &__phone, &__email
+
+            &:not(:first-child)
+                margin: 20px 0 0
+
+    .pm-submenu
+        position: absolute 0 * 0 100%
+        width: 100%
+        background: var(--body-bg-color)
+        margin: 0
+        z-index: 3
+        transition: transform .3s ease
+
+        &.js__opened
+            transform: translate3d(-100%, 0, 0)
+
+        li
+            margin: 0 !important
+
+        &__link, &__back
+            font-size: 14px
+
+        &__link
+            padding: 10px 60px 10px 20px
+            display: flex
+            align-items: center
+
+        &__back
+            color: #fff var(--main-color)
+            padding: 15px 60px 15px 40px
+            cursor: pointer
+            display: block
+            position: relative
+            user-select: none
+
+            &:before
+                content: ""
+                top: calc(50% - 3px)
+                left: 27px
+                position: absolute
+                width: 5px
+                height: 5px
+                border-top: 1px solid currentColor
+                border-right: 1px solid currentColor
+                transform: rotate(-135deg)

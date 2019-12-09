@@ -64,7 +64,12 @@
             border: none
 
     &__time
-        grid-area: time
+
+        &:not(:nth-child(2))
+            grid-area: time
+
+        &:nth-child(2)
+            grid-area: phone
 
 .contacts-info
     background: #E9E3E3

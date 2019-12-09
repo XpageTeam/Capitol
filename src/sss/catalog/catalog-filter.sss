@@ -32,7 +32,7 @@
 		width: var(--base-padding)
 		background: inherit
 
-	@media (min-width: 1920px)
+	@media (min-width: 2080px)
 		&:after
 			width: calc((100vw - 1920px) / 2)
 
@@ -259,11 +259,12 @@
 			&__input
 				position: absolute 0 * * 0
 				opacity: 0
+				pointer-events: none
 				
 				&:focus
 
 					+ label
-						border-color: var(--main-color) !important
+						border-color: transparent
 
 				&:checked + label
 					border-color: transparent
@@ -276,7 +277,7 @@
 			margin: 19px 0 0
 
 @media (min-width: 660px)
-	.bx_filter_parameters_box_container
+	.btn-container
 		display: flex
 
 		.default, .bordered	

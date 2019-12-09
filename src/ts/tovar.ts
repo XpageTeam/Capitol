@@ -1,6 +1,6 @@
 import domReady from "./xpage/ready";
 import Swiper from "swiper";
-import { settings, App } from "./xpage/index";
+import { settings, App, sameHeights } from "./xpage/index";
 
 domReady(() => {
     ;(async function(){
@@ -30,12 +30,12 @@ domReady(() => {
             }
         });
     
-        if (window.matchMedia("(max-width: 1200px"))
-            loadingAllImgs(slider);
+        if (window.matchMedia("(min-width: 1200px)"))
+            loadingAllImgs(slider, document.querySelectorAll(".tovar-imgs__item").length);
         
         window.addEventListener("resize", function(){
-            if (window.matchMedia("(max-width: 1200px"))
-                loadingAllImgs(slider);
+            if (window.matchMedia("(min-width: 1200px)"))
+                loadingAllImgs(slider, document.querySelectorAll(".tovar-imgs__item").length);
         });
     })();
 
@@ -78,9 +78,12 @@ domReady(() => {
                 }
             })
         });
+
+        sameHeights(".bot-slider", ".cat-item__desc-title");
     })();
 });
 
-const loadingAllImgs = (slider: Swiper) => {
-    slider.lazy.load();
+const loadingAllImgs = (slider: Swiper, slidesCount: number) => {
+    for (let i = 0; i < slidesCount; i++)
+    slider.lazy.loadInSlide(i);
 }

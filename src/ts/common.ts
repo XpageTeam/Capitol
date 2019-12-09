@@ -12,7 +12,9 @@ import "./lc-orders"
 import "./timeline-slider"
 import App from "./xpage/core";
 import domReady from "./xpage/ready";
-import { EventListener } from "./xpage/index";
+import { EventListener, sameHeights } from "./xpage/index";
+
+import "./forms";
 
 declare global {
 	interface Window {
@@ -36,8 +38,12 @@ domReady(async () => {
 
 domReady(() => {
 	new EventListener(".lc-links select").add("change", (select: HTMLSelectElement) => {
-		const id = select.value;
+		const id = +select.value;
 
-		(document.querySelector(`.lc-links__link:nth-child(${id}) a`) as HTMLLinkElement).click();
+		(document.querySelector(`.lc-links__link:nth-child(${id + 1}) a`) as HTMLLinkElement).click();
 	});
+});
+
+domReady(() => {
+	sameHeights(".catalog2-list", ".cat-item__desc-title")
 });

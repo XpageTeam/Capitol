@@ -13,6 +13,19 @@
         border-bottom: 1px solid var(--border-color)
         padding: 17px 0 17px 20px
         transition: background .3s ease, border-color .3s ease
+        border-color: var(--main-color)
+
+        &::-webkit-input-placeholder
+            color: var(--main-color)
+
+        &:-moz-placeholder
+            color: var(--main-color)
+
+        &::-moz-placeholder
+            color: var(--main-color)
+
+        &:-ms-input-placeholder
+            color: var(--main-color)
 
         &::-ms-clear, &::-ms-reveal
             display: none
@@ -26,9 +39,6 @@
                 size: 49px
                 background: url("../img/ico-remove.svg") center no-repeat
                 cursor: pointer
-
-        &:focus, &:hover
-            border-color: var(--main-color)
 
         &:focus
             background: #ffffff

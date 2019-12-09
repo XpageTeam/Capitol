@@ -1,13 +1,28 @@
 .popup-menu
     figure.popup-menu__logo
         img(src="img/logo-white.svg", alt="Capitol")
+    .popup-menu__city
+        .h-city
+            select
+                option(value="1") Челябинск
+                option(value="2") Челябинск1
+                option(value="3") Челябинск2
+                option(value="4") Челябинск3
+                option(value="5") Челябинск4
+                option(value="6") Челябинск5
+                option(value="7") Челябинск6
+                option(value="8") Челябинск7
     .popup-menu__content
         .pm-content
             nav.pm-content__left-menu
                 ul.pm
-                    li.pm__item.pm__item--submenu
-                        a.pm__link(href="#") Женщины
+                    li.pm__item.pm__item--submenu 
+                        a.pm__link(href="#") 
+                            figure.pm__link-img
+                                img(src="img/photos/ico-wm.svg")
+                            figcaption Женщины
                         ul.pm-submenu
+                            li.pm-submenu__back Назад
                             li
                                 a.pm-submenu__link(href="#" data-count="10") Куртки
                             li
@@ -17,17 +32,24 @@
                             li
                                 a.pm-submenu__link(href="#" data-count="12") Полупальто
                     li.pm__item.pm__item--submenu
-                        a.pm__link(href="#") Мужчины
+                        a.pm__link(href="#")
+                            figure.pm__link-img
+                                img(src="img/photos/ico-m.svg")
+                            figcaption  Мужчины
                         ul.pm-submenu
+                            li.pm-submenu__back Назад
                             li
                                 a.pm-submenu__link(href="#" data-count="10") Куртки
                             li
                                 a.pm-submenu__link(href="#" data-count="9") Пальто
             nav.pm-content__mid-menu
                 ul.pm
-                    each link in ["О компании", "Доставка", "Оплата", "Рассрочка", "Новинки", "Аутлет", ]
+                    each link, i in ["О компании", "Доставка", "Оплата", "Рассрочка", "Новинки", "Аутлет", "Контакты"]
                         li.pm__item
-                            a.pm__link(href="#")=link
+                            a.pm__link(href="#")
+                                figure.pm__link-img
+                                    img(src="img/photos/ico-menu-"+i+".svg")
+                                figcaption=link
             .pm-content__contacts
                 .pm-contacts
                     .pm-contacts__phone

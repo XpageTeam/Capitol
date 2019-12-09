@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-	const phoneInputs = document.querySelectorAll(".phone-input");
+	const phoneInputs = document.querySelectorAll(".phone-input, .input--phone");
 
 	if (!phoneInputs.length)
 		return;

@@ -182,9 +182,6 @@
             &.active
                 background: url("../img/ico-favorite-white-added.svg") center no-repeat
 
-        .ci-favorite
-            position: absolute 0 * * 0
-
         .ci-remove
             position: absolute -10px -10px * *
 
@@ -196,8 +193,15 @@
     .ci-desc
 
         &__price-actions
-            grid-template-areas: "price"
-            grid-template-columns: 1fr
+            // grid-template-areas: "price"
+            // grid-template-columns: 1fr
+            display: flex
+            align-items: flex-start
+            flex-direction: column
+            justify-content: space-between
+
+            .ci-favorite
+                margin: 12px 0 0
 
 @media (max-width: 660px) and (min-width: 380px)
     .cart
@@ -247,14 +251,18 @@
         font-size: em(16)
 
     .ci-desc
-        grid-template-areas: "title title" "sizes index" "counter counter" "price_actions price_actions"
-        grid-template-columns: auto auto
+        // grid-template-areas: "title title" "sizes index" "counter counter" "price_actions price_actions"
+        // grid-template-columns: auto auto
         gap: 20px 10px
         border: none
 
-        grid-template-rows: 70px 70px auto
+        // grid-template-rows: 70px 70px auto
         grid-template-columns: 110px auto auto
-        grid-template-areas: "img title title" "img sizes index" "counter counter price_actions"
+        align-items: stretch
+        grid-template-areas: "img title title" "img sizes sizes" "img index price_actions" "counter counter price_actions"
+
+        .row-item__text
+            font-size: 11px
 
         &__sizes
             padding-right: 0
@@ -262,6 +270,9 @@
         &__counter
             margin-left: 0
             margin-right: auto
+
+        &__price-actions
+            align-self: stretch
 
     .ci-prices
 

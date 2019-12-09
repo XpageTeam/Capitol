@@ -21,5 +21,14 @@ domReady(() => {
 				(textInput as HTMLInputElement).value = files.join(", ")
 			}
 		})
-	})
+	});
+
+	new EventListener(".ico-eye").add("click", (el: HTMLElement) => {
+		const passInput = el.closest(".default-input").querySelector("input[type=password], input[type=text]") as HTMLInputElement;
+
+		if (passInput.type == "password")
+			passInput.type = "text";
+		else if (passInput.type == "text")
+			passInput.type = "password";
+	});
 })

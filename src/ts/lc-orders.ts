@@ -7,9 +7,6 @@ domReady(() => {
     new EventListener(".ot-more").add("click", (el: HTMLElement, event: Event) => {
         event.preventDefault();
 
-        console.log(isAnimatingNow);
-        
-
         // if (isAnimatingNow) return;
 
         isAnimatingNow = true;
