@@ -36,12 +36,27 @@
 .pm-content
     display: grid
     width: 100%
-    grid-template-areas: "leftMenu midMenu contacts" "copy copy soc"
-    grid-template-columns: 230px 230px 1fr
-    gap: vh(110) vw(55)
+    grid-template-areas: "leftMenu leftMenu midMenu contacts" "copy copy copy soc"
+    grid-template-columns: 180px 180px 180px 1fr
+    gap: vh(160) vw(55)
 
     &__left-menu
         grid-area: leftMenu
+        gap: inherit
+        
+        .pm
+            display: grid
+            grid-template-areas: "lm rm"
+            grid-template-columns: repeat(2, 1fr)
+            gap: inherit
+
+            &__item
+
+                &:first-child
+                    grid-area: lm
+
+                &:nth-child(2)
+                    grid-area: rm
 
     &__mid-menu
         grid-area: midMenu
@@ -76,7 +91,7 @@
                 font-weight: 500
 
             &:not(:first-child)
-                margin: 75px 0 0
+                margin: 0 !important
 
     &__link
         font-size: em(18)
@@ -293,6 +308,9 @@
             padding: 0
             position: static
             overflow: visible
+
+    .pm-content__left-menu .pm
+        display: block
 
     .pm
 
