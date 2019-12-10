@@ -95,23 +95,27 @@
 
     &__link
         font-size: em(18)
-        position: relative
-        
-        &:before
-            content: ""
-            top: calc(50% - 1px)
-            right: calc(100% + 8px)
-            position: absolute
-            width: 9px
-            height: 2px
-            background: currentColor
-            transition: opacity .3s ease
-            opacity: 0
+        transition: color .3s ease
 
-        &.active, &:hover, &:focus
+        &:hover, &:focus, &.active
+            color: #8E8989
+        // position: relative
+        
+        // &:before
+        //     content: ""
+        //     top: calc(50% - 1px)
+        //     right: calc(100% + 8px)
+        //     position: absolute
+        //     width: 9px
+        //     height: 2px
+        //     background: currentColor
+        //     transition: opacity .3s ease
+        //     opacity: 0
+
+        // &.active, &:hover, &:focus
             
-            &:before
-                opacity: 1
+        //     &:before
+        //         opacity: 1
 
        
 
@@ -125,26 +129,29 @@
 
     &__link
         letter-spacing: 0.02em
-        position: relative
+        transition: color .3s ease
 
-        &.active
-            font-weight: bold
+        &:hover, &:focus, &.active
+            color: #8E8989
+
+        // &.active
+        //     font-weight: bold
         
-        &:before
-            content: ""
-            top: calc(50% - 1px)
-            right: calc(100% + 8px)
-            position: absolute
-            width: 9px
-            height: 2px
-            background: currentColor
-            transition: opacity .3s ease
-            opacity: 0
+        // &:before
+        //     content: ""
+        //     top: calc(50% - 1px)
+        //     right: calc(100% + 8px)
+        //     position: absolute
+        //     width: 9px
+        //     height: 2px
+        //     background: currentColor
+        //     transition: opacity .3s ease
+        //     opacity: 0
 
-        &.active, &:hover, &:focus
+        // &.active, &:hover, &:focus
             
-            &:before
-                opacity: 1
+        //     &:before
+        //         opacity: 1
 
         &[data-count]
 
@@ -250,6 +257,12 @@
 
                 &:not(:first-child)
                     margin: 30px 0 0
+
+@media (min-width: 660px)
+    .pm-submenu
+
+        &__back, &__back + li
+            display: none
 
 @media (max-width: 660px)
     .pm-content

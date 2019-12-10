@@ -154,6 +154,11 @@
     size: 19px
     position: relative
 
+    &:hover
+
+        &:before
+            size: 73px
+
     &:before, &:after
         content: ""
         position: absolute 50% * * 50%
@@ -164,6 +169,7 @@
     &:before
         background: rgba(255,255,255, .3)
         opacity: 0
+        transition: width .3s ease, height .3s ease
 
     &:after
         background: url("../img/ico-search.svg") center no-repeat

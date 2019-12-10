@@ -4,6 +4,20 @@
 
         &-slide
 
+            &-prev
+
+                .main-slide
+
+                    &__img
+
+                        img
+                            transform: translate3d(5%,0,0)
+                            // opacity: 1
+
+                    &__content-text
+                        transform: translate3d(50px, vh(42), 0)
+                        // opacity: 1
+
             &-active
 
                 .main-slide
@@ -17,7 +31,8 @@
                     &__img
 
                         img
-                            transform: translate3d(0,0,0) scale(1.03)
+                            transform: translate3d(0,0,0)
+                            opacity: 1
 
                         &:after
                             transform: translate3d(20%, 50%, 0) scale(.76)
@@ -25,9 +40,9 @@
                         &:before
                             transform: translate3d(20%, 50%, 0) scale(1)
 
-                    &__content-text span
+                    &__content-text
+                        transform: translate3d(0, vh(42), 0)
                         opacity: 1
-                        transform: none
 
 .main-slide
     background-position: center
@@ -50,7 +65,8 @@
 
     &__content
         display: inline-block
-        margin-left: persent(184, 1766)
+        // margin-left: persent(184, 1766)
+        margin-left: vh(184, 1766)
         margin-bottom: -4px
         height: calc(100vh + 4px)
         position: relative
@@ -66,14 +82,9 @@
             font-size: vw(250)
             font-weight: bold
             z-index: 2
-            transform-style: preserve-3d
-            perspective: 600px
-
-            span
-                opacity: 0
-                will-change: opacity, transform
-                transition: opacity .6s ease, transform 1s ease
-                transform: translate3d(-30%, 0, 0) rotateY(-90deg)
+            transform: translate3d(-50px, vh(42), 0)
+            opacity: 0
+            transition: opacity .3s ease, transform .3s ease
 
     &__img
         position: relative
@@ -88,8 +99,9 @@
             height: 100%
             position: relative
             z-index: 1
-            transition: transform 4s ease
+            transition: transform .3s ease, opacity .3s ease
             transform: translate3d(-5%,0,0)
+            opacity: 0
 
         &:before, &:after
             content: ""
@@ -113,7 +125,7 @@
             // width: 100vw !important
 
 .main-nav
-    position: absolute * 0 128px
+    position: absolute * 0 115px
 
     &__buttons
         display: flex
@@ -124,12 +136,21 @@
             &-prev, &-next
                 position: static
                 margin: 0
-                size: 45px 13px
-                background: url("../img/main-slider-arrow.svg") no-repeat
+                size: 45px 50px
+                background: url("../img/main-slider-arrow.svg") center no-repeat
+                transition: transform .3s ease
+
+            &-next
+
+                &:hover
+                    transform: translate3d(7px, 0, 0)
 
             &-prev
                 transform: rotateZ(180deg)
                 margin-right: 44px
+
+                &:hover
+                    transform: translate3d(-7px, 0, 0) rotateZ(180deg)
 
 @media (max-width: 1700px)
     .main-nav

@@ -11,10 +11,21 @@
     &:hover, &:focus-within
         border-color: var(--border-color)
         z-index: 3
+        background: #fff
 
         .cat-item__desc-sizes
             opacity: 1
             pointer-events: auto
+            background: #fff
+
+            .default-input__label
+                font-size: em(12)
+                padding: 4px 12px 4px
+                color: rgba(0,0,0, .5)
+
+                &:hover
+                    background: #E9E3E3
+                    border-color: transparent !important
 
         img + img
             opacity: 1

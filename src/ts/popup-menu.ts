@@ -31,6 +31,9 @@ domReady(() => {
             return;
 
         link.addEventListener("click", function(e: Event){
+            if (window.matchMedia("(min-width: 660px)"))
+                return;
+
             e.preventDefault();
 
             submenu.classList.add("js__opened");

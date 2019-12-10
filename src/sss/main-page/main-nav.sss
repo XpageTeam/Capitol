@@ -18,6 +18,10 @@
         color: #fff
         font-weight: bold
         font-size: em(48)
+        transition: color .3s ease
+
+        &:hover
+            color: var(--main-color)
 
         &[data-count]
             position: relative
@@ -27,6 +31,7 @@
                 border-radius: 50%
                 background: rgba(255,255,255, .3)
                 size: 32px
+                color: #fff
                 line-height: 34px
                 text-align: center
                 font-size: em(14, 48)
