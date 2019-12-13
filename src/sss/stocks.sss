@@ -1,0 +1,89 @@
+@media (min-width: 1000px)
+    .news
+        display: grid
+        grid-template-columns: 278px 1fr
+        grid-template-areas: "img date" "img title" "img text"
+        grid-template-rows: 1fr auto auto
+        align-items: end
+
+    .stocks-list
+
+        &__item
+
+            &:not(:first-child)
+                margin: 78px 0 0
+
+.news
+    gap: 15px 65px
+
+    &__img
+        grid-area: img
+
+        img
+            display: block
+            width: 100%
+
+    &__date
+        grid-area: date
+        line-height: 1
+        color: #979797
+        margin-bottom: auto
+
+    &__title
+        grid-area: title
+        font-size: em(22)
+        line-height: calc(28 / 20)
+        max-width: 450px
+        -webkit-line-clamp: 2
+        line-clamp: 2
+        font-weight: 400
+
+        a
+            color: inherit
+            border: none
+
+    &__title, &__text
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical
+
+    &__text
+        grid-area: text
+        max-width: 530px
+        -webkit-line-clamp: 3
+        line-clamp: 3
+        line-height: calc(30 / 14)
+
+@media (max-width: 1000px) and (min-width: 800px)
+    .stocks-list
+        display: flex
+        flex-wrap: wrap
+        margin: 0 0 -30px -30px
+
+        &__item
+            margin: 0 0 30px 30px
+            width: calc((100% - 30px * 2) / 2)
+
+@media (max-width: 1000px)
+    .news
+
+        &__img
+            margin: 0 0 20px
+            display: block
+
+        &__date
+            margin: 0 0 10px
+
+        &__title
+            font-size: em(18)
+
+        &__text
+            margin: 10px 0 0
+
+@media (max-width: 800px)
+    .stocks-list
+
+        &__item
+            margin: 30px 0 0

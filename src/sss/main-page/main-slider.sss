@@ -65,11 +65,13 @@
 
     &__content
         display: inline-block
-        // margin-left: persent(184, 1766)
-        margin-left: vh(184, 1766)
         margin-bottom: -4px
         height: calc(100vh + 4px)
         position: relative
+
+        @media (min-width: 1920px)
+            // margin-left: persent(184, 1766)
+            margin-left: vh(184, 1766)
 
         &-text
             position: absolute * 0 0
@@ -151,6 +153,10 @@
 
                 &:hover
                     transform: translate3d(-7px, 0, 0) rotateZ(180deg)
+
+@media (min-width: 1920px)
+    .main .wrapper
+        max-width: calc(1920px + var(--base-padding)*2)
 
 @media (max-width: 1700px)
     .main-nav

@@ -82,13 +82,16 @@
         &.active
             background: url("../img/ico-favorite-white-added.svg") no-repeat
 
+    &__plus
+        flex: none
+
     &__desc
         margin: 35px 0 0
 
         &-title
             display: flex
             justify-content: space-between
-            align-items: flex-start
+            align-items: center
 
             &:after
                 background: url("../img/ico-plus.svg") no-repeat
@@ -101,6 +104,14 @@
             color: rgba(0,0,0, .5)
             white-space: nowrap
             margin: 0 0 7px
+
+            .prices
+                
+                &__cur
+                    font-size: 1em
+
+                &__last
+                    font-size: em(12)
 
         &-sizes
             position: absolute calc(100% - 1px) -1px *

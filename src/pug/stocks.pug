@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Акции
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading.full-width-page
+        include inc/header.pug
+        main#content
+            .inner-content
+                aside.inner-content__aside
+                    .filter(Data-widget="sticky")
+                        .filter__item.aside-category
+                            .aside-category__list
+                                .aside-category__item
+                                    a.aside-category__link(href="#") Женщины
+                                .aside-category__item
+                                    a.aside-category__link(href="#") Мужчины
+                .inner-content__title
+                    include mixins/title-block.pug
+                    +titleBLock(["Capitol", "Акции"], false)
+                .inner-content__content
+                    .stocks
+                        .stocks-list
+                            - for (let i = 0; i < 4; i++)
+                                .stocks-list__item
+                                    .news
+                                        a.news__img(href="#")
+                                            img(src="img/photos/stock-img.jpg")
+                                        .news__date 11.10.2019
+                                        .news__title 
+                                            a(href="#") Capitol — это международная сеть салонов кожи и меха
+                                        .news__text Сегодня представительства Capitol есть уже в 10 городах России: Челябинске, Перми, Тюмени, Уфе, Екатеринбурге, Казани, Омске, Красноярске, Новосибирске и Сургуте. 
+                .inner-content__footer
+                    include inc/footer.pug
+        include inc/scripts.pug
