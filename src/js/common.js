@@ -51,16 +51,48 @@ document.addEventListener("DOMContentLoaded", () => {
 	;(async function(){
 		const IMask = await import("imask");
 
-		for (let i = 0; i < phoneInputs.length; i++){
-			const phoneInput = phoneInputs[i];
+		phoneInputsMask(phoneInputs, IMask);
 
-			new IMask.default(phoneInput, {
-				mask: '+{7}(000)000-00-00'
-			});
+		const config = {
+			childList: true,
+			subtree: true
+		};
+
+		// Функция обратного вызова при срабатывании мутации
+		const callback = function(mutationsList, observer) {
+			for (let mutation of mutationsList) {
+				if (mutation.addedNodes.length)
+					for (const node of mutation.addedNodes)
+						if (node instanceof HTMLElement)
+							phoneInputsMask(node.querySelectorAll(".phone-input, .input--phone"), IMask);
+			}
 		}
+
+		// Создаем экземпляр наблюдателя с указанной функцией обратного вызова
+		const observer = new MutationObserver(callback);
+
+		// Начинаем наблюдение за настроенными изменениями целевого элемента
+		observer.observe(document.body, config);
 		
 	})();
 });
+
+const phoneInputsMask = (inputs, IMask) => {
+	for (let i = 0; i < inputs.length; i++){
+		const phoneInput = inputs[i];
+
+		new IMask.default(phoneInput, {
+			mask: '+# (000) 000-00-00',
+			lazy: true,
+			placeholder: {
+				show: 'always'
+			},
+			definitions: {
+				"#": "7",
+			}
+		});
+	}
+};
 
 const initFancybox = () => {
 	$(".fancybox").fancybox({
