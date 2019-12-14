@@ -16,7 +16,7 @@ domReady(() => {
 
     new Swiper(".main-slider", {
         effect: "fade",
-        loop: true,
+        // loop: true,
         lazy: {
             loadPrevNext: true,
             loadOnTransitionStart: true
