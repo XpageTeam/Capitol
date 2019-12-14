@@ -1,23 +1,33 @@
 .popup-menu
     position: fixed 0
     z-index: 22
-    background: var(--body-bg-color)
+    // background: var(--body-bg-color)
     display: grid
     grid-template-areas: "logo content"
     grid-template-columns: persent(605, 1920) 1fr
-    transition: opacity .3s ease
+    transition: transform .5s ease
 
-    &:not(.js__opened)
-        opacity: 0
+    &:not(.js__opened), &:not(.js__opened) &__logo
+        transform: translate3d(101%, 0, 0)
         pointer-events: none
 
+    &:not(.js__opened) &__logo img
+        opacity: 0
+
     &__logo
-        background: url("../img/popup-menu-logo-bg.png") center no-repeat, #C9AA78
+        // background: url("../img/popup-menu-logo-bg.png") center no-repeat, #C9AA78
+        background-color: var(--main-color)
         background-size: cover
         grid-area: logo
         display: flex
         justify-content: center
         align-items: center
+        transition: transform .3s cubic-bezier(0.77, 0, 0.175, 1)
+        transition-delay: .6s
+
+        img
+            transition: opacity 1s ease
+            transition-delay: 1.6s
 
     &__content
         grid-area: content
@@ -25,9 +35,13 @@
         justify-content: center
         align-items: center
         padding: vh(100) vw(150)
+        background: #ffffff
+        position: relative
+        z-index: 1
 
     &__close
         position: absolute 70px 65px * *
+        z-index: 2
         size: 30px
         background: url("../img/ico-close.svg") center no-repeat
         cursor: pointer
