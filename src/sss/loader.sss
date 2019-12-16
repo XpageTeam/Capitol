@@ -1,7 +1,7 @@
 body.loaded
 
     .loader
-        opacity: 0
+        transform: translate3d(0, -100%, 0)
         pointer-events: none
 
 .loader
@@ -11,7 +11,7 @@ body.loaded
     display: flex
     justify-content: center
     align-items: center
-    transition: opacity .3s ease
+    transition: transform .8s ease
 
     &__content
         display: flex

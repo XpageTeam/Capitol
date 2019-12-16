@@ -15,6 +15,7 @@ import domReady from "./xpage/ready";
 import { EventListener, sameHeights } from "./xpage/index";
 
 import "./forms";
+import "./xpage/loader";
 
 declare global {
 	interface Window {

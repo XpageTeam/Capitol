@@ -1,6 +1,5 @@
 import domReady from "./xpage/ready";
 import {Swiper, Lazy, Navigation, Keyboard, EffectFade, Autoplay} from "swiper/dist/js/swiper.esm";
-import "./xpage/loader";
 
 Swiper.use([Lazy, Navigation, EffectFade, Keyboard, Autoplay]);
 
@@ -16,7 +15,7 @@ domReady(() => {
 
     new Swiper(".main-slider", {
         effect: "fade",
-        // loop: true,
+        loop: true,
         lazy: {
             loadPrevNext: true,
             loadOnTransitionStart: true
@@ -30,7 +29,7 @@ domReady(() => {
         },
         autoplay: {
             disableOnInteraction: false,
-            delay: 5000,
+            delay: 2500,
         }
     });
 });
