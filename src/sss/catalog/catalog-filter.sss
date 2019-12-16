@@ -6,6 +6,18 @@
 		border-radius: 5px
 		background: #fff
 
+.btn-container
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+
+	.default, .bordered
+
+		&-btn
+
+			&:not(:first-child)
+				margin: 15px 0 0
+
 .filter
 	max-width: 277px
 	padding-right: 60px
@@ -276,16 +288,16 @@
 		&:not(:first-child)
 			margin: 19px 0 0
 
-@media (min-width: 660px)
-	.btn-container
-		display: flex
+// @media (min-width: 660px)
+// 	.btn-container
+// 		display: flex
 
-		.default, .bordered	
+// 		.default, .bordered	
 
-			&-btn
+// 			&-btn
 
-				&:not(:first-child)
-					margin-left: 15px
+// 				&:not(:first-child)
+// 					margin-left: 15px
 
 @media (min-width: 660px)
 	.filter__close

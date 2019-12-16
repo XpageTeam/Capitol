@@ -1,5 +1,6 @@
 import $ from "jquery"
 import is from "is_js"
+import {TweenLite} from "gsap/gsap-core.js";
 
 import "./filter.js"
 import { Sticky } from "./x-widgets.js"
@@ -7,6 +8,7 @@ import { Sticky } from "./x-widgets.js"
 window.jQuery = $
 window.$ = $
 window.is = is
+window.TweenLite = TweenLite;
 
 let isFancyboxReady = false;
 

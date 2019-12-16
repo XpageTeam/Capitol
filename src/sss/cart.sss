@@ -40,6 +40,7 @@
 
     &__img
         grid-area: img
+        position: relative
 
         img
             display: block
@@ -116,7 +117,22 @@
     &__summ
         font-size: em(20)
         line-height: 1
+        display: flex
+        flex-direction: column
+        align-items: flex-start
         white-space: nowrap
+
+        .prices
+
+            &__cur
+                font-size: 1em
+                font-weight: inherit
+
+            &__last
+                font-size: em(16, 20)
+
+                &:not(:first-child)
+                    margin: 5px 0 0
 
     &__count
         font-size: em(14)

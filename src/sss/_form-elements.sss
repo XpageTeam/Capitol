@@ -126,6 +126,10 @@ textarea.default-input__input
 		display: flex
 		align-items: center
 		user-select: none
+		text-transform: lowercase
+		
+		&::first-letter
+			text-transform: uppercase
 
 		&:before, &:after
 			content: ""
@@ -259,6 +263,11 @@ textarea.default-input__input
 		font-size: 1em
 		// color: #fff
 		margin-bottom: 15px
+		display: block
+		text-transform: lowercase
+
+		&::first-letter
+			text-transform: uppercase
 
 		&-file
 			size: 49px

@@ -1,6 +1,6 @@
 import domReady from "./xpage/ready";
 import {Swiper, Lazy, Navigation, Keyboard, EffectFade, Autoplay} from "swiper/dist/js/swiper.esm";
-import App from "./xpage/core";
+import "./xpage/loader";
 
 Swiper.use([Lazy, Navigation, EffectFade, Keyboard, Autoplay]);
 

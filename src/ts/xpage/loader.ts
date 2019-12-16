@@ -1,12 +1,13 @@
 import randomInt from "../functions/randomInt"
 import Counter from "./counter"
 import { App } from "./index";
+import loaderCanvas from "./canvasLoader";
 
 document.addEventListener("DOMContentLoaded", () => {
 	const loadStepsCount = randomInt(4, 10), // Количество шагов в загрузчике
 		// loadingTime = randomInt(1, 4), // Время работы загрузчика
         progressCounter = App.getElement(".loader__text span"),
-        progressBg = App.getElement(".loader__bg");
+        canvas = document.querySelector(".loader__canvas canvas") as HTMLCanvasElement;
 
 	let loadPercentsForSteps: number[] = new Array(loadStepsCount), // Массив процентов загрузки для каждого шага
 		timeForSteps: number[] = new Array(loadStepsCount); // Время прохода каждого шага
@@ -28,11 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
         )
 
 		timeForSteps[i] = randomInt(50, 200) / 1000
-	}
+    }
+    
+    const canvasLoader = new loaderCanvas(canvas);
 
 	let curStep = 0;
 	const loadingAnimate = (step: number, time: number) => {
-        curStep++
+        curStep++;
         
 		Counter(
             progressCounter, 
@@ -46,11 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.body.classList.add("loaded")
                 } 
             },
-            function(currentCounter: number){
-                progressBg.style.transform = `skewY(-2deg) scaleY(1.2) translate3d(0,${Math.abs(currentCounter - 100)}%,0)`;
+            function(curValue: number){
+                canvasLoader.curPercent = curValue;
             }
         )
 	};
 
 	loadingAnimate(loadPercentsForSteps[0], timeForSteps[0])
-})
+});

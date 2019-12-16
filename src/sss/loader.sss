@@ -1,0 +1,44 @@
+body.loaded
+
+    .loader
+        opacity: 0
+        pointer-events: none
+
+.loader
+    position: fixed 0
+    z-index: 99
+    background: var(--body-bg-color)
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: opacity .3s ease
+
+    &__content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+        border-radius: 50%
+        position: relative
+        size: 360px
+        flex: none
+        border: 1px solid var(--border-color)
+
+    &__text
+        font-size: em(12)
+        line-height: 1
+        position: absolute * 0 120px
+
+    &__canvas
+        position: absolute 0
+        size: 100%
+
+@media (max-width: 660px)
+    .loader
+
+        &__content
+            size: 200px
+
+        &__text
+            bottom: 45px
