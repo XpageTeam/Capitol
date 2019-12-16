@@ -4,6 +4,9 @@ body.loaded
         transform: translate3d(0, -100%, 0)
         pointer-events: none
 
+        &__content
+            opacity: 0
+
 .loader
     position: fixed 0
     z-index: 99
@@ -12,6 +15,7 @@ body.loaded
     justify-content: center
     align-items: center
     transition: transform .8s ease
+    transition-delay: .5s
 
     &__content
         display: flex
@@ -24,6 +28,7 @@ body.loaded
         size: 360px
         flex: none
         border: 1px solid var(--border-color)
+        transition: opacity .3s ease
 
     &__text
         font-size: em(12)

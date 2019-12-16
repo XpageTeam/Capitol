@@ -52,7 +52,7 @@ domReady(() => {
         App.each(".bot-slider", (slider: HTMLElement) => {
             new Swiper(slider, {
                 slidesPerView: "auto",
-                spaceBetween: 36,
+                spaceBetween: 72,
                 lazy: {
                     loadPrevNext: true
                 },

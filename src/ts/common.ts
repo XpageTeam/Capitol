@@ -30,6 +30,9 @@ domReady(async () => {
     if (window.is.touchDevice())
 		return;
 
+	console.log(123);
+	
+
     const select = await import("./xpage/select");
 
     App.each(".default-input__input--select", (el: HTMLSelectElement) => {

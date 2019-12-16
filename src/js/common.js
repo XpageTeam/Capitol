@@ -10,6 +10,7 @@ window.$ = $
 window.is = is
 window.TweenLite = TweenLite;
 
+
 let isFancyboxReady = false;
 
 import("./jquery.fancybox.js")
@@ -31,7 +32,7 @@ window.fancyboxReady = callback => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    fancyboxReady(initFancybox)
+    fancyboxReady(initFancybox);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
