@@ -28,6 +28,10 @@
                     &:before
                         transform: translate3d(33%, -50%, 0) scale(1)
 
+                    &__sale
+                        opacity: 1
+                        transition-delay: .3s
+
                     &__img
 
                         img
@@ -62,6 +66,16 @@
 
     &:after
         transition-delay: .1s
+
+    &__sale
+        position: absolute vh(210) 20px * *
+        z-index: 1
+        transition: opacity 1s ease
+        opacity: 0
+
+        .cat-item__sale
+            size: 206px
+            font-size: em(60)
 
     &__content
         display: inline-block
@@ -188,6 +202,14 @@
                 max-height: 75vh
                 transform: none !important
 
+        &__sale
+            right: vw(200)
+            top: 50%
+
+            .cat-item__sale
+                font-size: vw(40)
+                size: vw(160)
+
 
 @media (max-width: 660px)
     html
@@ -209,6 +231,14 @@
 
             &-text
                 font-size: vw(80, 414)
+
+        &__sale
+            right: vw(400)
+            top: 50%
+
+            .cat-item__sale
+                font-size: vw(60)
+                size: vw(200)
 
     .main-nav
         bottom: vh(180, 735)

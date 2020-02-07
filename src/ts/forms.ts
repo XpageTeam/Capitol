@@ -26,6 +26,8 @@ domReady(() => {
 	new EventListener(".ico-eye").add("click", (el: HTMLElement) => {
 		const passInput = el.closest(".default-input").querySelector("input[type=password], input[type=text]") as HTMLInputElement;
 
+		el.classList.toggle("js__active")
+
 		if (passInput.type == "password")
 			passInput.type = "text";
 		else if (passInput.type == "text")

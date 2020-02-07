@@ -168,7 +168,7 @@ textarea.default-input__input
 		transition: opacity .3s ease
 		opacity: 0
 		pointer-events: none
-		position: absolute calc(100% + 5px) 0 *
+		position: absolute 5px 0 * *
 		color: red
 		text-align: right
 		font-size: em(12)
@@ -182,7 +182,10 @@ textarea.default-input__input
 		transition: border-color .3s ease
 	
 		&--error:not(:valid)
-			border-color: red
+			
+			&:not(:focus)
+				border-bottom: 3px solid #E74E40
+				color: #E74E40
 
 			~ .default-input__error
 				opacity: 1

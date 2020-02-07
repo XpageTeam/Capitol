@@ -29,8 +29,6 @@ declare global {
 domReady(async () => {
     if (window.is.touchDevice())
 		return;
-
-	console.log(123);
 	
 
     const select = await import("./xpage/select");
