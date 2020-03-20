@@ -6,7 +6,9 @@ interface Shadows {
 }
 
 domReady(() => {
-	App.each(".standart-page__text table:not([class])", (table: HTMLTableElement) => {
+	const tables = App.elementsGetter(".standart-page table:not([class])");
+
+	for (let table of tables){
 		const tableWrap: HTMLElement = document.createElement("div"),
 			tableWrapTrack: HTMLElement = document.createElement("div"),
 			shadows: Shadows = {
@@ -23,15 +25,13 @@ domReady(() => {
 		tableWrap.classList.add("table-wrap");
 		tableWrapTrack.classList.add("table-wrap__track");
 
-		App.wrap(table, tableWrapTrack)
-		App.wrap(".table-wrap__track", tableWrap)
+		App.wrap(table, tableWrapTrack);
+		App.wrap(tableWrapTrack, tableWrap);
 
-		App.each(".table-wrap", (el: HTMLElement) => {
-			el.insertBefore(shadows.left, el.querySelector("*:first-child"))
-			el.insertBefore(shadows.right, null)
-		})
+		tableWrap.insertBefore(shadows.left, tableWrap.querySelector("*:first-child"));
+		tableWrap.insertBefore(shadows.right, null);
 
-		App.each(".table-wrap__track", function(track: HTMLElement){
+		;(function(track: HTMLElement){
 			if (track.scrollWidth > track.clientWidth){
 				let wrap = track.closest(".table-wrap");
 
@@ -43,7 +43,7 @@ domReady(() => {
 			}
 
 			new EventListener(track).add("scroll", function(el: HTMLElement){
-				let wrap = el.closest(".table-wrap");
+				const wrap = el.closest(".table-wrap");
 
 				let shadows: Shadows = {
 					left: wrap.querySelector(".table-wrap__shadow--left"),
@@ -52,9 +52,9 @@ domReady(() => {
 
 				setShadowOpacity(shadows.right, el.scrollWidth - el.clientWidth - el.scrollLeft)
 				setShadowOpacity(shadows.left, el.scrollLeft)
-			})
-		});
-	});
+			});
+		})(tableWrapTrack);
+	}
 })
 
 const setShadowOpacity = (element:HTMLElement, scrollWidth: number, offsetWidth: number = 80) => {

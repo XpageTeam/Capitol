@@ -96,7 +96,17 @@
         &:nth-child(2)
             grid-area: title
 
-    &__content
+    > div[id*="bx_inc"]
+
+        &:first-child
+
+            > div[id*="bx_inc"]
+                display: grid
+                grid-template-columns: var(--catalog-cutch) calc(100% - var(--catalog-cutch))
+                grid-template-areas: "aside title" "aside catalog"
+
+
+    &__content, > div[id*="bx_inc"]
 
         &:first-child
             grid-area: catalog
