@@ -70,7 +70,24 @@
         &__container
             align-items: flex-start
 
-@media (max-width: 660px)
+    @media (orientation: landscape)
+        .mp-menu
+            padding-right: 0
+            width: 100%
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            gap: 10px
+
+            li
+                margin: 0 !important
+
+            &__link
+                font-size: em(20)
+
+                &:after
+                    font-size: 12px !important
+
+@media (max-width: 660px) and (orientation: portrait)
     .mp-menu
 
         &__container
